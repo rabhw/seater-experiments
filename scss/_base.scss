@@ -1,18 +1,6 @@
 @import "compass";
 @import "compass/reset";
+@import "variables";
 @import "mixins";
 @import "layout";
-
-/*
-// Colors
-*/
-
-$grey: #dedede;
-$lightGrey: lighten($grey, 8%);
-$darkGrey: darken($grey, 10%);
-
-/*
-// Table sizes
-*/
-
-$table-sizes: (2, 3, 4, 5, 6, 7, 8, 9, 10);
+@import "fancybox";

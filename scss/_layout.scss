@@ -1,3 +1,37 @@
+* {
+	box-sizing: border-box;
+}
+
 %circle {
 	@include border-radius(50%);
+}
+
+nav {
+	@include pie-clearfix();
+}
+
+.tabs {
+	li {
+		float: left;
+		&:first-child a {
+			@include border-top-left-radius;
+		}
+		&:last-child a {
+			@include border-top-right-radius;
+		}
+	}
+	a {
+		display: block;
+		text-align: center;
+		padding: $global-padding/2;
+		background: $grey-lighter;
+		&.active {
+			background: $grey-light;
+		}
+	}
+	&.two {
+		li {
+			width: 50%;
+		}
+	}
 }

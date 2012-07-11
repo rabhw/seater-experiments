@@ -5,6 +5,8 @@
 
 $(document).ready(function() {
 
+
+
 	$('.rotate-table').on('click', function(e) {
 
 		var $this = $(this);
@@ -19,6 +21,11 @@ $(document).ready(function() {
 		}
 
 		e.preventDefault();
+	});
+
+
+	$('.seat').on('click', function(e) {
+		$.fancybox( $('#edit-seat') );
 	});
 
 });

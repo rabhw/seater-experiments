@@ -1,0 +1,30 @@
+/*
+// Colors
+*/
+
+$grey: #888888;
+$grey-lighter: lighten($grey, 42%);
+$grey-light: lighten($grey, 30%);
+$grey-dark: darken($grey, 5%);
+$grey-darker: darken($grey, 10%);
+
+
+/*
+// Table sizes
+*/
+
+$table-sizes: (2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+/*
+// Padding / margins
+*/
+
+$global-padding: 40px;
+
+/*
+// Transitions
+*/
+
+$default-transition-duration: 0.5s;
+$transition-fast: 0.2s;
+$transition-slow: 1s;
