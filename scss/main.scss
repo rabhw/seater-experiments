@@ -1,9 +1,5 @@
 @import "base";
 
-$grey: #dedede;
-$lightGrey: lighten($grey, 10%);
-$darkGrey: darken($grey, 10%);
-
 .circle {
 	@include border-radius(50%);
 }
