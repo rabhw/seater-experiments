@@ -1,0 +1,154 @@
+@import "base";
+
+$grey: #dedede;
+$lightGrey: lighten($grey, 10%);
+$darkGrey: darken($grey, 10%);
+
+.circle {
+	@include border-radius(50%);
+}
+
+
+$table-sizes: (2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+@mixin rotate-tables($angle-span: 360deg, $angle-offset: 0deg) {
+
+	@each $size in $table-sizes {
+
+		$angle-per-table: $angle-span / $size;
+
+		.table[data-table-size="#{$size}"] {
+
+			@for $i from 1 through $size {
+				.seat[data-seat-number="#{$i}"] {
+					@include transform(rotate($angle-offset + $angle-per-table * $i));
+				}
+			}
+		}
+	}
+
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #444;
+}
+
+a {
+	text-decoration: none;
+	color: #444;
+}
+
+#wrap {
+	max-width: 1650px;
+	min-width: 940px;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	@include rotate-tables;
+}
+
+#canvas {
+	margin-top: 40px;
+	background: $lightGrey;
+	height: 400px;
+	position: relative;
+}
+
+.table-wrap {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+}
+
+.table {
+	background: $grey;
+	border: 4px solid $darkGrey;
+	@include box-shadow(inset 0 0 50px $darkGrey);
+	@include transition;
+
+	&[data-table-shape="round"] {
+		width: 100px;
+		height: 100px;
+		@extend .circle;
+	}
+}
+
+.table-number {
+	position: absolute;
+	z-index: 9999;
+	width: 48px;
+	height: 48px;
+	font-weight: bold;
+	text-align: center;
+	cursor: default;
+	line-height: 48px;
+	top: 50%;
+	left: 50%;
+	margin-top: -24px;
+	margin-left: -24px;
+	background: $darkGrey;
+	@extend .circle;
+}
+
+.table-controls {
+	@include opacity(0);
+	@include transition;
+	width: 100%;
+	position: absolute;
+	bottom: -60px;
+	text-align: center;
+	font-size: 32px;
+	.rotate-table {
+		display: inline-block;
+		width: 25%;
+		&.cw {
+			text-align: left;
+			&:after {
+				top: 0;
+				left: 0;
+				content: "\21BB";
+			}
+		}
+		&.ccw {
+			text-align: right;
+				&:after {
+				top: 0;
+				left: 0;
+				content: "\21BA";
+			}
+		}
+	}
+}
+
+.table-wrap:hover {
+	.table-controls {
+		@include opacity(1);
+	}
+}
+
+.seat {
+	position: absolute;
+	left: 50%;
+	margin-left: -12px;
+	width: 24px;
+	height: 75px; // gives space between edge of table and seats
+	margin-top: -25px; // height of seat box - height of table
+	@include transform-origin(bottom ,center);
+	span {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		border-bottom: 12px solid #333;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		height: 0;
+		width: 12px;
+		&:hover {
+			border-bottom-color: lightblue;
+		}
+	}
+}

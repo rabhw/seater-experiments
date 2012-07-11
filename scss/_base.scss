@@ -1,0 +1,6 @@
+@import "compass";
+@import "compass/reset";
+
+$grey: #dedede;
+$lightGrey: lighten($grey, 8%);
+$darkGrey: darken($grey, 10%);

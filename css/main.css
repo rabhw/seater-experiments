@@ -1,0 +1,656 @@
+/* line 17, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../apps/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../scss/main.scss */
+.circle, .table[data-table-shape="round"], .table-number {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* line 32, ../scss/main.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+
+/* line 38, ../scss/main.scss */
+a {
+  text-decoration: none;
+  color: #444;
+}
+
+/* line 43, ../scss/main.scss */
+#wrap {
+  max-width: 1650px;
+  min-width: 940px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="2"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="2"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="3"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="3"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="3"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="4"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="4"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="4"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="4"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="5"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="5"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -ms-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="5"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -ms-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="5"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -ms-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="5"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(300deg);
+  -moz-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="6"] .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(51.429deg);
+  -moz-transform: rotate(51.429deg);
+  -ms-transform: rotate(51.429deg);
+  -o-transform: rotate(51.429deg);
+  transform: rotate(51.429deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(102.857deg);
+  -moz-transform: rotate(102.857deg);
+  -ms-transform: rotate(102.857deg);
+  -o-transform: rotate(102.857deg);
+  transform: rotate(102.857deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(154.286deg);
+  -moz-transform: rotate(154.286deg);
+  -ms-transform: rotate(154.286deg);
+  -o-transform: rotate(154.286deg);
+  transform: rotate(154.286deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(205.714deg);
+  -moz-transform: rotate(205.714deg);
+  -ms-transform: rotate(205.714deg);
+  -o-transform: rotate(205.714deg);
+  transform: rotate(205.714deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(257.143deg);
+  -moz-transform: rotate(257.143deg);
+  -ms-transform: rotate(257.143deg);
+  -o-transform: rotate(257.143deg);
+  transform: rotate(257.143deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(308.571deg);
+  -moz-transform: rotate(308.571deg);
+  -ms-transform: rotate(308.571deg);
+  -o-transform: rotate(308.571deg);
+  transform: rotate(308.571deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="7"] .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="8"] .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(80deg);
+  -moz-transform: rotate(80deg);
+  -ms-transform: rotate(80deg);
+  -o-transform: rotate(80deg);
+  transform: rotate(80deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(160deg);
+  -moz-transform: rotate(160deg);
+  -ms-transform: rotate(160deg);
+  -o-transform: rotate(160deg);
+  transform: rotate(160deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(200deg);
+  -moz-transform: rotate(200deg);
+  -ms-transform: rotate(200deg);
+  -o-transform: rotate(200deg);
+  transform: rotate(200deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(280deg);
+  -moz-transform: rotate(280deg);
+  -ms-transform: rotate(280deg);
+  -o-transform: rotate(280deg);
+  transform: rotate(280deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(320deg);
+  -moz-transform: rotate(320deg);
+  -ms-transform: rotate(320deg);
+  -o-transform: rotate(320deg);
+  transform: rotate(320deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="9"] .seat[data-seat-number="9"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  transform: rotate(36deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -ms-transform: rotate(108deg);
+  -o-transform: rotate(108deg);
+  transform: rotate(108deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -ms-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -ms-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(252deg);
+  -moz-transform: rotate(252deg);
+  -ms-transform: rotate(252deg);
+  -o-transform: rotate(252deg);
+  transform: rotate(252deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -ms-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="9"] {
+  -webkit-transform: rotate(324deg);
+  -moz-transform: rotate(324deg);
+  -ms-transform: rotate(324deg);
+  -o-transform: rotate(324deg);
+  transform: rotate(324deg);
+}
+/* line 23, ../scss/main.scss */
+#wrap .table[data-table-size="10"] .seat[data-seat-number="10"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+/* line 52, ../scss/main.scss */
+#canvas {
+  margin-top: 40px;
+  background: #f8f8f8;
+  height: 400px;
+  position: relative;
+}
+
+/* line 59, ../scss/main.scss */
+.table-wrap {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+/* line 65, ../scss/main.scss */
+.table {
+  background: #dedede;
+  border: 4px solid #c5c5c5;
+  -webkit-box-shadow: inset 0 0 50px #c5c5c5;
+  -moz-box-shadow: inset 0 0 50px #c5c5c5;
+  box-shadow: inset 0 0 50px #c5c5c5;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 71, ../scss/main.scss */
+.table[data-table-shape="round"] {
+  width: 100px;
+  height: 100px;
+}
+
+/* line 78, ../scss/main.scss */
+.table-number {
+  position: absolute;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+  line-height: 48px;
+  top: 50%;
+  left: 50%;
+  margin-top: -24px;
+  margin-left: -24px;
+  background: #c5c5c5;
+}
+
+/* line 95, ../scss/main.scss */
+.table-controls {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  width: 100%;
+  position: absolute;
+  bottom: -60px;
+  text-align: center;
+  font-size: 32px;
+}
+/* line 103, ../scss/main.scss */
+.table-controls .rotate-table {
+  display: inline-block;
+  width: 25%;
+}
+/* line 106, ../scss/main.scss */
+.table-controls .rotate-table.cw {
+  text-align: left;
+}
+/* line 108, ../scss/main.scss */
+.table-controls .rotate-table.cw:after {
+  top: 0;
+  left: 0;
+  content: "\21BB";
+}
+/* line 114, ../scss/main.scss */
+.table-controls .rotate-table.ccw {
+  text-align: right;
+}
+/* line 116, ../scss/main.scss */
+.table-controls .rotate-table.ccw:after {
+  top: 0;
+  left: 0;
+  content: "\21BA";
+}
+
+/* line 126, ../scss/main.scss */
+.table-wrap:hover .table-controls {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 131, ../scss/main.scss */
+.seat {
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 75px;
+  margin-top: -25px;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+/* line 139, ../scss/main.scss */
+.seat span {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  border-bottom: 12px solid #333;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  height: 0;
+  width: 12px;
+}
+/* line 150, ../scss/main.scss */
+.seat span:hover {
+  border-bottom-color: lightblue;
+}
