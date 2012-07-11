@@ -1,30 +1,5 @@
 @import "base";
 
-.circle {
-	@include border-radius(50%);
-}
-
-
-$table-sizes: (2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-@mixin rotate-tables($angle-span: 360deg, $angle-offset: 0deg) {
-
-	@each $size in $table-sizes {
-
-		$angle-per-table: $angle-span / $size;
-
-		.table[data-table-size="#{$size}"] {
-
-			@for $i from 1 through $size {
-				.seat[data-seat-number="#{$i}"] {
-					@include transform(rotate($angle-offset + $angle-per-table * $i));
-				}
-			}
-		}
-	}
-
-}
-
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -41,7 +16,6 @@ a {
 	min-width: 940px;
 	padding: 0 20px;
 	margin: 0 auto;
-
 	@include rotate-tables;
 }
 
@@ -67,7 +41,7 @@ a {
 	&[data-table-shape="round"] {
 		width: 100px;
 		height: 100px;
-		@extend .circle;
+		@extend %circle;
 	}
 }
 
@@ -85,7 +59,7 @@ a {
 	margin-top: -24px;
 	margin-left: -24px;
 	background: $darkGrey;
-	@extend .circle;
+	@extend %circle;
 }
 
 .table-controls {
