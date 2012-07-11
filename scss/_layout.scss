@@ -24,9 +24,11 @@ nav {
 		display: block;
 		text-align: center;
 		padding: $global-padding/2;
-		background: $grey-lighter;
+		background: $grey;
+		color: white;
 		&.active {
 			background: $grey-light;
+			color: $grey;
 		}
 	}
 	&.two {

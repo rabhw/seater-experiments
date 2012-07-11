@@ -23,6 +23,22 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$.extend($.fancybox.defaults, {
+		autoSize : 'false',
+		width: '100%',
+		minWidth : 800,
+		maxWidth : 940,
+		padding : 40,
+		helpers:  {
+		    overlay : {
+		    	opacity: 0.3,
+		        css : {
+		            //'background-color' : '#000'
+		        }
+		    }
+		}
+	});
+
 
 	$('.seat').on('click', function(e) {
 		$.fancybox( $('#edit-seat') );

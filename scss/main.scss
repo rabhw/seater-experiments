@@ -3,7 +3,9 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	color: #444;
+	line-height: 1.5;
+	color: $grey;
+	background: $grey-lighter;
 }
 
 a {
@@ -21,9 +23,10 @@ a {
 
 #canvas {
 	border: 2px solid $grey-light;
-	background: $grey-lighter;
+	background: white;
 	height: 600px;
 	position: relative;
+	@include border-bottom-radius;
 }
 
 .table-wrap {
@@ -57,8 +60,7 @@ a {
 	left: 50%;
 	margin-top: -24px;
 	margin-left: -24px;
-	background: $grey;
-	@extend %circle;
+	color: $grey-darker;
 }
 
 .table-controls {
@@ -66,7 +68,7 @@ a {
 	@include transition;
 	width: 100%;
 	position: absolute;
-	bottom: -60px;
+	bottom: -70px;
 	text-align: center;
 	font-size: 32px;
 	.rotate-table {
@@ -119,6 +121,41 @@ a {
 		@include transition(all 0.5s);
 		&:hover {
 			border-bottom-color: $grey;
+		}
+	}
+}
+
+
+.panel {
+	background: white;
+	display: none; // hide by default
+}
+
+input[type=text], textarea {
+	width: 100%;
+	padding: 5px;
+	@include border-radius($border-radius-small);
+	border: 1px solid $grey-light;
+}
+
+.guest-list {
+	max-height: 400px;
+	overflow-x: hidden;
+	font-size: 12px;
+	margin: 1.75em 0;
+	border-top: 3px solid $grey-lighter;
+	border-bottom: 3px solid $grey-lighter;
+	li {
+		border-bottom: 1px solid $grey-lighter;
+		&:last-child {
+			border-bottom: none;
+		}
+		& > a {
+			display: block;
+			padding: 10px;
+			&:hover {
+				background: $grey-lighter;
+			}
 		}
 	}
 }
