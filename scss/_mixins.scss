@@ -1,5 +1,6 @@
 /*
 //	Mixin for seat distribution around circlular table
+//	$table-sizes is defined in _base.scss
 */
 
 @mixin rotate-tables($angle-span: 360deg, $angle-offset: 0deg) {
