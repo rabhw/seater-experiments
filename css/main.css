@@ -75,7 +75,7 @@ h1, .alpha {
 }
 
 /* line 5, ../scss/_layout.scss */
-.table[data-table-shape="round"] {
+.table-wrap[data-table-shape="circle"] .table {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -423,440 +423,8 @@ a {
   padding: 0 20px;
   margin: 40px auto;
 }
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="2"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="2"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="3"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  -o-transform: rotate(120deg);
-  transform: rotate(120deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="3"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(240deg);
-  -moz-transform: rotate(240deg);
-  -ms-transform: rotate(240deg);
-  -o-transform: rotate(240deg);
-  transform: rotate(240deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="3"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="4"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="4"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="4"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="4"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="5"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(72deg);
-  -moz-transform: rotate(72deg);
-  -ms-transform: rotate(72deg);
-  -o-transform: rotate(72deg);
-  transform: rotate(72deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="5"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(144deg);
-  -moz-transform: rotate(144deg);
-  -ms-transform: rotate(144deg);
-  -o-transform: rotate(144deg);
-  transform: rotate(144deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="5"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(216deg);
-  -moz-transform: rotate(216deg);
-  -ms-transform: rotate(216deg);
-  -o-transform: rotate(216deg);
-  transform: rotate(216deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="5"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(288deg);
-  -moz-transform: rotate(288deg);
-  -ms-transform: rotate(288deg);
-  -o-transform: rotate(288deg);
-  transform: rotate(288deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="5"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(60deg);
-  -moz-transform: rotate(60deg);
-  -ms-transform: rotate(60deg);
-  -o-transform: rotate(60deg);
-  transform: rotate(60deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  -o-transform: rotate(120deg);
-  transform: rotate(120deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(240deg);
-  -moz-transform: rotate(240deg);
-  -ms-transform: rotate(240deg);
-  -o-transform: rotate(240deg);
-  transform: rotate(240deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(300deg);
-  -moz-transform: rotate(300deg);
-  -ms-transform: rotate(300deg);
-  -o-transform: rotate(300deg);
-  transform: rotate(300deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="6"] .seat[data-seat-number="6"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(51.429deg);
-  -moz-transform: rotate(51.429deg);
-  -ms-transform: rotate(51.429deg);
-  -o-transform: rotate(51.429deg);
-  transform: rotate(51.429deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(102.857deg);
-  -moz-transform: rotate(102.857deg);
-  -ms-transform: rotate(102.857deg);
-  -o-transform: rotate(102.857deg);
-  transform: rotate(102.857deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(154.286deg);
-  -moz-transform: rotate(154.286deg);
-  -ms-transform: rotate(154.286deg);
-  -o-transform: rotate(154.286deg);
-  transform: rotate(154.286deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(205.714deg);
-  -moz-transform: rotate(205.714deg);
-  -ms-transform: rotate(205.714deg);
-  -o-transform: rotate(205.714deg);
-  transform: rotate(205.714deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(257.143deg);
-  -moz-transform: rotate(257.143deg);
-  -ms-transform: rotate(257.143deg);
-  -o-transform: rotate(257.143deg);
-  transform: rotate(257.143deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="6"] {
-  -webkit-transform: rotate(308.571deg);
-  -moz-transform: rotate(308.571deg);
-  -ms-transform: rotate(308.571deg);
-  -o-transform: rotate(308.571deg);
-  transform: rotate(308.571deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="7"] .seat[data-seat-number="7"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="6"] {
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="7"] {
-  -webkit-transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="8"] .seat[data-seat-number="8"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(40deg);
-  -moz-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  -o-transform: rotate(40deg);
-  transform: rotate(40deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(80deg);
-  -moz-transform: rotate(80deg);
-  -ms-transform: rotate(80deg);
-  -o-transform: rotate(80deg);
-  transform: rotate(80deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  -o-transform: rotate(120deg);
-  transform: rotate(120deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(160deg);
-  -moz-transform: rotate(160deg);
-  -ms-transform: rotate(160deg);
-  -o-transform: rotate(160deg);
-  transform: rotate(160deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(200deg);
-  -moz-transform: rotate(200deg);
-  -ms-transform: rotate(200deg);
-  -o-transform: rotate(200deg);
-  transform: rotate(200deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="6"] {
-  -webkit-transform: rotate(240deg);
-  -moz-transform: rotate(240deg);
-  -ms-transform: rotate(240deg);
-  -o-transform: rotate(240deg);
-  transform: rotate(240deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="7"] {
-  -webkit-transform: rotate(280deg);
-  -moz-transform: rotate(280deg);
-  -ms-transform: rotate(280deg);
-  -o-transform: rotate(280deg);
-  transform: rotate(280deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="8"] {
-  -webkit-transform: rotate(320deg);
-  -moz-transform: rotate(320deg);
-  -ms-transform: rotate(320deg);
-  -o-transform: rotate(320deg);
-  transform: rotate(320deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="9"] .seat[data-seat-number="9"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="1"] {
-  -webkit-transform: rotate(36deg);
-  -moz-transform: rotate(36deg);
-  -ms-transform: rotate(36deg);
-  -o-transform: rotate(36deg);
-  transform: rotate(36deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="2"] {
-  -webkit-transform: rotate(72deg);
-  -moz-transform: rotate(72deg);
-  -ms-transform: rotate(72deg);
-  -o-transform: rotate(72deg);
-  transform: rotate(72deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="3"] {
-  -webkit-transform: rotate(108deg);
-  -moz-transform: rotate(108deg);
-  -ms-transform: rotate(108deg);
-  -o-transform: rotate(108deg);
-  transform: rotate(108deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="4"] {
-  -webkit-transform: rotate(144deg);
-  -moz-transform: rotate(144deg);
-  -ms-transform: rotate(144deg);
-  -o-transform: rotate(144deg);
-  transform: rotate(144deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="5"] {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="6"] {
-  -webkit-transform: rotate(216deg);
-  -moz-transform: rotate(216deg);
-  -ms-transform: rotate(216deg);
-  -o-transform: rotate(216deg);
-  transform: rotate(216deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="7"] {
-  -webkit-transform: rotate(252deg);
-  -moz-transform: rotate(252deg);
-  -ms-transform: rotate(252deg);
-  -o-transform: rotate(252deg);
-  transform: rotate(252deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="8"] {
-  -webkit-transform: rotate(288deg);
-  -moz-transform: rotate(288deg);
-  -ms-transform: rotate(288deg);
-  -o-transform: rotate(288deg);
-  transform: rotate(288deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="9"] {
-  -webkit-transform: rotate(324deg);
-  -moz-transform: rotate(324deg);
-  -ms-transform: rotate(324deg);
-  -o-transform: rotate(324deg);
-  transform: rotate(324deg);
-}
-/* line 15, ../scss/_mixins.scss */
-#wrap .table[data-table-size="10"] .seat[data-seat-number="10"] {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
 
-/* line 24, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 #canvas {
   border: 2px solid #d5d5d5;
   background: white;
@@ -870,14 +438,501 @@ a {
   border-bottom-right-radius: 4px;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 31, ../scss/main.scss */
 .table-wrap {
   position: absolute;
-  top: 20%;
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="2"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="2"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="3"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="3"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="3"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="4"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="4"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="4"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="4"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="5"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="5"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -ms-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="5"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -ms-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="5"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -ms-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="5"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(300deg);
+  -moz-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="6"] .table .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(51.429deg);
+  -moz-transform: rotate(51.429deg);
+  -ms-transform: rotate(51.429deg);
+  -o-transform: rotate(51.429deg);
+  transform: rotate(51.429deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(102.857deg);
+  -moz-transform: rotate(102.857deg);
+  -ms-transform: rotate(102.857deg);
+  -o-transform: rotate(102.857deg);
+  transform: rotate(102.857deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(154.286deg);
+  -moz-transform: rotate(154.286deg);
+  -ms-transform: rotate(154.286deg);
+  -o-transform: rotate(154.286deg);
+  transform: rotate(154.286deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(205.714deg);
+  -moz-transform: rotate(205.714deg);
+  -ms-transform: rotate(205.714deg);
+  -o-transform: rotate(205.714deg);
+  transform: rotate(205.714deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(257.143deg);
+  -moz-transform: rotate(257.143deg);
+  -ms-transform: rotate(257.143deg);
+  -o-transform: rotate(257.143deg);
+  transform: rotate(257.143deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(308.571deg);
+  -moz-transform: rotate(308.571deg);
+  -ms-transform: rotate(308.571deg);
+  -o-transform: rotate(308.571deg);
+  transform: rotate(308.571deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="7"] .table .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="8"] .table .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(80deg);
+  -moz-transform: rotate(80deg);
+  -ms-transform: rotate(80deg);
+  -o-transform: rotate(80deg);
+  transform: rotate(80deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(160deg);
+  -moz-transform: rotate(160deg);
+  -ms-transform: rotate(160deg);
+  -o-transform: rotate(160deg);
+  transform: rotate(160deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(200deg);
+  -moz-transform: rotate(200deg);
+  -ms-transform: rotate(200deg);
+  -o-transform: rotate(200deg);
+  transform: rotate(200deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(280deg);
+  -moz-transform: rotate(280deg);
+  -ms-transform: rotate(280deg);
+  -o-transform: rotate(280deg);
+  transform: rotate(280deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(320deg);
+  -moz-transform: rotate(320deg);
+  -ms-transform: rotate(320deg);
+  -o-transform: rotate(320deg);
+  transform: rotate(320deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="9"] .table .seat[data-seat-number="9"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="1"] {
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  transform: rotate(36deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="2"] {
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="3"] {
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -ms-transform: rotate(108deg);
+  -o-transform: rotate(108deg);
+  transform: rotate(108deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="4"] {
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -ms-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="5"] {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="6"] {
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -ms-transform: rotate(216deg);
+  -o-transform: rotate(216deg);
+  transform: rotate(216deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="7"] {
+  -webkit-transform: rotate(252deg);
+  -moz-transform: rotate(252deg);
+  -ms-transform: rotate(252deg);
+  -o-transform: rotate(252deg);
+  transform: rotate(252deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="8"] {
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -ms-transform: rotate(288deg);
+  -o-transform: rotate(288deg);
+  transform: rotate(288deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="9"] {
+  -webkit-transform: rotate(324deg);
+  -moz-transform: rotate(324deg);
+  -ms-transform: rotate(324deg);
+  -o-transform: rotate(324deg);
+  transform: rotate(324deg);
+}
+/* line 15, ../scss/_mixins.scss */
+.table-wrap[data-table-shape="circle"][data-table-size="10"] .table .seat[data-seat-number="10"] {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/* line 36, ../scss/main.scss */
+.table-wrap[data-table-shape="circle"] .table {
+  width: 100px;
+  height: 100px;
+}
+/* line 40, ../scss/main.scss */
+.table-wrap[data-table-shape="circle"] .table .seat {
   left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 71px;
+  margin-top: -25px;
+}
+/* line 51, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"] .table {
+  width: 130px;
+  height: 70px;
+}
+/* line 60, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="1"] {
+  top: -20px;
+  left: 50%;
+  margin-left: -12px;
+}
+/* line 66, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
+  right: -20px;
+  top: 50%;
+  margin-top: -12px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+/* line 73, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="3"] {
+  bottom: -20px;
+  right: 50%;
+  margin-right: -12px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 80, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="4"] {
+  left: -20px;
+  bottom: 50%;
+  margin-bottom: -12px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
-/* line 38, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 .table {
   background: #d5d5d5;
   border: 4px solid #888888;
@@ -887,13 +942,8 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 43, ../scss/main.scss */
-.table[data-table-shape="round"] {
-  width: 100px;
-  height: 100px;
-}
 
-/* line 52, ../scss/main.scss */
+/* line 98, ../scss/main.scss */
 .table-number {
   position: absolute;
   z-index: 999;
@@ -910,7 +960,7 @@ a {
   color: #6f6f6f;
 }
 
-/* line 68, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -923,55 +973,50 @@ a {
   position: absolute;
   bottom: -70px;
   text-align: center;
-  font-size: 32px;
+  font-size: 20px;
 }
-/* line 76, ../scss/main.scss */
+/* line 122, ../scss/main.scss */
 .table-controls .rotate-table {
   display: inline-block;
   width: 25%;
 }
-/* line 79, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 81, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 87, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 89, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 99, ../scss/main.scss */
+/* line 145, ../scss/main.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 .seat {
   position: absolute;
-  left: 50%;
-  margin-left: -12px;
-  width: 24px;
-  height: 71px;
-  margin-top: -25px;
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
   -ms-transform-origin: bottom center;
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 112, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 .seat span {
   cursor: pointer;
   position: absolute;
@@ -989,18 +1034,18 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 124, ../scss/main.scss */
+/* line 165, ../scss/main.scss */
 .seat span:hover {
   border-bottom-color: #888888;
 }
 
-/* line 131, ../scss/main.scss */
+/* line 172, ../scss/main.scss */
 .panel {
   background: white;
   display: none;
 }
 
-/* line 136, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -1012,7 +1057,7 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 .guest-list {
   max-height: 400px;
   overflow-x: hidden;
@@ -1021,20 +1066,20 @@ input[type=text], textarea {
   border-top: 3px solid #f3f3f3;
   border-bottom: 3px solid #f3f3f3;
 }
-/* line 150, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 .guest-list li {
   border-bottom: 1px solid #f3f3f3;
 }
-/* line 152, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 .guest-list li:last-child {
   border-bottom: none;
 }
-/* line 155, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .guest-list li > a {
   display: block;
   padding: 10px;
 }
-/* line 158, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .guest-list li > a:hover {
   background: #f3f3f3;
 }

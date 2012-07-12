@@ -3,13 +3,13 @@
 //	$table-sizes is defined in _base.scss
 */
 
-@mixin rotate-tables($angle-span: 360deg, $angle-offset: 0deg) {
+@mixin distribute-seats-circle($angle-span: 360deg, $angle-offset: 0deg) {
 
 	@each $size in $table-sizes {
 
 		$angle-per-table: $angle-span / $size;
 
-		.table[data-table-size="#{$size}"] {
+		&[data-table-size="#{$size}"] .table {
 
 			@for $i from 1 through $size {
 				.seat[data-seat-number="#{$i}"] {
