@@ -214,7 +214,7 @@ nav:after {
 
 /* line 74, ../scss/_fancybox.scss */
 #fancybox-loading, .fancybox-prev span, .fancybox-next span {
-  background: url('../img/fancybox_sprite.png?1334575150');
+  background: url('../img/fancybox_sprite.png?1342050161');
 }
 
 /* line 78, ../scss/_fancybox.scss */
@@ -893,7 +893,7 @@ a {
   height: 100px;
 }
 
-/* line 50, ../scss/main.scss */
+/* line 52, ../scss/main.scss */
 .table-number {
   position: absolute;
   z-index: 999;
@@ -910,7 +910,7 @@ a {
   color: #6f6f6f;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 68, ../scss/main.scss */
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -925,39 +925,39 @@ a {
   text-align: center;
   font-size: 32px;
 }
-/* line 74, ../scss/main.scss */
+/* line 76, ../scss/main.scss */
 .table-controls .rotate-table {
   display: inline-block;
   width: 25%;
 }
-/* line 77, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 79, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 85, ../scss/main.scss */
+/* line 87, ../scss/main.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 87, ../scss/main.scss */
+/* line 89, ../scss/main.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 97, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 102, ../scss/main.scss */
+/* line 104, ../scss/main.scss */
 .seat {
   position: absolute;
   left: 50%;
@@ -971,7 +971,7 @@ a {
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 110, ../scss/main.scss */
+/* line 112, ../scss/main.scss */
 .seat span {
   cursor: pointer;
   position: absolute;
@@ -989,18 +989,18 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 122, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 .seat span:hover {
   border-bottom-color: #888888;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 .panel {
   background: white;
   display: none;
 }
 
-/* line 134, ../scss/main.scss */
+/* line 136, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -1012,7 +1012,7 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 141, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .guest-list {
   max-height: 400px;
   overflow-x: hidden;
@@ -1021,20 +1021,20 @@ input[type=text], textarea {
   border-top: 3px solid #f3f3f3;
   border-bottom: 3px solid #f3f3f3;
 }
-/* line 148, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 .guest-list li {
   border-bottom: 1px solid #f3f3f3;
 }
-/* line 150, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .guest-list li:last-child {
   border-bottom: none;
 }
-/* line 153, ../scss/main.scss */
+/* line 155, ../scss/main.scss */
 .guest-list li > a {
   display: block;
   padding: 10px;
 }
-/* line 156, ../scss/main.scss */
+/* line 158, ../scss/main.scss */
 .guest-list li > a:hover {
   background: #f3f3f3;
 }
