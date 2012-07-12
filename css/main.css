@@ -883,33 +883,31 @@ a {
 .table-wrap[data-table-shape="circle"] .table .seat {
   left: 50%;
   margin-left: -12px;
-  width: 24px;
   height: 71px;
   margin-top: -25px;
 }
-/* line 51, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"] .table {
   width: 130px;
   height: 70px;
 }
-/* line 60, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="1"] {
   top: -20px;
   left: 50%;
   margin-left: -12px;
 }
-/* line 66, ../scss/main.scss */
+/* line 65, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
-  right: -20px;
-  top: 50%;
-  margin-top: -12px;
+  right: -32px;
+  bottom: 50%;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 73, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="3"] {
   bottom: -20px;
   right: 50%;
@@ -920,11 +918,10 @@ a {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 80, ../scss/main.scss */
+/* line 78, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="4"] {
-  left: -20px;
+  left: -32px;
   bottom: 50%;
-  margin-bottom: -12px;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -932,7 +929,7 @@ a {
   transform: rotate(-90deg);
 }
 
-/* line 92, ../scss/main.scss */
+/* line 89, ../scss/main.scss */
 .table {
   background: #d5d5d5;
   border: 4px solid #888888;
@@ -943,7 +940,7 @@ a {
   transition: all 0.5s;
 }
 
-/* line 98, ../scss/main.scss */
+/* line 95, ../scss/main.scss */
 .table-number {
   position: absolute;
   z-index: 999;
@@ -960,7 +957,7 @@ a {
   color: #6f6f6f;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -975,40 +972,41 @@ a {
   text-align: center;
   font-size: 20px;
 }
-/* line 122, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 .table-controls .rotate-table {
   display: inline-block;
   width: 25%;
 }
-/* line 125, ../scss/main.scss */
+/* line 122, ../scss/main.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 127, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 133, ../scss/main.scss */
+/* line 130, ../scss/main.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 135, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 145, ../scss/main.scss */
+/* line 142, ../scss/main.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 150, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 .seat {
+  width: 24px;
   position: absolute;
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1016,7 +1014,7 @@ a {
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 153, ../scss/main.scss */
+/* line 151, ../scss/main.scss */
 .seat span {
   cursor: pointer;
   position: absolute;
@@ -1034,18 +1032,18 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 165, ../scss/main.scss */
+/* line 163, ../scss/main.scss */
 .seat span:hover {
   border-bottom-color: #888888;
 }
 
-/* line 172, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 .panel {
   background: white;
   display: none;
 }
 
-/* line 177, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -1057,7 +1055,7 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 182, ../scss/main.scss */
 .guest-list {
   max-height: 400px;
   overflow-x: hidden;
@@ -1066,20 +1064,20 @@ input[type=text], textarea {
   border-top: 3px solid #f3f3f3;
   border-bottom: 3px solid #f3f3f3;
 }
-/* line 191, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 .guest-list li {
   border-bottom: 1px solid #f3f3f3;
 }
-/* line 193, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 .guest-list li:last-child {
   border-bottom: none;
 }
-/* line 196, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 .guest-list li > a {
   display: block;
   padding: 10px;
 }
-/* line 199, ../scss/main.scss */
+/* line 197, ../scss/main.scss */
 .guest-list li > a:hover {
   background: #f3f3f3;
 }

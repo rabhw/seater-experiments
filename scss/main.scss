@@ -40,7 +40,6 @@ a {
 			.seat {
 				left: 50%;
 				margin-left: -12px;
-				width: 24px;
 				height: 71px; // gives space between edge of table and seats
 				margin-top: -25px; // height of seat box - height of table
 			}
@@ -64,9 +63,8 @@ a {
 				}
 				// Right seat
 				&[data-seat-number="2"] {
-					right: -20px;
-					top: 50%;
-					margin-top: -12px;
+					right: -32px;
+					bottom: 50%;
 					@include rotate(90deg);
 				}
 				// Bottom seat
@@ -78,9 +76,8 @@ a {
 				}
 				// Left seat
 				&[data-seat-number="4"] {
-					left: -20px;
+					left: -32px;
 					bottom: 50%;
-					margin-bottom: -12px;
 					@include rotate(-90deg);
 				}
 			}
@@ -148,6 +145,7 @@ a {
 }
 
 .seat {
+	width: 24px;
 	position: absolute;
 	@include transform-origin(bottom ,center);
 	span {
