@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js" ng-app="seater">
 <head>
     <meta charset="utf-8">
 
@@ -27,7 +22,7 @@
     <!-- All JavaScript at the bottom, except this Modernizr build.
          Modernizr enables HTML5 elements & feature detects for optimal performance.
          Create your own custom Modernizr build: www.modernizr.com/download/ -->
-    <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+    <script src="js/lib/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
     <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -37,7 +32,7 @@
     <!-- Add your site or application content here -->
 
 
-    <div id="wrap">
+    <div id="wrap" ng-controller="AppCtrl">
         <h1>Find Your Seat</h1>
         <nav id="nav-app">
             <ul class="tabs two">
@@ -45,84 +40,14 @@
                 <li><a href="#">Guest List</a></li>
             </ul>
         </nav>
-        <div id="canvas">
-
-            <div class="table-wrap" data-table-shape="circle" data-table-size="8" style="top: 50%; left: 20%;">
-                <div class="table-number">1</div>
-                <div class="table">
-                    <div class="seat" data-seat-number="1"><span></span></div>
-                    <div class="seat" data-seat-number="2"><span></span></div>
-                    <div class="seat" data-seat-number="3"><span></span></div>
-                    <div class="seat" data-seat-number="4"><span></span></div>
-                    <div class="seat" data-seat-number="5"><span></span></div>
-                    <div class="seat" data-seat-number="6"><span></span></div>
-                    <div class="seat" data-seat-number="7"><span></span></div>
-                    <div class="seat" data-seat-number="8"><span></span></div>
-                </div><!-- .table -->
-                <div class="table-controls">
-                    <a href="#" class="rotate-table cw"></a>
-                    <a href="#" class="rotate-table ccw"></a>
-                </div><!-- .table-controls -->
-            </div><!-- .table-wrap -->
-
-
-            <div class="table-wrap" data-table-shape="rect" data-table-size="4" style="top: 20%; left: 50%;">
-                <div class="table-number">2</div>
-                <div class="table">
-                    <div class="seat" data-seat-number="1"><span></span></div>
-                    <div class="seat" data-seat-number="2"><span></span></div>
-                    <div class="seat" data-seat-number="3"><span></span></div>
-                    <div class="seat" data-seat-number="4"><span></span></div>
-                </div><!-- .table -->
-                <div class="table-controls">
-                    <a href="#" class="rotate-table cw"></a>
-                    <a href="#" class="rotate-table ccw"></a>
-                </div><!-- .table-controls -->
-            </div><!-- .table-wrap -->
-
-        </div>
+        <div ng-view></div>
     </div>
 
-    <div id="edit-seat" class="panel">
-        <h1>Add a guest</h1>
-        <input type="text" placeholder="Find a guest...">
-        <ul class="guest-list">
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-            <li><a href="#">Guest name here</a></li>
-        </ul>
-    </div>
-
-
-
-
-
-
-
-    <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
-
-    <!-- scripts concatenated and minified via build script -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/lib/jquery-1.7.2.min.js"></script>
+    <script src="js/lib/angular/angular.js"></script>
+    <script src="js/lib/angular/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
     <!-- end scripts -->
 </body>
 </html>
