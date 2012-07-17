@@ -1,5 +1,4 @@
 <div id="canvas" ng-controller="PlanCtrl">
-
     <div ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>
         <div class="table">

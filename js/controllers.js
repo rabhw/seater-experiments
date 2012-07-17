@@ -5,16 +5,18 @@
 function AppCtrl($scope, $routeParams) {
 
 	$scope.plans = {
-		"tables" : {
-			1 : {
+		"tables" : [	
+			{
+				"id" : 0,
 				"number" : 2,
 				"shape" : "circle",
 				"xPos" : "20%",
 				"yPos" : "50%",
 				"rotate" : "45deg",
-				"seats" : [1,2,3,4,5]
+				"seats" : [1,2]
 			},
-			2 : {
+			{
+				"id" : 1,
 				"number" : 4,
 				"shape" : "rect",
 				"xPos" : "90%",
@@ -22,22 +24,37 @@ function AppCtrl($scope, $routeParams) {
 				"rotate" : "90deg",
 				"seats" : [6,7,8,9]
 			}
-		},
-		"guests" : {
-			2 : {
+		],
+		"guests" : [
+			{
+				"id" : 1,
 				"name" : "Ross"
 			},
-			3 : {
+			{
+				"id" : 2,
 				"name" : "Thomas"
 			},
-			4 : {
+			{
+				"id" : 3,
 				"name" : "Ken"
+			},
+			{
+				"id" : 4,
+				"name" : "Susheila"
+			},
+			{
+				"id" : 5,
+				"name" : "George"
+			},
+			{
+				"id" : 6,
+				"name" : "Lavery"
 			}
-		}
+		]
 	}
 }
 
 
 function PlanCtrl($scope, $routeParams) {
-	
+
 }
