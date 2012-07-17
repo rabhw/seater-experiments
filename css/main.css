@@ -1015,7 +1015,7 @@ a {
   transform-origin: bottom center;
 }
 /* line 151, ../scss/main.scss */
-.seat span {
+.seat a {
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -1033,7 +1033,7 @@ a {
   transition: all 0.5s;
 }
 /* line 163, ../scss/main.scss */
-.seat span:hover {
+.seat a:hover {
   border-bottom-color: #888888;
 }
 

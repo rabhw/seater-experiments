@@ -148,7 +148,7 @@ a {
 	width: 24px;
 	position: absolute;
 	@include transform-origin(bottom ,center);
-	span {
+	a {
 		cursor: pointer;
 		position: absolute;
 		top: 0;

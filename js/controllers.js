@@ -7,7 +7,7 @@ function AppCtrl($scope, $routeParams) {
 	$scope.plans = {
 		"tables" : [	
 			{
-				"id" : 0,
+				"id" : 23,
 				"number" : 2,
 				"shape" : "circle",
 				"xPos" : "20%",
@@ -16,13 +16,13 @@ function AppCtrl($scope, $routeParams) {
 				"seats" : [1,2]
 			},
 			{
-				"id" : 1,
+				"id" : 48,
 				"number" : 4,
 				"shape" : "rect",
 				"xPos" : "90%",
 				"yPos" : "30%",
 				"rotate" : "90deg",
-				"seats" : [6,7,8,9]
+				"seats" : [3,4,5,6]
 			}
 		],
 		"guests" : [
@@ -57,4 +57,20 @@ function AppCtrl($scope, $routeParams) {
 
 function PlanCtrl($scope, $routeParams) {
 
+}
+
+function EditSeatCtrl($scope, $routeParams) {
+	var table = _.filter($scope.plans.tables, function(obj) {
+		return obj.id == $routeParams.tableId;
+	});
+
+	$scope.table = table[0];
+
+	var guestId = $scope.table.seats[$routeParams.seatId];
+
+	var guest = _.filter($scope.plans.guests, function(obj) {
+		return obj.id == guestId;
+	});
+
+	$scope.guest = guest[0];
 }

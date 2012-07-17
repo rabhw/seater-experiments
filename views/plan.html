@@ -2,7 +2,7 @@
     <div ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>
         <div class="table">
-            <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><span></span></div>
+            <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a href="#/table/{{table.id}}/seat/{{$index}}/edit"></a></div>
         </div><!-- .table -->
         <div class="table-controls">
             <a href="#" class="rotate-table cw"></a>
