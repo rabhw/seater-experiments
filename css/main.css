@@ -128,277 +128,133 @@ nav:after {
   width: 50%;
 }
 
-/* fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
-/* line 2, ../scss/_fancybox.scss */
-.fancybox-tmp iframe, .fancybox-tmp object {
-  vertical-align: top;
-  padding: 0;
-  margin: 0;
-}
-
-/* line 8, ../scss/_fancybox.scss */
-.fancybox-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 8020;
-}
-
-/* line 15, ../scss/_fancybox.scss */
-.fancybox-skin {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  background: white;
-  color: #444;
-  text-shadow: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-
-/* line 27, ../scss/_fancybox.scss */
-.fancybox-opened {
-  z-index: 8030;
-}
-
-/* line 31, ../scss/_fancybox.scss */
-.fancybox-opened .fancybox-skin {
-  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-/* line 37, ../scss/_fancybox.scss */
-.fancybox-outer, .fancybox-inner {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  outline: none;
-}
-
-/* line 44, ../scss/_fancybox.scss */
-.fancybox-inner {
+/* Example tokeninput style #1: Token vertical list*/
+/* line 2, ../scss/_tokeninput.scss */
+ul.token-input-list {
   overflow: hidden;
-}
-
-/* line 48, ../scss/_fancybox.scss */
-.fancybox-type-iframe .fancybox-inner {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* line 52, ../scss/_fancybox.scss */
-.fancybox-error {
-  color: #444;
-  font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: auto !important;
+  height: 1%;
+  width: 400px;
+  border: 1px solid #999;
+  cursor: text;
+  font-size: 12px;
+  font-family: Verdana;
+  z-index: 999;
   margin: 0;
-  padding: 10px;
+  padding: 0;
+  background-color: #fff;
+  list-style-type: none;
+  clear: left;
 }
 
-/* line 59, ../scss/_fancybox.scss */
-.fancybox-image, .fancybox-iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
+/* line 19, ../scss/_tokeninput.scss */
+ul.token-input-list li {
+  list-style-type: none;
+}
+
+/* line 23, ../scss/_tokeninput.scss */
+ul.token-input-list li input {
   border: 0;
+  width: 350px;
+  padding: 3px 8px;
+  background-color: white;
+  -webkit-appearance: caret;
+}
+
+/* line 31, ../scss/_tokeninput.scss */
+li.token-input-token {
+  overflow: hidden;
+  height: auto !important;
+  height: 1%;
+  margin: 3px;
+  padding: 3px 5px;
+  background-color: #d0efa0;
+  color: #000;
+  font-weight: bold;
+  cursor: default;
+  display: block;
+}
+
+/* line 44, ../scss/_tokeninput.scss */
+li.token-input-token p {
+  float: left;
   padding: 0;
   margin: 0;
-  vertical-align: top;
 }
 
-/* line 69, ../scss/_fancybox.scss */
-.fancybox-image {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* line 74, ../scss/_fancybox.scss */
-#fancybox-loading, .fancybox-prev span, .fancybox-next span {
-  background: url('../img/fancybox_sprite.png?1342050161');
-}
-
-/* line 78, ../scss/_fancybox.scss */
-#fancybox-loading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -22px;
-  margin-left: -22px;
-  background-position: 0 -108px;
-  opacity: 0.8;
+/* line 50, ../scss/_tokeninput.scss */
+li.token-input-token span {
+  float: right;
+  color: #777;
   cursor: pointer;
-  z-index: 8020;
 }
 
-/* line 90, ../scss/_fancybox.scss */
-#fancybox-loading div {
-  width: 44px;
-  height: 44px;
-  background: url("fancybox_loading.gif") center center no-repeat;
+/* line 56, ../scss/_tokeninput.scss */
+li.token-input-selected-token {
+  background-color: #08844e;
+  color: #fff;
 }
 
-/* line 96, ../scss/_fancybox.scss */
-.fancybox-close {
-  font-size: 28px;
+/* line 61, ../scss/_tokeninput.scss */
+li.token-input-selected-token span {
+  color: #bbb;
+}
+
+/* line 65, ../scss/_tokeninput.scss */
+div.token-input-dropdown {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  cursor: pointer;
-  z-index: 8040;
-}
-/* line 103, ../scss/_fancybox.scss */
-.fancybox-close:after {
-  position: absolute;
-  content: "\00d7";
-  right: 0;
-  top: 0;
-}
-
-/* line 111, ../scss/_fancybox.scss */
-.fancybox-nav {
-  position: absolute;
-  top: 0;
-  width: 40%;
-  height: 100%;
-  cursor: pointer;
-  background: transparent url("blank.gif");
-  /* helps IE */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  z-index: 8040;
-}
-
-/* line 122, ../scss/_fancybox.scss */
-.fancybox-prev {
-  left: 0;
-}
-
-/* line 126, ../scss/_fancybox.scss */
-.fancybox-next {
-  right: 0;
-}
-
-/* line 130, ../scss/_fancybox.scss */
-.fancybox-nav span {
-  position: absolute;
-  top: 50%;
-  width: 36px;
-  height: 34px;
-  margin-top: -18px;
-  cursor: pointer;
-  z-index: 8040;
-  visibility: hidden;
-}
-
-/* line 141, ../scss/_fancybox.scss */
-.fancybox-prev span {
-  left: 20px;
-  background-position: 0 -36px;
-}
-
-/* line 146, ../scss/_fancybox.scss */
-.fancybox-next span {
-  right: 20px;
-  background-position: 0 -72px;
-}
-
-/* line 151, ../scss/_fancybox.scss */
-.fancybox-nav:hover span {
-  visibility: visible;
-}
-
-/* line 155, ../scss/_fancybox.scss */
-.fancybox-tmp {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  padding: 0;
-  overflow: visible;
-  visibility: hidden;
-}
-
-/* Overlay helper */
-/* line 166, ../scss/_fancybox.scss */
-#fancybox-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 400px;
+  background-color: #fff;
   overflow: hidden;
-  display: none;
-  z-index: 8010;
-  background: #000;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  cursor: default;
+  font-size: 12px;
+  font-family: Verdana;
+  z-index: 1;
 }
 
-/* line 176, ../scss/_fancybox.scss */
-#fancybox-overlay.overlay-fixed {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-/* Title helper */
-/* line 184, ../scss/_fancybox.scss */
-.fancybox-title {
-  visibility: hidden;
-  font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: relative;
-  text-shadow: none;
-  z-index: 8050;
-}
-
-/* line 192, ../scss/_fancybox.scss */
-.fancybox-opened .fancybox-title {
-  visibility: visible;
-}
-
-/* line 196, ../scss/_fancybox.scss */
-.fancybox-title-float-wrap {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  margin-bottom: -35px;
-  z-index: 8030;
-  text-align: center;
-}
-
-/* line 205, ../scss/_fancybox.scss */
-.fancybox-title-float-wrap .child {
-  display: inline-block;
-  margin-right: -100%;
-  padding: 2px 20px;
-  background: transparent;
-  /* Fallback for web browsers that doesn't support RGBa */
-  background: rgba(0, 0, 0, 0.8);
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
-  text-shadow: 0 1px 2px #222;
-  color: #FFF;
+/* line 79, ../scss/_tokeninput.scss */
+div.token-input-dropdown p {
+  margin: 0;
+  padding: 5px;
   font-weight: bold;
-  line-height: 24px;
-  white-space: nowrap;
+  color: #777;
 }
 
-/* line 221, ../scss/_fancybox.scss */
-.fancybox-title-outside-wrap {
-  position: relative;
-  margin-top: 10px;
-  color: #fff;
+/* line 86, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul {
+  margin: 0;
+  padding: 0;
 }
 
-/* line 227, ../scss/_fancybox.scss */
-.fancybox-title-inside-wrap {
-  margin-top: 10px;
+/* line 91, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul li {
+  background-color: #fff;
+  padding: 3px;
+  list-style-type: none;
 }
 
-/* line 231, ../scss/_fancybox.scss */
-.fancybox-title-over-wrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #fff;
-  padding: 10px;
-  background: #000;
-  background: rgba(0, 0, 0, 0.8);
+/* line 97, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul li.token-input-dropdown-item {
+  background-color: #fafafa;
+}
+
+/* line 101, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+  background-color: #fff;
+}
+
+/* line 105, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul li em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* line 110, ../scss/_tokeninput.scss */
+div.token-input-dropdown ul li.token-input-selected-dropdown-item {
+  background-color: #d0efa0;
 }
 
 /* line 3, ../scss/main.scss */

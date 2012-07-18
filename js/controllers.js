@@ -60,6 +60,12 @@ function PlanCtrl($scope, $routeParams) {
 }
 
 function EditSeatCtrl($scope, $routeParams) {
+
+	$scope.addGuest = function() {
+		console.log('adding guest');
+	}
+
+
 	var table = _.filter($scope.plans.tables, function(obj) {
 		return obj.id == $routeParams.tableId;
 	});
@@ -73,4 +79,10 @@ function EditSeatCtrl($scope, $routeParams) {
 	});
 
 	$scope.guest = guest[0];
+
+	$('#guest-name').tokenInput($scope.plans.guests, {
+		tokenLimit: 1,
+		prePopulate: [$scope.guest]
+	});
+
 }
