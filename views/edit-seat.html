@@ -1,7 +1,8 @@
 <div id="edit-seat">
     <div>
         <label>Guest name:</label>
-        <input type="text" id="guest-name" ng-model="guest.id" />
-        <div ng-click="addGuest()">Test</div>
+        <input type="text" id="guest-name" ng-model="guest.id" test-directive />
+        <div ng-click="addGuest(guest.id)">Test</div>
+
     </div>
 </div><!-- #canvas -->
