@@ -3,24 +3,18 @@
 /* Directives */
 
 
-angular.module('seater.directives', []).directive('testDirective', function(planService) {
-	var directiveDefinitionObject = {
-	    link: function postLink(scope, iElement, iAttrs) { 	 
-        	iElement.tokenInput(planService.guests(), {
-				tokenLimit: 1
-				
-			});
+angular.module('seater.directives', []).directive('tokenInput', function (planService) {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<input type="text" id="guest-name" ng-model="guest.id" />',
+            link : function (scope, element, attrs) {
+            	element.tokenInput(planService.guests(), {
+					tokenLimit: 1
+            	});
 
-			iElement.show();
+            	$('#guest-name').show(); // Provides visual that the input is being updated by tokeninput
 
-			iElement.change(function() {
-				console.log('changed')
-			});
-
-			scope.$watch( 'guest.id', function() {
-				console.log('watch triggered');
-			});       	
-		}
-	  };
-	  return directiveDefinitionObject;
+            }
+        };
 });
