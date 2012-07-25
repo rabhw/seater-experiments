@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('seater.services', []).service('planService', function () {
+angular.module('seater.services', []).service('planService', function ($routeParams) {
 
 	var plans = {
 		"tables" : [	
@@ -59,16 +59,26 @@ angular.module('seater.services', []).service('planService', function () {
             return plans;
         },
 
-        table : function(tableId) {
-
+        guests : function() {
+        	return plans.guests;
         },
 
-        seat : function(tableId, seatIndex) {
+        table : function() {
+        	var table = _.filter(plans.tables, function(obj) {
+        		return obj.id == $routeParams.tableId;
+        	});
 
+        	return table[0];
         },
 
-        guest : function(tableId, seatIndex) {
+        guest : function() {
+        	var table = this.table();
+        	var guestId = table.seats[$routeParams.seatId];
+        	var guest = _.filter(plans.guests, function(obj) {
+        		return obj.id == guestId;
+        	});
 
+        	return guest[0];
         },
 
         addNote : function (noteTitle) {

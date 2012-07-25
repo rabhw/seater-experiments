@@ -3,10 +3,10 @@
 /* Directives */
 
 
-angular.module('seater.directives', []).directive('testDirective', function() {
+angular.module('seater.directives', []).directive('testDirective', function(planService) {
 	var directiveDefinitionObject = {
 	    link: function postLink(scope, iElement, iAttrs) { 	 
-        	iElement.tokenInput(scope.plans.guests, {
+        	iElement.tokenInput(planService.guests(), {
 				tokenLimit: 1
 				
 			});
