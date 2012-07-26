@@ -28,28 +28,49 @@ angular.module('seater.services', []).service('planService', function ($routePar
 		"guests" : [
 			{
 				"id" : 1,
-				"name" : "Ross"
+				"text" : "Ross"
 			},
 			{
 				"id" : 2,
-				"name" : "Thomas"
+				"text" : "Thomas"
 			},
 			{
 				"id" : 3,
-				"name" : "Ken"
+				"text" : "Ken"
 			},
 			{
 				"id" : 4,
-				"name" : "Susheila"
+				"text" : "Susheila"
 			},
 			{
 				"id" : 5,
-				"name" : "George"
+				"text" : "George"
 			},
 			{
 				"id" : 6,
-				"name" : "Lavery"
-			}
+				"text" : "Lavery"
+			},
+			{
+				"id" : 7,
+				"text" : "Ross"
+			},
+			{
+				"id" : 8,
+				"text" : "Thomas"
+			},
+			{
+				"id" : 9,
+				"text" : "Ken"
+			},
+			{
+				"id" : 10,
+				"text" : "Susheila"
+			},
+			{
+				"id" : 11,
+				"text" : "George"
+			},
+
 		]
 	}
 

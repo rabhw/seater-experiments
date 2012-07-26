@@ -128,133 +128,608 @@ nav:after {
   width: 50%;
 }
 
-/* Example tokeninput style #1: Token vertical list*/
-/* line 2, ../scss/_tokeninput.scss */
-ul.token-input-list {
-  overflow: hidden;
-  height: auto !important;
-  height: 1%;
-  width: 400px;
-  border: 1px solid #999;
-  cursor: text;
-  font-size: 12px;
-  font-family: Verdana;
-  z-index: 999;
-  margin: 0;
-  padding: 0;
+/*
+Version: @@ver@@ Timestamp: @@timestamp@@
+*/
+/* line 4, ../scss/_select2.scss */
+.select2-container {
+  position: relative;
+  display: inline-block;
+  /* inline-block for ie7 */
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 16, ../scss/_select2.scss */
+.select2-container,
+.select2-drop,
+.select2-search,
+.select2-search input {
+  /*
+    Force border-box so that % widths fit the parent
+    container without overlap because of margin/padding.
+
+    More Info : http://www.quirksmode.org/css/box.html
+  */
+  -moz-box-sizing: border-box;
+  /* firefox */
+  -ms-box-sizing: border-box;
+  /* ie */
+  -webkit-box-sizing: border-box;
+  /* webkit */
+  -khtml-box-sizing: border-box;
+  /* konqueror */
+  box-sizing: border-box;
+  /* css3 */
+}
+
+/* line 30, ../scss/_select2.scss */
+.select2-container .select2-choice {
   background-color: #fff;
-  list-style-type: none;
-  clear: left;
-}
-
-/* line 19, ../scss/_tokeninput.scss */
-ul.token-input-list li {
-  list-style-type: none;
-}
-
-/* line 23, ../scss/_tokeninput.scss */
-ul.token-input-list li input {
-  border: 0;
-  width: 350px;
-  padding: 3px 8px;
-  background-color: white;
-  -webkit-appearance: caret;
-}
-
-/* line 31, ../scss/_tokeninput.scss */
-li.token-input-token {
-  overflow: hidden;
-  height: auto !important;
-  height: 1%;
-  margin: 3px;
-  padding: 3px 5px;
-  background-color: #d0efa0;
-  color: #000;
-  font-weight: bold;
-  cursor: default;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.5, white));
+  background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 50%);
+  background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 50%);
+  background-image: -o-linear-gradient(bottom, #eeeeee 0%, white 50%);
+  background-image: -ms-linear-gradient(top, #eeeeee 0%, white 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#ffffff', GradientType = 0);
+  background-image: linear-gradient(top, #eeeeee 0%, #ffffff 50%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #aaa;
   display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0 0 8px;
+  color: #444;
+  text-decoration: none;
 }
 
-/* line 44, ../scss/_tokeninput.scss */
-li.token-input-token p {
-  float: left;
-  padding: 0;
-  margin: 0;
+/* line 58, ../scss/_select2.scss */
+.select2-container.select2-drop-above .select2-choice {
+  border-bottom-color: #aaa;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  -moz-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.9, white));
+  background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 90%);
+  background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 90%);
+  background-image: -o-linear-gradient(bottom, #eeeeee 0%, white 90%);
+  background-image: -ms-linear-gradient(top, #eeeeee 0%, white 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 );
+  background-image: linear-gradient(top, #eeeeee 0%, #ffffff 90%);
 }
 
-/* line 50, ../scss/_tokeninput.scss */
-li.token-input-token span {
-  float: right;
-  color: #777;
+/* line 72, ../scss/_select2.scss */
+.select2-container .select2-choice span {
+  margin-right: 26px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+/* line 82, ../scss/_select2.scss */
+.select2-container .select2-choice abbr {
+  display: block;
+  position: absolute;
+  right: 26px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  font-size: 1px;
+  background: url('../img/select2.png?1339555834') right top no-repeat;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+}
+
+/* line 96, ../scss/_select2.scss */
+.select2-container .select2-choice abbr:hover {
+  background-position: right -11px;
   cursor: pointer;
 }
 
-/* line 56, ../scss/_tokeninput.scss */
-li.token-input-selected-token {
-  background-color: #08844e;
+/* line 101, ../scss/_select2.scss */
+.select2-drop {
+  background: #fff;
+  color: #000;
+  border: 1px solid #aaa;
+  border-top: 0;
+  position: absolute;
+  top: 100%;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  width: 100%;
+  margin-top: -1px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+
+/* line 121, ../scss/_select2.scss */
+.select2-drop.select2-drop-above {
+  -webkit-border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
+  margin-top: 1px;
+  border-top: 1px solid #aaa;
+  border-bottom: 0;
+  -webkit-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 135, ../scss/_select2.scss */
+.select2-container .select2-choice div {
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #ccc;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #cccccc), color-stop(0.6, #eeeeee));
+  background-image: -webkit-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%);
+  background-image: -moz-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%);
+  background-image: -o-linear-gradient(bottom, #cccccc 0%, #eeeeee 60%);
+  background-image: -ms-linear-gradient(top, #cccccc 0%, #eeeeee 60%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cccccc', endColorstr = '#eeeeee', GradientType = 0);
+  background-image: linear-gradient(top, #cccccc 0%, #eeeeee 60%);
+  border-left: 1px solid #aaa;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 18px;
+}
+
+/* line 159, ../scss/_select2.scss */
+.select2-container .select2-choice div b {
+  background: url('../img/select2.png?1339555834') no-repeat 0 1px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 166, ../scss/_select2.scss */
+.select2-search {
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 10000;
+  min-height: 26px;
+  width: 100%;
+  margin: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* line 177, ../scss/_select2.scss */
+.select2-search-hidden {
+  display: block;
+  position: absolute;
+  left: -10000px;
+}
+
+/* line 183, ../scss/_select2.scss */
+.select2-search input {
+  background: white url('../img/select2.png?1339555834') no-repeat 100% -22px;
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1339555834') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+  padding: 4px 20px 4px 5px;
+  outline: 0;
+  border: 1px solid #aaa;
+  font-family: sans-serif;
+  font-size: 1em;
+  width: 100%;
+  margin: 0;
+  height: auto !important;
+  min-height: 26px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+/* line 209, ../scss/_select2.scss */
+.select2-drop.select2-drop-above .select2-search input {
+  margin-top: 4px;
+}
+
+/* line 213, ../scss/_select2.scss */
+.select2-search input.select2-active {
+  background: white url('../img/spinner.gif?1339555834') no-repeat 100%;
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1339555834') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+}
+
+/* line 225, ../scss/_select2.scss */
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #5897fb;
+  outline: none;
+}
+
+/* line 234, ../scss/_select2.scss */
+.select2-dropdown-open .select2-choice {
+  border: 1px solid #aaa;
+  border-bottom-color: transparent;
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow: 0 1px 0 #fff inset;
+  -o-box-shadow: 0 1px 0 #fff inset;
+  box-shadow: 0 1px 0 #fff inset;
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, white), color-stop(0.5, #eeeeee));
+  background-image: -webkit-linear-gradient(center bottom, white 0%, #eeeeee 50%);
+  background-image: -moz-linear-gradient(center bottom, white 0%, #eeeeee 50%);
+  background-image: -o-linear-gradient(bottom, white 0%, #eeeeee 50%);
+  background-image: -ms-linear-gradient(top, white 0%, #eeeeee 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+  background-image: linear-gradient(top, #ffffff 0%, #eeeeee 50%);
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 257, ../scss/_select2.scss */
+.select2-dropdown-open .select2-choice div {
+  background: transparent;
+  border-left: none;
+}
+
+/* line 261, ../scss/_select2.scss */
+.select2-dropdown-open .select2-choice div b {
+  background-position: -18px 1px;
+}
+
+/* results */
+/* line 266, ../scss/_select2.scss */
+.select2-results {
+  margin: 4px 4px 4px 0;
+  padding: 0 0 0 4px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+/* line 275, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub {
+  margin: 0 0 0 0;
+}
+
+/* line 279, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub > li .select2-result-label {
+  padding-left: 20px;
+}
+
+/* line 280, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 40px;
+}
+
+/* line 281, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 60px;
+}
+
+/* line 282, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 80px;
+}
+
+/* line 283, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 100px;
+}
+
+/* line 284, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 110px;
+}
+
+/* line 285, ../scss/_select2.scss */
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label {
+  padding-left: 120px;
+}
+
+/* line 287, ../scss/_select2.scss */
+.select2-results li {
+  list-style: none;
+  display: list-item;
+}
+
+/* line 292, ../scss/_select2.scss */
+.select2-results li.select2-result-with-children > .select2-result-label {
+  font-weight: bold;
+}
+
+/* line 296, ../scss/_select2.scss */
+.select2-results .select2-result-label {
+  padding: 3px 7px 4px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* line 302, ../scss/_select2.scss */
+.select2-results .select2-highlighted {
+  background: #3875d7;
   color: #fff;
 }
 
-/* line 61, ../scss/_tokeninput.scss */
-li.token-input-selected-token span {
-  color: #bbb;
+/* line 306, ../scss/_select2.scss */
+.select2-results li em {
+  background: #feffde;
+  font-style: normal;
 }
 
-/* line 65, ../scss/_tokeninput.scss */
-div.token-input-dropdown {
-  position: absolute;
-  width: 400px;
-  background-color: #fff;
-  overflow: hidden;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+/* line 310, ../scss/_select2.scss */
+.select2-results .select2-highlighted em {
+  background: transparent;
+}
+
+/* line 313, ../scss/_select2.scss */
+.select2-results .select2-no-results {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/*
+disabled look for already selected choices in the results dropdown
+.select2-results .select2-disabled.select2-highlighted {
+    color: #666;
+    background: #f4f4f4;
+    display: list-item;
+    cursor: default;
+}
+.select2-results .select2-disabled {
+  background: #f4f4f4;
+  display: list-item;
   cursor: default;
-  font-size: 12px;
-  font-family: Verdana;
-  z-index: 1;
+}
+*/
+/* line 332, ../scss/_select2.scss */
+.select2-results .select2-disabled {
+  display: none;
 }
 
-/* line 79, ../scss/_tokeninput.scss */
-div.token-input-dropdown p {
+/* line 336, ../scss/_select2.scss */
+.select2-more-results.select2-active {
+  background: #f4f4f4 url('../img/spinner.gif?1339555834') no-repeat 100%;
+}
+
+/* line 340, ../scss/_select2.scss */
+.select2-more-results {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/* disabled styles */
+/* line 347, ../scss/_select2.scss */
+.select2-container.select2-container-disabled .select2-choice {
+  background-color: #f4f4f4;
+  background-image: none;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+
+/* line 354, ../scss/_select2.scss */
+.select2-container.select2-container-disabled .select2-choice div {
+  background-color: #f4f4f4;
+  background-image: none;
+  border-left: 0;
+}
+
+/* multiselect */
+/* line 363, ../scss/_select2.scss */
+.select2-container-multi .select2-choices {
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background-image: -webkit-linear-gradient(top, #eeeeee 1%, white 15%);
+  background-image: -moz-linear-gradient(top, #eeeeee 1%, white 15%);
+  background-image: -o-linear-gradient(top, #eeeeee 1%, white 15%);
+  background-image: -ms-linear-gradient(top, #eeeeee 1%, white 15%);
+  background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  border: 1px solid #aaa;
   margin: 0;
-  padding: 5px;
-  font-weight: bold;
-  color: #777;
+  padding: 0;
+  cursor: text;
+  overflow: hidden;
+  height: auto !important;
+  height: 1%;
+  position: relative;
 }
 
-/* line 86, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul {
+/* line 381, ../scss/_select2.scss */
+.select2-container-multi .select2-choices {
+  min-height: 26px;
+}
+
+/* line 385, ../scss/_select2.scss */
+.select2-container-multi.select2-container-active .select2-choices {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #5897fb;
+  outline: none;
+}
+
+/* line 393, ../scss/_select2.scss */
+.select2-container-multi .select2-choices li {
+  float: left;
+  list-style: none;
+}
+
+/* line 397, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-field {
+  white-space: nowrap;
   margin: 0;
   padding: 0;
 }
 
-/* line 91, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul li {
-  background-color: #fff;
-  padding: 3px;
-  list-style-type: none;
+/* line 403, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-field input {
+  color: #666;
+  background: transparent !important;
+  font-family: sans-serif;
+  font-size: 100%;
+  height: 15px;
+  padding: 5px;
+  margin: 1px 0;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 97, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul li.token-input-dropdown-item {
-  background-color: #fafafa;
+/* line 419, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+  background: white url('../img/spinner.gif?1339555834') no-repeat 100% !important;
 }
 
-/* line 101, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul li.token-input-dropdown-item2 {
-  background-color: #fff;
+/* line 423, ../scss/_select2.scss */
+.select2-default {
+  color: #999 !important;
 }
 
-/* line 105, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul li em {
-  font-weight: bold;
-  font-style: normal;
+/* line 427, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #e4e4e4;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#eeeeee', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  border: 1px solid #aaaaaa;
+  line-height: 13px;
+  padding: 3px 5px 3px 18px;
+  margin: 3px 0 3px 5px;
+  position: relative;
+  cursor: default;
 }
 
-/* line 110, ../scss/_tokeninput.scss */
-div.token-input-dropdown ul li.token-input-selected-dropdown-item {
-  background-color: #d0efa0;
+/* line 453, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice span {
+  cursor: default;
+}
+
+/* line 456, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus {
+  background: #d4d4d4;
+}
+
+/* line 460, ../scss/_select2.scss */
+.select2-search-choice-close {
+  display: block;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  width: 12px;
+  height: 13px;
+  font-size: 1px;
+  background: url('../img/select2.png?1339555834') right top no-repeat;
+  outline: none;
+}
+
+/* line 472, ../scss/_select2.scss */
+.select2-container-multi .select2-search-choice-close {
+  left: 3px;
+}
+
+/* line 477, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
+  background-position: right -11px;
+}
+
+/* line 480, ../scss/_select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
+  background-position: right -11px;
+}
+
+/* disabled styles */
+/* line 486, ../scss/_select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices {
+  background-color: #f4f4f4;
+  background-image: none;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+
+/* line 493, ../scss/_select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+  background-image: none;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 3px 5px 3px 5px;
+}
+
+/* line 500, ../scss/_select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
+  display: none;
+}
+
+/* end multiselect */
+/* line 506, ../scss/_select2.scss */
+.select2-result-selectable .select2-match,
+.select2-result-unselectable .select2-result-selectable .select2-match {
+  text-decoration: underline;
+}
+
+/* line 507, ../scss/_select2.scss */
+.select2-result-unselectable .select2-match {
+  text-decoration: none;
+}
+
+/* line 509, ../scss/_select2.scss */
+.select2-offscreen {
+  position: absolute;
+  left: -10000px;
 }
 
 /* line 3, ../scss/main.scss */

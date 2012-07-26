@@ -12,7 +12,10 @@ function PlanCtrl($scope, $routeParams, planService) {
 }
 
 function SeatCtrl($scope, $routeParams, planService) {
-	$scope.guest = planService.guest();
+
+	$scope.guests = planService.guests();
+
+	$scope.guest = planService.guest().id;
 
 	$scope.saveSeat = function(guestId) {
 		console.log(guestId);
