@@ -1358,11 +1358,13 @@ a {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  overflow: hidden;
 }
 
-/* line 31, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 .table-wrap {
   position: absolute;
+  cursor: move;
 }
 /* line 15, ../scss/_mixins.scss */
 .table-wrap[data-table-shape="circle"][data-table-size="2"] .table .seat[data-seat-number="1"] {
@@ -1796,30 +1798,30 @@ a {
   -o-transform: rotate(360deg);
   transform: rotate(360deg);
 }
-/* line 36, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 .table-wrap[data-table-shape="circle"] .table {
   width: 100px;
   height: 100px;
 }
-/* line 40, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 .table-wrap[data-table-shape="circle"] .table .seat {
   left: 50%;
   margin-left: -12px;
   height: 71px;
   margin-top: -25px;
 }
-/* line 50, ../scss/main.scss */
+/* line 52, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"] .table {
   width: 130px;
   height: 70px;
 }
-/* line 59, ../scss/main.scss */
+/* line 61, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="1"] {
   top: -20px;
   left: 50%;
   margin-left: -12px;
 }
-/* line 65, ../scss/main.scss */
+/* line 67, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
   right: -32px;
   bottom: 50%;
@@ -1829,7 +1831,7 @@ a {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 71, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="3"] {
   bottom: -20px;
   right: 50%;
@@ -1840,7 +1842,7 @@ a {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 78, ../scss/main.scss */
+/* line 80, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="4"] {
   left: -32px;
   bottom: 50%;
@@ -1851,7 +1853,7 @@ a {
   transform: rotate(-90deg);
 }
 
-/* line 89, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 .table {
   background: #d5d5d5;
   border: 4px solid #888888;
@@ -1862,15 +1864,15 @@ a {
   transition: all 0.5s;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 .table-number {
+  cursor: move;
   position: absolute;
   z-index: 999;
   width: 48px;
   height: 48px;
   font-weight: bold;
   text-align: center;
-  cursor: default;
   line-height: 48px;
   top: 50%;
   left: 50%;
@@ -1879,7 +1881,7 @@ a {
   color: #6f6f6f;
 }
 
-/* line 111, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1894,39 +1896,39 @@ a {
   text-align: center;
   font-size: 20px;
 }
-/* line 119, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 .table-controls .rotate-table {
   display: inline-block;
   width: 25%;
 }
-/* line 122, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 124, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 130, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 132, ../scss/main.scss */
+/* line 134, ../scss/main.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 142, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 147, ../scss/main.scss */
+/* line 149, ../scss/main.scss */
 .seat {
   width: 24px;
   position: absolute;
@@ -1936,7 +1938,7 @@ a {
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 151, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 .seat a {
   cursor: pointer;
   position: absolute;
@@ -1954,18 +1956,18 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 163, ../scss/main.scss */
+/* line 165, ../scss/main.scss */
 .seat a:hover {
   border-bottom-color: #888888;
 }
 
-/* line 170, ../scss/main.scss */
+/* line 172, ../scss/main.scss */
 .panel {
   background: white;
   display: none;
 }
 
-/* line 175, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -1977,7 +1979,7 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 182, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 .guest-list {
   max-height: 400px;
   overflow-x: hidden;
@@ -1986,20 +1988,20 @@ input[type=text], textarea {
   border-top: 3px solid #f3f3f3;
   border-bottom: 3px solid #f3f3f3;
 }
-/* line 189, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 .guest-list li {
   border-bottom: 1px solid #f3f3f3;
 }
-/* line 191, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 .guest-list li:last-child {
   border-bottom: none;
 }
-/* line 194, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .guest-list li > a {
   display: block;
   padding: 10px;
 }
-/* line 197, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .guest-list li > a:hover {
   background: #f3f3f3;
 }
