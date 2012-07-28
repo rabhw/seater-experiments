@@ -13,7 +13,7 @@ angular.module('seater.services', []).service('planService', function ($routePar
 				"xPos" : "20%",
 				"yPos" : "50%",
 				"rotate" : "45deg",
-				"seats" : [1,2]
+				"seats" : [1,2,3]
 			},
 			{
 				"id" : 48,
@@ -84,17 +84,17 @@ angular.module('seater.services', []).service('planService', function ($routePar
         	return plans.guests;
         },
 
-        table : function() {
+        table : function(tableId) {
         	var table = _.filter(plans.tables, function(obj) {
-        		return obj.id == $routeParams.tableId;
+        		return obj.id == tableId;
         	});
 
         	return table[0];
         },
 
-        guest : function() {
-        	var table = this.table();
-        	var guestId = table.seats[$routeParams.seatId];
+        guest : function(tableId, seatId) {
+        	var table = this.table(tableId);
+        	var guestId = table.seats[seatId];
         	var guest = _.filter(plans.guests, function(obj) {
         		return obj.id == guestId;
         	});
