@@ -10,17 +10,17 @@ angular.module('seater.services', []).service('planService', function ($routePar
 				"id" : 23,
 				"number" : 2,
 				"shape" : "circle",
-				"xPos" : "20%",
-				"yPos" : "50%",
+				"xPos" : "200px",
+				"yPos" : "300px",
 				"rotate" : "45deg",
-				"seats" : [1,2,3]
+				"seats" : [1,2,3,12,11,10,7,9]
 			},
 			{
 				"id" : 48,
 				"number" : 4,
 				"shape" : "rect",
-				"xPos" : "90%",
-				"yPos" : "30%",
+				"xPos" : "600px",
+				"yPos" : "100px",
 				"rotate" : "90deg",
 				"seats" : [3,4,5,6]
 			}

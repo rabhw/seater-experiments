@@ -27,6 +27,20 @@ angular.module('seater.directives', []).directive('draggable', function() {
         });
       }
     };
+}).directive('resizable',function(){
+    return{
+      restrict:'A',
+      link:function(scope,element,attrs){
+        console.log('got it');
+        element.resizable();
+      }
+    };
+}).directive('tableControls',function(){
+    return{
+      restrict:'A',
+      link:function(scope,element,attrs){
+      }
+    };
 }).directive('editSeat',function(){
     return{
       restrict:'E',

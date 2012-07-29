@@ -33,6 +33,21 @@ function PlanCtrl($scope, $routeParams, planService) {
 		// @TODO: If seat is empty, will fail to read id property
 		$scope.editGuest = planService.guest(tableId, seatIndex).id;
 	}
+
+	$scope.rotateTable = function(table, dir) {
+		var currRot = parseInt(table.rotate), newRot;
+		if (dir === "cw") {
+			newRot = currRot+=45;
+			newRot = newRot+'deg';
+			table.rotate = newRot;
+		}
+
+		else {
+			newRot = currRot-=45;
+			newRot = newRot+'deg';
+			table.rotate = newRot;
+		}
+	}
 }
 
 function SeatCtrl($scope, $routeParams, planService) {

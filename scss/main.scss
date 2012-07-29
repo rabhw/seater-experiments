@@ -26,7 +26,7 @@ a {
 	height: 600px;
 	position: relative;
 	@include border-bottom-radius;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .table-wrap {
@@ -35,7 +35,6 @@ a {
 	@include single-transition(transform, $transition-fast);
 
 	
-
 	&.ui-draggable-dragging {
 		@include scale(1.2);
 	}
@@ -98,6 +97,7 @@ a {
 .table {
 	background: $grey-light;
 	border: 4px solid $grey;
+	@include single-transition(transform);
 }
 
 .table-number {

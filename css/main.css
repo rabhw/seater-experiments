@@ -1334,6 +1334,98 @@ disabled look for already selected choices in the results dropdown
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
+/*
+* jQuery UI Resizable 1.8.22
+*/
+/* line 4, ../scss/_jqueryui.scss */
+.ui-resizable {
+  position: relative;
+}
+
+/* line 5, ../scss/_jqueryui.scss */
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+}
+
+/* line 6, ../scss/_jqueryui.scss */
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+/* line 7, ../scss/_jqueryui.scss */
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+
+/* line 8, ../scss/_jqueryui.scss */
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+/* line 9, ../scss/_jqueryui.scss */
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 10, ../scss/_jqueryui.scss */
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 11, ../scss/_jqueryui.scss */
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+
+/* line 12, ../scss/_jqueryui.scss */
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+
+/* line 13, ../scss/_jqueryui.scss */
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+
+/* line 14, ../scss/_jqueryui.scss */
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+
 /* line 3, ../scss/main.scss */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -1369,7 +1461,7 @@ a {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* line 32, ../scss/main.scss */
@@ -1382,7 +1474,7 @@ a {
   -o-transition: -o-transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
 }
-/* line 39, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 .table-wrap.ui-draggable-dragging {
   -webkit-transform: scale(1.2, 1.2);
   -moz-transform: scale(1.2, 1.2);
@@ -1822,30 +1914,30 @@ a {
   -o-transform: rotate(360deg);
   transform: rotate(360deg);
 }
-/* line 45, ../scss/main.scss */
+/* line 44, ../scss/main.scss */
 .table-wrap[data-table-shape="circle"] .table {
   width: 100px;
   height: 100px;
 }
-/* line 49, ../scss/main.scss */
+/* line 48, ../scss/main.scss */
 .table-wrap[data-table-shape="circle"] .table .seat {
   left: 50%;
   margin-left: -12px;
   height: 71px;
   margin-top: -25px;
 }
-/* line 59, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"] .table {
   width: 130px;
   height: 70px;
 }
-/* line 68, ../scss/main.scss */
+/* line 67, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="1"] {
   top: -20px;
   left: 50%;
   margin-left: -12px;
 }
-/* line 74, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
   right: -32px;
   bottom: 50%;
@@ -1855,7 +1947,7 @@ a {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 80, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="3"] {
   bottom: -20px;
   right: 50%;
@@ -1866,7 +1958,7 @@ a {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 87, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="4"] {
   left: -32px;
   bottom: 50%;
@@ -1877,10 +1969,15 @@ a {
   transform: rotate(-90deg);
 }
 
-/* line 98, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 .table {
   background: #d5d5d5;
   border: 4px solid #888888;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  -moz-transition: -moz-transform 0.4s ease-in-out;
+  -ms-transition: -ms-transform 0.4s ease-in-out;
+  -o-transition: -o-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
 /* line 103, ../scss/main.scss */
