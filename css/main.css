@@ -1477,11 +1477,11 @@ a {
 }
 /* line 38, ../scss/main.scss */
 .table-wrap.ui-draggable-dragging {
-  -webkit-transform: scale(1.2, 1.2);
-  -moz-transform: scale(1.2, 1.2);
-  -ms-transform: scale(1.2, 1.2);
-  -o-transform: scale(1.2, 1.2);
-  transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.25, 1.25);
+  -moz-transform: scale(1.25, 1.25);
+  -ms-transform: scale(1.25, 1.25);
+  -o-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
 }
 /* line 15, ../scss/_mixins.scss */
 .table-wrap[data-table-shape="circle"][data-table-size="2"] .table .seat[data-seat-number="1"] {

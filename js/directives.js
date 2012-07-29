@@ -72,6 +72,7 @@ angular.module('seater.directives', []).directive('draggable', function() {
         }).hide();
 
         return function postLink(scope, iElement, iAttrs) {
+
           var api = tElement.qtip('api');
           $('.seat a').live('click', function(e) {
             tElement.qtip('option', {

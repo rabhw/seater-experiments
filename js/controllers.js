@@ -9,7 +9,6 @@ function AppCtrl($scope, $routeParams) {
 
 function PlanCtrl($scope, $routeParams, planService) {
 
-
 	$scope.plans = planService.all();
 	$scope.guests = planService.guests();
 

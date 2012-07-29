@@ -36,7 +36,7 @@ a {
 
 	
 	&.ui-draggable-dragging {
-		@include scale(1.2);
+		@include scale(1.25);
 	}
 
 	&[data-table-shape="circle"] {
