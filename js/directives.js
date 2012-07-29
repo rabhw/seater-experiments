@@ -12,6 +12,10 @@ angular.module('seater.directives', []).directive('draggable', function() {
               stack: ".table-wrap",
               start : function(event, ui) {
                 $('.ui-tooltip').fadeOut('fast');
+              },
+              stop : function(event, ui) {
+                scope.table.xPos = event.target.offsetLeft+'px';
+                scope.table.yPos = event.target.offsetTop+'px';
               }
            });
         }
@@ -23,6 +27,7 @@ angular.module('seater.directives', []).directive('draggable', function() {
         element.droppable({
           drop:function(event,ui){
             // do stuff when dropped (store position / convert values to %)
+            
           }
         });
       }

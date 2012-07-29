@@ -13,27 +13,35 @@ nav {
 .tabs {
 	li {
 		float: left;
-		&:first-child a {
-			@include border-top-left-radius;
-		}
-		&:last-child a {
-			@include border-top-right-radius;
-		}
-	}
-	a {
-		display: block;
-		text-align: center;
-		padding: $global-padding/2;
-		background: $grey;
-		color: white;
-		&.active {
-			background: $grey-light;
-			color: $grey;
+			a {
+				border-right: 1px solid $grey;
+				display: block;
+				text-align: center;
+				padding: $global-padding/2;
+				background: $grey;
+				color: white;
+				&.active {
+					background: $grey-light;
+					color: $grey;
+			}
+
+			&:first-child a {
+				@include border-top-left-radius;
+			}
+			&:last-child a {
+				@include border-top-right-radius;
+				border-right: none;
+			}
 		}
 	}
 	&.two {
 		li {
 			width: 50%;
+		}
+	}
+	&.three {
+		li {
+			width: 33.33%;
 		}
 	}
 }

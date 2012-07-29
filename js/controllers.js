@@ -50,6 +50,6 @@ function PlanCtrl($scope, $routeParams, planService) {
 	}
 }
 
-function SeatCtrl($scope, $routeParams, planService) {
-
+function GuestCtrl($scope, $routeParams, planService) {
+	$scope.guests = planService.guests();
 }

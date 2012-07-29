@@ -99,42 +99,48 @@ nav:after {
   float: left;
 }
 /* line 16, ../scss/_layout.scss */
-.tabs li:first-child a {
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-/* line 19, ../scss/_layout.scss */
-.tabs li:last-child a {
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-/* line 23, ../scss/_layout.scss */
-.tabs a {
+.tabs li a {
+  border-right: 1px solid #888888;
   display: block;
   text-align: center;
   padding: 20px;
   background: #888888;
   color: white;
 }
-/* line 29, ../scss/_layout.scss */
-.tabs a.active {
+/* line 23, ../scss/_layout.scss */
+.tabs li a.active {
   background: #d5d5d5;
   color: #888888;
 }
-/* line 35, ../scss/_layout.scss */
+/* line 28, ../scss/_layout.scss */
+.tabs li a:first-child a {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+/* line 31, ../scss/_layout.scss */
+.tabs li a:last-child a {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  border-right: none;
+}
+/* line 38, ../scss/_layout.scss */
 .tabs.two li {
   width: 50%;
 }
+/* line 43, ../scss/_layout.scss */
+.tabs.three li {
+  width: 33.33%;
+}
 
-/* line 41, ../scss/_layout.scss */
+/* line 49, ../scss/_layout.scss */
 .panel {
   position: absolute;
   z-index: 9999;
 }
 
-/* line 46, ../scss/_layout.scss */
+/* line 54, ../scss/_layout.scss */
 .hide {
   display: none;
 }
@@ -237,7 +243,7 @@ Version: @@ver@@ Timestamp: @@timestamp@@
   width: 12px;
   height: 12px;
   font-size: 1px;
-  background: url('../img/select2.png?1343266628') right top no-repeat;
+  background: url('../img/select2.png?1343579138') right top no-repeat;
   cursor: pointer;
   text-decoration: none;
   border: 0;
@@ -311,7 +317,7 @@ Version: @@ver@@ Timestamp: @@timestamp@@
 
 /* line 159, ../scss/_select2.scss */
 .select2-container .select2-choice div b {
-  background: url('../img/select2.png?1343266628') no-repeat 0 1px;
+  background: url('../img/select2.png?1343579138') no-repeat 0 1px;
   display: block;
   width: 100%;
   height: 100%;
@@ -338,13 +344,13 @@ Version: @@ver@@ Timestamp: @@timestamp@@
 
 /* line 183, ../scss/_select2.scss */
 .select2-search input {
-  background: white url('../img/select2.png?1343266628') no-repeat 100% -22px;
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
-  background: url('../img/select2.png?1343266628') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+  background: white url('../img/select2.png?1343579138') no-repeat 100% -22px;
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
+  background: url('../img/select2.png?1343579138') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
   padding: 4px 20px 4px 5px;
   outline: 0;
   border: 1px solid #aaa;
@@ -369,13 +375,13 @@ Version: @@ver@@ Timestamp: @@timestamp@@
 
 /* line 213, ../scss/_select2.scss */
 .select2-search input.select2-active {
-  background: white url('../img/spinner.gif?1343266628') no-repeat 100%;
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
-  background: url('../img/spinner.gif?1343266628') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+  background: white url('../img/spinner.gif?1343579138') no-repeat 100%;
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, -ms-linear-gradient(top, white 85%, #eeeeee 99%);
+  background: url('../img/spinner.gif?1343579138') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
 }
 
 /* line 225, ../scss/_select2.scss */
@@ -537,7 +543,7 @@ disabled look for already selected choices in the results dropdown
 
 /* line 336, ../scss/_select2.scss */
 .select2-more-results.select2-active {
-  background: #f4f4f4 url('../img/spinner.gif?1343266628') no-repeat 100%;
+  background: #f4f4f4 url('../img/spinner.gif?1343579138') no-repeat 100%;
 }
 
 /* line 340, ../scss/_select2.scss */
@@ -629,7 +635,7 @@ disabled look for already selected choices in the results dropdown
 
 /* line 419, ../scss/_select2.scss */
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
-  background: white url('../img/spinner.gif?1343266628') no-repeat 100% !important;
+  background: white url('../img/spinner.gif?1343579138') no-repeat 100% !important;
 }
 
 /* line 423, ../scss/_select2.scss */
@@ -684,7 +690,7 @@ disabled look for already selected choices in the results dropdown
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url('../img/select2.png?1343266628') right top no-repeat;
+  background: url('../img/select2.png?1343579138') right top no-repeat;
   outline: none;
 }
 

@@ -5,7 +5,7 @@
 var seater = angular.module('seater', ['ui', 'seater.services', 'seater.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/plan', {templateUrl: 'views/plan.html', controller: PlanCtrl});
-    $routeProvider.when('/table/:tableId/seat/:seatId/edit', {templateUrl: 'views/edit-seat.html', controller: SeatCtrl});
+    $routeProvider.when('/guests', {templateUrl: 'views/guests.html', controller: GuestCtrl});
     $routeProvider.otherwise({redirectTo: '/plan'});
   }]);
 
