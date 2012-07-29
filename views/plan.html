@@ -1,3 +1,6 @@
+<div ng-show="ObjectPanel">
+    OBJECTS PANEL HERE!
+</div>
 <div id="canvas" droppable>
     <div draggable ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>

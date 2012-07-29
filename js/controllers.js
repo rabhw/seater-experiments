@@ -34,7 +34,9 @@ function PlanCtrl($scope, $routeParams, planService) {
 	}
 
 	$scope.rotateTable = function(table, dir) {
+
 		var currRot = parseInt(table.rotate), newRot;
+
 		if (dir === "cw") {
 			newRot = currRot+=45;
 			newRot = newRot+'deg';

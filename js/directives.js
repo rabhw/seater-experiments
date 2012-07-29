@@ -40,12 +40,6 @@ angular.module('seater.directives', []).directive('draggable', function() {
         element.resizable();
       }
     };
-}).directive('tableControls',function(){
-    return{
-      restrict:'A',
-      link:function(scope,element,attrs){
-      }
-    };
 }).directive('editSeat',function(){
     return{
       restrict:'E',
