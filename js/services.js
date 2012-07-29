@@ -28,47 +28,51 @@ angular.module('seater.services', []).service('planService', function ($routePar
 		"guests" : [
 			{
 				"id" : 1,
-				"text" : "Ross"
+				"text" : "Ross Lavery"
 			},
 			{
 				"id" : 2,
-				"text" : "Thomas"
+				"text" : "Thomas Price"
 			},
 			{
 				"id" : 3,
-				"text" : "Ken"
+				"text" : "Ken George"
 			},
 			{
 				"id" : 4,
-				"text" : "Susheila"
+				"text" : "Susheila Li"
 			},
 			{
 				"id" : 5,
-				"text" : "George"
+				"text" : "John Doe"
 			},
 			{
 				"id" : 6,
-				"text" : "Lavery"
+				"text" : "Jane Samuelson"
 			},
 			{
 				"id" : 7,
-				"text" : "Ross"
+				"text" : "Gillian Minsky"
 			},
 			{
 				"id" : 8,
-				"text" : "Thomas"
+				"text" : "John Lavery"
 			},
 			{
 				"id" : 9,
-				"text" : "Ken"
+				"text" : "Gail Lavery"
 			},
 			{
 				"id" : 10,
-				"text" : "Susheila"
+				"text" : "Winnie Wong"
 			},
 			{
 				"id" : 11,
-				"text" : "George"
+				"text" : "Carmen Li"
+			},
+			{
+				"id" : 12,
+				"text" : "Najeeb Sachedina"
 			},
 
 		]
@@ -98,6 +102,8 @@ angular.module('seater.services', []).service('planService', function ($routePar
         	var guest = _.filter(plans.guests, function(obj) {
         		return obj.id == guestId;
         	});
+
+        	return guest[0];
         },
 
         saveSeat : function(tableId, seatId, guestId) {
