@@ -100,6 +100,13 @@ angular.module('seater.services', []).service('planService', function ($routePar
         	});
 
         	return guest[0];
+        },
+
+        saveSeat : function(tableId, seatId, guestId) {
+        	var table = this.table(tableId);
+        	console.log(tableId, seatId, guestId);
+        	table.seats[seatId] = guestId;
+        	console.log('saved');
         }
     };
 });

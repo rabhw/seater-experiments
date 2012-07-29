@@ -1,9 +1,7 @@
 <div id="edit-seat">
-    <div>
-    	<select ui-select2 data-placeholder="Add a guest..." ng-model="guest" style="width: 200px">
-    	  <option></option>
-    	  <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
-    	</select>
-    	{{guest}}
-    </div>
-</div><!-- #canvas -->
+	<select ui-select2 data-placeholder="Add a guest..." ng-model="editGuest">
+	  <option></option>
+	  <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
+	</select>
+	<button ng-click="saveSeat()">Save</button>
+</div>

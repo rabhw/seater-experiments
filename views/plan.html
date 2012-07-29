@@ -2,7 +2,7 @@
     <div draggable ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>
         <div class="table">
-            <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ui-jq="qtip" ng-click="setGuest($event, table.id, $index)" ui-options="{ content: { text: getContent(api, table.id, $index) } }"></a></div>
+            <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-click="setGuest(table.id, $index)"></a></div>
         </div><!-- .table -->
         <div class="table-controls">
             <a href="#" class="rotate-table cw"></a>
@@ -10,15 +10,6 @@
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 
-
-    <div class="edit-seat" style="display: none;">
-        <div>
-            <select ui-select2 data-placeholder="Add a guest..." ng-model="guest" style="width: 200px">
-              <option></option>
-              <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
-            </select>
-            <button>Save</button>
-        </div>
-    </div>
+    <edit-seat></edit-seat>
 
 </div><!-- #canvas -->

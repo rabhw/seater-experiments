@@ -37,3 +37,12 @@ nav {
 		}
 	}
 }
+
+.panel {
+	position: absolute;
+	z-index: 9999;
+}
+
+.hide {
+	display: none;
+}

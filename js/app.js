@@ -22,15 +22,14 @@ seater.value('ui.config', {
          position: {
             my: 'left center',
             at:'right center',
-            viewport: $(window)
+            viewport: $('#canvas')
          },
          hide: {
          	event: false,
          	effect: false
          },
          show: {
-         	event: 'click',
-         	solo: true
+         	event: 'click'
          }
       }
    }
