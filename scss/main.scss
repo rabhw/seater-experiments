@@ -32,6 +32,13 @@ a {
 .table-wrap {
 	position: absolute;
 	cursor: move;
+	@include single-transition(transform, $transition-fast);
+
+	
+
+	&.ui-draggable-dragging {
+		@include scale(1.2);
+	}
 
 	&[data-table-shape="circle"] {
 		@include distribute-seats-circle;

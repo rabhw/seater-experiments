@@ -8,8 +8,11 @@ angular.module('seater.directives', []).directive('draggable', function() {
         restrict:'A',
         link:function(scope,element,attrs){
            element.draggable({
-          containment: "parent",
-            stack: ".table-wrap"
+              containment: "parent",
+              stack: ".table-wrap",
+              start : function(event, ui) {
+                $('.ui-tooltip').fadeOut('fast');
+              }
            });
         }
     };
@@ -29,6 +32,12 @@ angular.module('seater.directives', []).directive('draggable', function() {
       restrict:'E',
       templateUrl: 'views/edit-seat.html',
       replace: true,
+      controller: function editSeatCtrl($scope, $element, planService) {
+        $scope.saveSeat = function() {
+          planService.saveSeat($scope.editTable, $scope.editSeat, $scope.editGuest);
+          $($element).parents('.ui-tooltip').fadeOut('fast');
+        }
+      },
       compile: function compile(tElement, tAttrs) {
 
         tElement.qtip({
@@ -46,7 +55,6 @@ angular.module('seater.directives', []).directive('draggable', function() {
         return function postLink(scope, iElement, iAttrs) {
           var api = tElement.qtip('api');
           $('.seat a').live('click', function(e) {
-            console.log(e);
             tElement.qtip('option', {
               'position.target': $(this)
             });

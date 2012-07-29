@@ -24,9 +24,9 @@ $global-padding: 40px;
 /*
 // Transitions
 */
-
-$default-transition-duration: 0.5s;
-$transition-fast: 0.2s;
+$default-transition-function: ease-in-out;
+$default-transition-duration: 0.4s;
+$transition-fast: 0.1s;
 $transition-slow: 1s;
 
 /*

@@ -98,8 +98,6 @@ angular.module('seater.services', []).service('planService', function ($routePar
         	var guest = _.filter(plans.guests, function(obj) {
         		return obj.id == guestId;
         	});
-
-        	return guest[0];
         },
 
         saveSeat : function(tableId, seatId, guestId) {
