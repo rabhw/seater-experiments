@@ -21,7 +21,7 @@ angular.module('seater.services', []).service('planService', function ($routePar
 				"shape" : "rect",
 				"xPos" : "600px",
 				"yPos" : "100px",
-				"rotate" : "90deg",
+				"rotate" : "0deg",
 				"seats" : [3,4,5,6]
 			}
 		],

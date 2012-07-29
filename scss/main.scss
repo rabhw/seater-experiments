@@ -45,11 +45,17 @@ a {
 			width: 100px;
 			height: 100px;
 			@extend %circle;
+			.seat-wrap {
+				position: relative;
+				width: 100px;
+				height: 100px;
+			}
 			.seat {
+				margin-left: -10px;
+				top: -30%; // every change to this value = change height px by OPPOSITE amount
 				left: 50%;
-				margin-left: -12px;
-				height: 71px; // gives space between edge of table and seats
-				margin-top: -25px; // height of seat box - height of table
+				height: 80px; // every change to this value = change top % by OPPOSITE amount
+				width: 20px;
 			}
 		}
 	}
@@ -60,33 +66,43 @@ a {
 			height: 70px;
 		}
 
+		.seat-wrap {
+			width: 130px;
+			height: 70px;
+			position: relative;
+		}
+
+		.seat {
+			width: 20px;
+			height: 20px;
+		}
+
 		// Rectangle 4 layout
 		&[data-table-size="4"] {
 			.seat {
 				// Top seat
 				&[data-seat-number="1"] {
-					top: -20px;
+					top: -30px;
 					left: 50%;
-					margin-left: -12px;
-				}
-				// Right seat
-				&[data-seat-number="2"] {
-					right: -32px;
-					bottom: 50%;
-					@include rotate(90deg);
+					margin-left: -10px;
 				}
 				// Bottom seat
 				&[data-seat-number="3"] {
-					bottom: -20px;
-					right: 50%;
-					margin-right: -12px;
-					@include rotate(180deg);
+					bottom: -30px;
+					left: 50%;
+					margin-left: -10px;
+				}
+				// Right seat
+				&[data-seat-number="2"] {
+					right: -30px;
+					top: 50%;
+					margin-top: -10px;
 				}
 				// Left seat
 				&[data-seat-number="4"] {
-					left: -32px;
-					bottom: 50%;
-					@include rotate(-90deg);
+					left: -30px;
+					top: 50%;
+					margin-top: -10px;
 				}
 			}
 		}
@@ -153,7 +169,6 @@ a {
 }
 
 .seat {
-	width: 24px;
 	position: absolute;
 	@include transform-origin(bottom ,center);
 	a {
@@ -161,15 +176,14 @@ a {
 		position: absolute;
 		top: 0;
 		left: 0;
-		content: "";
-		border-bottom: 12px solid $grey-light;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		height: 0;
-		width: 24px;
+		content: "fdsdf";
+		width: 20px;
+		height: 20px;
+		@extend %circle;
+		background: $grey-light;
 		@include transition(all 0.5s);
 		&:hover {
-			border-bottom-color: $grey;
+			background: $grey;
 		}
 	}
 }

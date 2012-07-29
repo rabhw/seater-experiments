@@ -69,13 +69,8 @@ h1, .alpha {
   margin-bottom: 0.75em;
 }
 
-/* line 1, ../scss/_layout.scss */
-* {
-  box-sizing: border-box;
-}
-
 /* line 5, ../scss/_layout.scss */
-.table-wrap[data-table-shape="circle"] .table {
+.table-wrap[data-table-shape="circle"] .table, .seat a {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1926,56 +1921,61 @@ a {
   height: 100px;
 }
 /* line 48, ../scss/main.scss */
-.table-wrap[data-table-shape="circle"] .table .seat {
-  left: 50%;
-  margin-left: -12px;
-  height: 71px;
-  margin-top: -25px;
+.table-wrap[data-table-shape="circle"] .table .seat-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
-/* line 58, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
+.table-wrap[data-table-shape="circle"] .table .seat {
+  margin-left: -10px;
+  top: -30%;
+  left: 50%;
+  height: 80px;
+  width: 20px;
+}
+/* line 64, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"] .table {
   width: 130px;
   height: 70px;
 }
-/* line 67, ../scss/main.scss */
+/* line 69, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"] .seat-wrap {
+  width: 130px;
+  height: 70px;
+  position: relative;
+}
+/* line 75, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"] .seat {
+  width: 20px;
+  height: 20px;
+}
+/* line 84, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="1"] {
-  top: -20px;
+  top: -30px;
   left: 50%;
-  margin-left: -12px;
+  margin-left: -10px;
 }
-/* line 73, ../scss/main.scss */
-.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
-  right: -32px;
-  bottom: 50%;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-/* line 79, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="3"] {
-  bottom: -20px;
-  right: 50%;
-  margin-right: -12px;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+  bottom: -30px;
+  left: 50%;
+  margin-left: -10px;
 }
-/* line 86, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
+.table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="2"] {
+  right: -30px;
+  top: 50%;
+  margin-top: -10px;
+}
+/* line 102, ../scss/main.scss */
 .table-wrap[data-table-shape="rect"][data-table-size="4"] .seat[data-seat-number="4"] {
-  left: -32px;
-  bottom: 50%;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  left: -30px;
+  top: 50%;
+  margin-top: -10px;
 }
 
-/* line 97, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 .table {
   background: #d5d5d5;
   border: 4px solid #888888;
@@ -1986,7 +1986,7 @@ a {
   transition: transform 0.4s ease-in-out;
 }
 
-/* line 103, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 .table-number {
   cursor: move;
   position: absolute;
@@ -2003,7 +2003,7 @@ a {
   color: #6f6f6f;
 }
 
-/* line 119, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -2018,41 +2018,40 @@ a {
   text-align: center;
   font-size: 20px;
 }
-/* line 127, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .table-controls .rotate-table {
   display: inline-block;
   width: 25%;
 }
-/* line 130, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 132, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 138, ../scss/main.scss */
+/* line 154, ../scss/main.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 140, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 150, ../scss/main.scss */
+/* line 166, ../scss/main.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 155, ../scss/main.scss */
+/* line 171, ../scss/main.scss */
 .seat {
-  width: 24px;
   position: absolute;
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -2060,30 +2059,28 @@ a {
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 159, ../scss/main.scss */
+/* line 174, ../scss/main.scss */
 .seat a {
   cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
-  content: "";
-  border-bottom: 12px solid #d5d5d5;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  height: 0;
-  width: 24px;
+  content: "fdsdf";
+  width: 20px;
+  height: 20px;
+  background: #d5d5d5;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 171, ../scss/main.scss */
+/* line 185, ../scss/main.scss */
 .seat a:hover {
-  border-bottom-color: #888888;
+  background: #888888;
 }
 
-/* line 177, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -2095,11 +2092,11 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 198, ../scss/main.scss */
 #edit-seat {
   width: 245px;
 }
-/* line 186, ../scss/main.scss */
+/* line 200, ../scss/main.scss */
 #edit-seat select {
   width: 190px;
 }
