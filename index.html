@@ -33,14 +33,14 @@
 
 
     <div id="wrap" ng-controller="AppCtrl">
-        <h1>Find Your Seat</h1>
+        <h1 id="logo" class="sprite-logo">Find Your Seat</h1>
         <nav id="nav-app">
             <ul class="tabs two">
                 <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
                 <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
             </ul>
         </nav>
-        <div ng-view></div>
+        <div id="main" ng-view></div>
     </div>
 
     <script src="js/lib/jquery-1.7.2.min.js"></script>

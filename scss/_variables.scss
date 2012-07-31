@@ -9,6 +9,23 @@ $grey-dark: darken($grey, 5%);
 $grey-darker: darken($grey, 10%);
 
 
+$tan: #edd4a8;
+$tan-light: lighten($tan, 14%);
+
+$purple: #5c565e;
+$purple-light: lighten($purple, 40%);
+$purple-lighter: lighten($purple, 60%);
+
+$skin: #ba8a70;
+$orange: #d4c472;
+$fadedGreen: #718f85;
+
+$grey-80: fade-out(black, 0.2);
+$grey-60: fade-out(black, 0.4);
+$grey-40: fade-out(black, 0.6);
+$grey-20: fade-out(black, 0.8);
+
+
 /*
 // Table sizes
 */

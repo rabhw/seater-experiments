@@ -1,7 +1,17 @@
-<div id="canvas" droppable>
-    <div id="objects">
-        objects panel here
+<div class="container">
+    <div id="objects" droppable palette>
+        <a href="#" class="pull-tab">Objects ▼</a>
+        <div draggable class="table-wrap" data-table-shape="rect">
+                <div class="table-number">Size: 4</div>
+                <div class="table"></div><!-- .table -->
+        </div>
+        <div draggable class="table-wrap" data-table-shape="circle">
+                <div class="table-number">Size: 4</div>
+                <div class="table"></div><!-- .table -->
+        </div>
     </div>
+</div>
+<div id="canvas" class="container" droppable>
     <div draggable ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">

@@ -42,6 +42,22 @@ angular.module('seater.directives', [])
         element.resizable();
       }
     };
+}).directive('palette',function(){
+    return{
+      restrict:'A',
+      link:function(scope,element,attrs){
+        var height = element.outerHeight();
+        var pullTab = element.find('.pull-tab');
+        element.css({ 'top': '-'+height+'px' }); // hide by default
+        pullTab.toggle(
+          function() {
+              element.animate({ 'top': '0' });
+          },
+          function() {
+              element.animate({ 'top': '-'+height+'px'});
+          });
+      }
+    };
 }).directive('editSeat',function(){
     return{
       restrict:'E',

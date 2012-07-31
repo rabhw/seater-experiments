@@ -1,5 +1,11 @@
 * {
-	box-sizing: border-box;
+	// box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+	@include pie-clearfix;
 }
 
 %circle {
@@ -7,31 +13,30 @@
 }
 
 nav {
-	@include pie-clearfix();
+	@include pie-clearfix;
 }
 
 .tabs {
 	li {
 		float: left;
-			a {
-				border-right: 1px solid $grey;
-				display: block;
-				text-align: center;
-				padding: $global-padding/2;
-				background: $grey;
+		a {
+			border-right: 1px solid $purple;
+			display: block;
+			text-align: center;
+			padding: $global-padding/2;
+			background: $purple-light;
+			color: $purple;
+			&.active {
+				background: $purple;
 				color: white;
-				&.active {
-					background: $grey-light;
-					color: $grey;
 			}
-
-			&:first-child a {
-				@include border-top-left-radius;
-			}
-			&:last-child a {
-				@include border-top-right-radius;
-				border-right: none;
-			}
+		}
+		&:first-child a {
+			@include border-top-left-radius;
+		}
+		&:last-child a {
+			@include border-top-right-radius;
+			border-right: none;
 		}
 	}
 	&.two {

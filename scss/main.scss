@@ -5,12 +5,36 @@ body {
 	font-size: 14px;
 	line-height: 1.5;
 	color: $grey;
-	background: $grey-lighter;
+	background: $tan-light;
+	&:before {
+		content: "";
+		position: fixed;
+		top: -10px;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		@include box-shadow(0 0 10px $grey-40);
+		z-index: 100;
+	}
+	&:after {
+		content: "";
+		position: fixed;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		@include box-shadow(0 0 10px $grey-40);
+		z-index: 100;
+	}
 }
 
 a {
 	text-decoration: none;
 	color: $grey;
+}
+
+#logo {
+	text-indent: -9999em;
 }
 
 #wrap {
@@ -21,22 +45,49 @@ a {
 	position: relative;
 }
 
-#canvas {
-	width: 100%;
-	border: 2px solid $grey-light;
+#main {
 	background: white;
+	@include border-bottom-radius;
+	border: 1px solid $grey-light;
+	border-top: none;
+	overflow: hidden;
+}
+
+#canvas {
 	height: 600px;
 	position: relative;
-	@include border-bottom-radius;
 	overflow: auto;
 }
 
 
 #objects {
-	background: darkGray;
+	background: $grey-lighter;
+	border-bottom: 1px solid $grey-light;
 	position: absolute;
 	z-index: 999;
-	width: 100%;
+	padding: 20px;
+	left: 0;
+	right: 0;
+	@include box-shadow(0 20px 20px -20px $grey-60);
+	@include border-bottom-radius($border-radius-small);
+	.table-wrap {
+		position: relative;
+		float: left;
+		margin-right: 2%;
+	}
+	.pull-tab {
+		text-align: center;
+		width: 100px;
+		height: 45px;
+		line-height: 40px;
+		position: absolute;
+		background: $orange;
+		color: white;
+		left: 25%;
+		bottom: -46px;
+		margin-left: -50px;
+		@include border-bottom-radius;
+	}
 }
 
 
