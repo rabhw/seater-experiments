@@ -50,7 +50,7 @@ angular.module('seater.directives', [])
         var windowHeight = $(window).outerHeight(),
             headerHeight = $('header').outerHeight(),
             footerHeight = $('footer').outerHeight(),
-            canvasHeight = (windowHeight - headerHeight - footerHeight)*0.95;
+            canvasHeight = (windowHeight - headerHeight - footerHeight)*0.98;
 
         element.css({'height' : canvasHeight+'px'});
 
@@ -60,7 +60,7 @@ angular.module('seater.directives', [])
 
         function setCanvasHeight() {
           windowHeight = $(window).outerHeight();
-          canvasHeight = (windowHeight - headerHeight - footerHeight)*0.95;
+          canvasHeight = (windowHeight - headerHeight - footerHeight)*0.98;
           element.css({'height' : canvasHeight+'px'})
         }
 
