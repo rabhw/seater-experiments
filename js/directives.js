@@ -42,6 +42,31 @@ angular.module('seater.directives', [])
         element.resizable();
       }
     };
+}).directive('canvas',function(){
+    return{
+      restrict:'A',
+      link:function(scope,element,attrs){
+
+        var windowHeight = $(window).outerHeight(),
+            headerHeight = $('header').outerHeight(),
+            footerHeight = $('footer').outerHeight(),
+            canvasHeight = (windowHeight - headerHeight - footerHeight)*0.95;
+
+        element.css({'height' : canvasHeight+'px'});
+
+        $(window).resize(function() {
+          setCanvasHeight();
+        });
+
+        function setCanvasHeight() {
+          windowHeight = $(window).outerHeight();
+          canvasHeight = (windowHeight - headerHeight - footerHeight)*0.95;
+          element.css({'height' : canvasHeight+'px'})
+        }
+
+        
+      }
+    };
 }).directive('palette',function(){
     return{
       restrict:'A',

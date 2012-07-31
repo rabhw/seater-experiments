@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" ng-app="seater">
 <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
 
     <!-- Use the .htaccess and remove these lines to avoid edge case issues.
@@ -33,14 +34,17 @@
 
 
     <div id="wrap" ng-controller="AppCtrl">
-        <h1 id="logo" class="sprite-logo">Find Your Seat</h1>
-        <nav id="nav-app">
-            <ul class="tabs two">
-                <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
-                <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
-            </ul>
-        </nav>
+        <header>
+            <h1 id="logo" class="sprite-logo">Find Your Seat</h1>
+            <nav id="nav-app">
+                <ul class="tabs two">
+                    <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
+                    <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
+                </ul>
+            </nav>
+        </header>
         <div id="main" ng-view></div>
+        <footer>&copy; 2012 Find Your Seat</footer>
     </div>
 
     <script src="js/lib/jquery-1.7.2.min.js"></script>

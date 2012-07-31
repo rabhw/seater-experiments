@@ -17,8 +17,13 @@ $purple-light: lighten($purple, 40%);
 $purple-lighter: lighten($purple, 60%);
 
 $skin: #ba8a70;
+
 $orange: #d4c472;
+$orange-dark: darken($orange, 15%);
+
 $fadedGreen: #718f85;
+$negative: #f56966;
+$negative-dark: darken($negative, 15%);
 
 $grey-80: fade-out(black, 0.2);
 $grey-60: fade-out(black, 0.4);

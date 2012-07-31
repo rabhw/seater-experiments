@@ -1,10 +1,6 @@
 @import "base";
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: $grey;
 	background: $tan-light;
 	&:before {
 		content: "";
@@ -35,14 +31,19 @@ a {
 
 #logo {
 	text-indent: -9999em;
+	margin-left: $global-padding;
 }
 
 #wrap {
 	max-width: 1650px;
 	min-width: 940px;
-	padding: 0 20px;
-	margin: 40px auto;
+	padding: 0 $global-padding/2;
+	margin: 0 auto;
 	position: relative;
+}
+
+header {
+	padding-top: 40px;
 }
 
 #main {
@@ -59,32 +60,37 @@ a {
 	overflow: auto;
 }
 
+#nav-app {
+	font-size: 16px;
+}
+
 
 #objects {
 	background: $grey-lighter;
 	border-bottom: 1px solid $grey-light;
 	position: absolute;
 	z-index: 999;
-	padding: 20px;
+	padding: $global-padding;
 	left: 0;
 	right: 0;
 	@include box-shadow(0 20px 20px -20px $grey-60);
 	@include border-bottom-radius($border-radius-small);
+	@include opacity(0.95);
 	.table-wrap {
 		position: relative;
 		float: left;
 		margin-right: 2%;
 	}
 	.pull-tab {
-		text-align: center;
+		@extend .button;
+		padding: 0;
+		line-height: 40px;
+		border-top: none;
 		width: 100px;
 		height: 45px;
-		line-height: 40px;
 		position: absolute;
-		background: $orange;
-		color: white;
 		left: 25%;
-		bottom: -46px;
+		bottom: -47px;
 		margin-left: -50px;
 		@include border-bottom-radius;
 	}
@@ -98,9 +104,19 @@ input[type=text], textarea {
 	border: 1px solid $grey-light;
 }
 
+button {
+	@extend .button;
+}
+
 #edit-seat {
-	width: 245px;
 	select {
 		width: 190px;
 	}
+	.actions {
+		padding-top: 4px;
+	}
+}
+
+footer {
+	padding: $global-padding/2;
 }

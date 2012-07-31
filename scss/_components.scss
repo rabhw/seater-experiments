@@ -1,0 +1,16 @@
+.button {
+	font-weight: 900;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: 1px solid $orange-dark;
+	background: $orange;
+	color: white;
+	text-align: center;
+	@include text-shadow(0 1px 0 $grey-80);
+	@include border-radius($border-radius-small);
+}
+
+.negative {
+	background: $negative;
+	border: 1px solid $negative-dark;
+}

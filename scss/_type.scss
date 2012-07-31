@@ -1,10 +1,38 @@
+/*
+//	Font Import
+*/
+
+body {
+	font-size: 14px;
+	line-height: 1.5;
+	color: $purple;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
 h1, .alpha {
 	font-size: 2em;
 	margin-bottom: 0.75em;
 }
 
 h2, .beta {
+	font-size: 1.571em;
+	margin-bottom: 0.75em;
+}
 
+.section-head {
+	line-height: 1;
+	margin-bottom: 0.786em;
+	padding-bottom: 0.75em;
+	border-bottom: 1px solid $grey-light;
+}
+
+.hint {
+	display: inline-block;
+	padding-left: 20px;
+	font-size: 0.636em;
+	color: $grey;
+	font-weight: 300;
 }
 
 h3, .gamma {

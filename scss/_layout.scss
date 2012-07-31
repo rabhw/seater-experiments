@@ -17,6 +17,8 @@ nav {
 }
 
 .tabs {
+	@include pie-clearfix;
+	border-bottom: 1px solid $grey-40;
 	li {
 		float: left;
 		a {
@@ -25,10 +27,11 @@ nav {
 			text-align: center;
 			padding: $global-padding/2;
 			background: $purple-light;
-			color: $purple;
+			color: $purple;			
 			&.active {
 				background: $purple;
 				color: white;
+				@include text-shadow( 0 -1px 0 $grey-80, 0 1px 0 rgba(255, 255, 255, 0.4) );
 			}
 		}
 		&:first-child a {
