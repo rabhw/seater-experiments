@@ -1980,9 +1980,10 @@ a {
   min-width: 940px;
   padding: 0 20px;
   margin: 40px auto;
+  position: relative;
 }
 
-/* line 23, ../scss/main.scss */
+/* line 24, ../scss/main.scss */
 #canvas {
   width: 100%;
   border: 2px solid #d5d5d5;
@@ -1998,7 +1999,15 @@ a {
   overflow: auto;
 }
 
-/* line 33, ../scss/main.scss */
+/* line 35, ../scss/main.scss */
+#objects {
+  background: darkGray;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+
+/* line 43, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -2010,11 +2019,11 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 40, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 #edit-seat {
   width: 245px;
 }
-/* line 42, ../scss/main.scss */
+/* line 52, ../scss/main.scss */
 #edit-seat select {
   width: 190px;
 }

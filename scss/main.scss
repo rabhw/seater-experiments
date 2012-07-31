@@ -18,6 +18,7 @@ a {
 	min-width: 940px;
 	padding: 0 20px;
 	margin: 40px auto;
+	position: relative;
 }
 
 #canvas {
@@ -29,6 +30,15 @@ a {
 	@include border-bottom-radius;
 	overflow: auto;
 }
+
+
+#objects {
+	background: darkGray;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+}
+
 
 input[type=text], textarea {
 	width: 100%;

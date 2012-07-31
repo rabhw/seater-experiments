@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-function AppCtrl($scope, $routeParams) {
-
+function AppCtrl($scope, $routeParams, $location) {
+	$scope.location = $location;
 }
 
 

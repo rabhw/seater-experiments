@@ -36,8 +36,8 @@
         <h1>Find Your Seat</h1>
         <nav id="nav-app">
             <ul class="tabs two">
-                <li><a href="#/plan">Seating Plan</a></li>
-                <li><a href="#/guests">Manage Guests</a></li>
+                <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
+                <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
             </ul>
         </nav>
         <div ng-view></div>
