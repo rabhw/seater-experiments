@@ -3,12 +3,27 @@
 /* Directives */
 
 
-angular.module('seater.directives', []).directive('draggable', function() {
+angular.module('seater.directives', [])
+.directive('droppable',function(){
     return {
+      controller: function($scope, $element) {
+
+      },
+      restrict:'A',
+      link:function(scope,element,attrs,controller){
+        element.droppable({
+          drop:function(event,ui){
+
+          }
+        });
+      }
+    };
+}).directive('draggable', function() {
+    return {
+        require: '^droppable',
         restrict:'A',
-        link:function(scope,element,attrs){
+        link:function(scope,element,attrs, controller){
            element.draggable({
-              containment: "parent",
               stack: ".table-wrap",
               start : function(event, ui) {
                 $('.ui-tooltip').fadeOut('fast');
@@ -20,23 +35,10 @@ angular.module('seater.directives', []).directive('draggable', function() {
            });
         }
     };
-}).directive('droppable',function(){
-    return{
-      restrict:'A',
-      link:function(scope,element,attrs){
-        element.droppable({
-          drop:function(event,ui){
-            // do stuff when dropped (store position / convert values to %)
-            
-          }
-        });
-      }
-    };
 }).directive('resizable',function(){
     return{
       restrict:'A',
       link:function(scope,element,attrs){
-        console.log('got it');
         element.resizable();
       }
     };
@@ -45,7 +47,7 @@ angular.module('seater.directives', []).directive('draggable', function() {
       restrict:'E',
       templateUrl: 'views/edit-seat.html',
       replace: true,
-      controller: function editSeatCtrl($scope, $element, planService) {
+      controller: function($scope, $element, planService) {
         $scope.saveSeat = function() {
           planService.saveSeat($scope.editTable, $scope.editSeat, $scope.editGuest);
           $($element).parents('.ui-tooltip').fadeOut('fast');
