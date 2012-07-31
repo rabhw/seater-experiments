@@ -2136,7 +2136,7 @@ header {
   background: #f3f3f3;
   border-bottom: 1px solid #d5d5d5;
   position: absolute;
-  z-index: 999;
+  z-index: 20000;
   padding: 40px;
   left: 0;
   right: 0;
