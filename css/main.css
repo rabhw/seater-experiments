@@ -2145,7 +2145,7 @@ disabled look for already selected choices in the results dropdown
 
 /* line 3, ../scss/main.scss */
 body {
-  background: #f9f1e3;
+  background: #f9f1e3 url('../img/bg.png?1343925943');
 }
 /* line 5, ../scss/main.scss */
 body:before {

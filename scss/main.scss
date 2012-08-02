@@ -1,7 +1,7 @@
 @import "base";
 
 body {
-	background: $tan-light;
+	@include background($tan-light image-url('bg.png'));
 	&:before {
 		content: "";
 		position: fixed;
