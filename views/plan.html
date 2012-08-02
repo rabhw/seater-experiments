@@ -1,6 +1,6 @@
 <div class="container">
-    <div id="objects" droppable>
-        <a class="pull-tab" ng-click="togglePalette()">+ Add an object</a>
+    <div id="objects" ng-class="{show: showPalette}" droppable>
+        <a class="pull-tab" ng-click="showPalette=!showPalette">+ Add an object</a>
         <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas below</span></h2>
         <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
                 <div class="table-number">Circular</div>
@@ -27,5 +27,22 @@
     </div><!-- .table-wrap -->
 
     <edit-seat></edit-seat>
+
+
+
+    <div id="myModal" class="fade" ui-modal ng-model="createTable">
+        <div class="modal-header">
+            <a data-dismiss="modal" class="close">×</a>
+            <h2 class="section-head">Add a table<span class="hint">If you're not sure about an option, you can always edit it later!</span></h2>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+          </div>
+          <div class="modal-footer">
+            <button class="negative" data-dismiss="modal">Close</button>
+            <button data-dismiss="modal">Create table</button>
+          </div>
+    </div>
+    <a ng-click="createTable=true">Open 1</a>
 
 </div><!-- #canvas -->

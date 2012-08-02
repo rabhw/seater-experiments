@@ -1,0 +1,85 @@
+// MODALS
+// ------
+
+// Background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30000;
+  background-color: white;
+  // Fade for backdrop
+  &.fade { @include opacity(0); }
+}
+
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  @include opacity(0.75);
+}
+
+// Base modal
+.modal {
+  display: block !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 40000;
+  overflow: auto;
+  width: 708px;
+  margin: -250px 0 0 -354px;
+  background-color: white;
+  border: 1px solid $grey-20;
+  @include border-radius;
+  @include background-clip(padding-box);
+  @include box-shadow(0 0 40px $grey-20);
+
+  &.fade {
+    @include opacity(0);
+    @include transition(opacity $default-transition-duration $default-transition-function, top $default-transition-duration $default-transition-function);
+    top: -25%;
+  }
+  &.fade.in {
+    @include opacity(1);
+    top: 50%;
+  }
+
+}
+.modal-header {
+  padding: 20px 20px 0 20px;
+  // Close icon
+  .close { float: right; margin-top: 2px; }
+}
+
+// Body (where all modal content resides)
+.modal-body {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 0 20px 20px 20px;
+}
+// Remove bottom margin if need be
+.modal-form {
+  margin-bottom: 0;
+}
+
+// Footer (for actions)
+.modal-footer {
+  padding: 20px;
+  margin-bottom: 0;
+  text-align: right; // right align buttons
+  background-color: $grey-lighter;
+  border-top: 1px solid $grey-light;
+  @include border-bottom-radius;
+  @include pie-clearfix;
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+}

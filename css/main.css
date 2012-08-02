@@ -2048,6 +2048,124 @@ disabled look for already selected choices in the results dropdown
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
+/* line 5, ../scss/_modal.scss */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30000;
+  background-color: white;
+}
+/* line 14, ../scss/_modal.scss */
+.modal-backdrop.fade {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 18, ../scss/_modal.scss */
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+
+/* line 23, ../scss/_modal.scss */
+.modal {
+  display: block !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 40000;
+  overflow: auto;
+  width: 708px;
+  margin: -250px 0 0 -354px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+/* line 38, ../scss/_modal.scss */
+.modal.fade {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+  top: -25%;
+}
+/* line 43, ../scss/_modal.scss */
+.modal.fade.in {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  top: 50%;
+}
+
+/* line 49, ../scss/_modal.scss */
+.modal-header {
+  padding: 20px 20px 0 20px;
+}
+/* line 52, ../scss/_modal.scss */
+.modal-header .close {
+  float: right;
+  margin-top: 2px;
+}
+
+/* line 56, ../scss/_modal.scss */
+.modal-body {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 0 20px 20px 20px;
+}
+
+/* line 62, ../scss/_modal.scss */
+.modal-form {
+  margin-bottom: 0;
+}
+
+/* line 67, ../scss/_modal.scss */
+.modal-footer {
+  padding: 20px;
+  margin-bottom: 0;
+  text-align: right;
+  background-color: #f3f3f3;
+  border-top: 1px solid #d5d5d5;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  *zoom: 1;
+}
+/* line 38, ../../../apps/Ruby/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.modal-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 77, ../scss/_modal.scss */
+.modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+/* line 82, ../scss/_modal.scss */
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
 /* line 3, ../scss/main.scss */
 body {
   background: #f9f1e3;

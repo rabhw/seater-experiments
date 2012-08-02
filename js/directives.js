@@ -41,11 +41,12 @@ angular.module('seater.directives', [])
             element.draggable( "option", "helper", "clone" );
             element.draggable( "option", "zIndex", 40000 );
             element.draggable( "option", "start", function(event, ui) {
-              $(event.target).css({'z-index' : '4534543534543'});
-              $scope.togglePalette();
+              $scope.showPalette = false;
+              $scope.$apply();
             });
             element.draggable( "option", "stop", function(event, ui) {
-
+              $scope.createTable = true;
+              $scope.$apply();
             });
           }
 
