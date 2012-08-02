@@ -47,8 +47,9 @@ $global-padding: 40px;
 // Transitions
 */
 $default-transition-function: ease-in-out;
-$default-transition-duration: 0.4s;
-$transition-fast: 0.1s;
+$default-transition-duration: 0.5s;
+$transition-fast: 0.25s;
+$transition-medium: 0.75s;
 $transition-slow: 1s;
 
 /*

@@ -9,6 +9,7 @@ angular.module('seater.directives', [])
       restrict:'A',
       link:function($scope,element,attrs){
         element.droppable({
+          tolerance: 'fit',
           drop:function(event,ui){
 
           }
@@ -21,6 +22,7 @@ angular.module('seater.directives', [])
         link:function($scope,element,attrs){
            element.draggable({
               containment: $('#canvas'),
+              grid: [50, 20],
               revert: 'invalid',
               appendTo: $('#canvas'),
               stack: ".table-wrap",
@@ -95,6 +97,7 @@ angular.module('seater.directives', [])
     return{
       restrict:'E',
       templateUrl: 'views/edit-seat.html',
+      transclude: true,
       replace: true,
       controller: function($scope, $element, planService) {
         $scope.saveSeat = function() {

@@ -13,6 +13,7 @@
     </div>
 </div>
 <div id="canvas" class="container" droppable canvas>
+    <!-- <a ng-click="createTable=true">Open 1</a> -->
     <div draggable ng-repeat="table in plans.tables" class="table-wrap" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.number}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
@@ -30,19 +31,20 @@
 
 
 
-    <div id="myModal" class="fade" ui-modal ng-model="createTable">
+    <div id="myModal" ui-modal ng-model="createTable">
         <div class="modal-header">
             <a data-dismiss="modal" class="close">×</a>
             <h2 class="section-head">Add a table<span class="hint">If you're not sure about an option, you can always edit it later!</span></h2>
         </div>
         <div class="modal-body">
-            <p>One fine body…</p>
-          </div>
-          <div class="modal-footer">
-            <button class="negative" data-dismiss="modal">Close</button>
-            <button data-dismiss="modal">Create table</button>
-          </div>
+            <ul>
+                <li ng-repeat="guest in guests">{{guest.text}}</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a class="button negative" data-dismiss="modal">Cancel</a>
+            <a class="button" data-dismiss="modal">Create table</a>
+        </div>
     </div>
-    <a ng-click="createTable=true">Open 1</a>
 
 </div><!-- #canvas -->

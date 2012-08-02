@@ -4,7 +4,7 @@
 	  <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
 	</select>
 	<div class="actions">
-		<button class="negative" ng-click="saveSeat()">Cancel</button>
-		<button ng-click="saveSeat()">Save</button>
+		<a class="button negative" ng-click="saveSeat()">Cancel</a>
+		<a class="button" ng-click="saveSeat()">Save</a>
 	</div>
 </div>

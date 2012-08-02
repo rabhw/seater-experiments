@@ -10,8 +10,6 @@
   left: 0;
   z-index: 30000;
   background-color: white;
-  // Fade for backdrop
-  &.fade { @include opacity(0); }
 }
 
 .modal-backdrop,
@@ -21,9 +19,8 @@
 
 // Base modal
 .modal {
-  display: block !important;
   position: fixed;
-  top: 50%;
+  top: -25%;
   left: 50%;
   z-index: 40000;
   overflow: auto;
@@ -35,14 +32,8 @@
   @include background-clip(padding-box);
   @include box-shadow(0 0 40px $grey-20);
 
-  &.fade {
-    @include opacity(0);
-    @include transition(opacity $default-transition-duration $default-transition-function, top $default-transition-duration $default-transition-function);
-    top: -25%;
-  }
-  &.fade.in {
-    @include opacity(1);
-    top: 50%;
+  &.in {
+    top: 45%;
   }
 
 }

@@ -3,6 +3,7 @@
 /* Controllers */
 
 function AppCtrl($scope, $routeParams, $location) {
+	$scope.createTable = false;
 	$scope.location = $location;
 }
 
@@ -41,12 +42,13 @@ function PlanCtrl($scope, $routeParams, planService) {
 
 		var currRot = parseInt(table.rotate), newRot;
 
+		// Clockwise
 		if (dir === "cw") {
 			newRot = currRot+=45;
 			newRot = newRot+'deg';
 			table.rotate = newRot;
 		}
-
+		// Counter-Clockwise
 		else {
 			newRot = currRot-=45;
 			newRot = newRot+'deg';

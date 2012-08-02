@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-size: 14px;
   line-height: 1.5;
-  color: #5c565e;
+  color: #555;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
 }
@@ -192,11 +192,6 @@ nav:after {
   z-index: 9999;
 }
 
-/* line 62, ../scss/_layout.scss */
-.hide {
-  display: none;
-}
-
 /* line 44, sprite/*.png */
 .sprite-sprite, .sprite-logo {
   background: url('../img/sprite-saa0f77a72f.png') no-repeat;
@@ -213,11 +208,11 @@ nav:after {
 .table-wrap {
   position: absolute;
   cursor: move;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out;
-  -moz-transition: -moz-transform 0.1s ease-in-out;
-  -ms-transition: -ms-transform 0.1s ease-in-out;
-  -o-transition: -o-transform 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  -moz-transition: -moz-transform 0.25s ease-in-out;
+  -ms-transition: -ms-transform 0.25s ease-in-out;
+  -o-transition: -o-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 /* line 7, ../scss/_tables.scss */
 .table-wrap.ui-draggable-dragging {
@@ -723,11 +718,11 @@ nav:after {
 .table {
   background: #c1bdc3;
   border: 4px solid #5c565e;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  -moz-transition: -moz-transform 0.4s ease-in-out;
-  -ms-transition: -ms-transform 0.4s ease-in-out;
-  -o-transition: -o-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -ms-transition: -ms-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -756,11 +751,11 @@ nav:after {
 .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 100%;
   position: absolute;
   bottom: -70px;
@@ -832,6 +827,7 @@ nav:after {
 
 /* line 1, ../scss/_components.scss */
 .button, #objects .pull-tab, button {
+  font-size: 1em;
   font-weight: 900;
   cursor: pointer;
   padding: 5px 10px;
@@ -847,7 +843,7 @@ nav:after {
   border-radius: 2px;
 }
 
-/* line 13, ../scss/_components.scss */
+/* line 14, ../scss/_components.scss */
 .negative {
   background: #f56966;
   border: 1px solid #f0231e;
@@ -2058,24 +2054,18 @@ disabled look for already selected choices in the results dropdown
   z-index: 30000;
   background-color: white;
 }
-/* line 14, ../scss/_modal.scss */
-.modal-backdrop.fade {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-}
 
-/* line 18, ../scss/_modal.scss */
+/* line 16, ../scss/_modal.scss */
 .modal-backdrop,
 .modal-backdrop.fade.in {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75;
 }
 
-/* line 23, ../scss/_modal.scss */
+/* line 21, ../scss/_modal.scss */
 .modal {
-  display: block !important;
   position: fixed;
-  top: 50%;
+  top: -25%;
   left: 50%;
   z-index: 40000;
   overflow: auto;
@@ -2095,47 +2085,34 @@ disabled look for already selected choices in the results dropdown
   -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
-/* line 38, ../scss/_modal.scss */
-.modal.fade {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
-  -moz-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
-  -ms-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
-  top: -25%;
-}
-/* line 43, ../scss/_modal.scss */
-.modal.fade.in {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-  top: 50%;
+/* line 35, ../scss/_modal.scss */
+.modal.in {
+  top: 45%;
 }
 
-/* line 49, ../scss/_modal.scss */
+/* line 40, ../scss/_modal.scss */
 .modal-header {
   padding: 20px 20px 0 20px;
 }
-/* line 52, ../scss/_modal.scss */
+/* line 43, ../scss/_modal.scss */
 .modal-header .close {
   float: right;
   margin-top: 2px;
 }
 
-/* line 56, ../scss/_modal.scss */
+/* line 47, ../scss/_modal.scss */
 .modal-body {
   overflow-y: auto;
   max-height: 400px;
   padding: 0 20px 20px 20px;
 }
 
-/* line 62, ../scss/_modal.scss */
+/* line 53, ../scss/_modal.scss */
 .modal-form {
   margin-bottom: 0;
 }
 
-/* line 67, ../scss/_modal.scss */
+/* line 58, ../scss/_modal.scss */
 .modal-footer {
   padding: 20px;
   margin-bottom: 0;
@@ -2156,12 +2133,12 @@ disabled look for already selected choices in the results dropdown
   display: table;
   clear: both;
 }
-/* line 77, ../scss/_modal.scss */
+/* line 68, ../scss/_modal.scss */
 .modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
 }
-/* line 82, ../scss/_modal.scss */
+/* line 73, ../scss/_modal.scss */
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
@@ -2251,11 +2228,11 @@ header {
 
 /* line 68, ../scss/main.scss */
 #objects {
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   height: 155px;
   background: #f3f3f3;
   border-bottom: 1px solid #d5d5d5;
