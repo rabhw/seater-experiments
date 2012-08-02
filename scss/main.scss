@@ -66,16 +66,22 @@ header {
 
 
 #objects {
+	@include transition;
+	height: 155px;
 	background: $grey-lighter;
 	border-bottom: 1px solid $grey-light;
 	position: absolute;
 	z-index: 20000;
 	padding: $global-padding;
+	top: -236px; // hide by default
 	left: 0;
 	right: 0;
 	@include box-shadow(0 20px 20px -20px $grey-60);
 	@include border-bottom-radius($border-radius-small);
 	@include opacity(0.95);
+	&.show {
+		top: 0px; // height + padding
+	}
 	.table-wrap {
 		position: relative;
 		float: left;
@@ -86,12 +92,12 @@ header {
 		padding: 0;
 		line-height: 40px;
 		border-top: none;
-		width: 100px;
+		width: 140px;
 		height: 45px;
 		position: absolute;
 		left: 25%;
 		bottom: -47px;
-		margin-left: -50px;
+		margin-left: -70px;
 		@include border-bottom-radius;
 	}
 }

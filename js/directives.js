@@ -6,11 +6,8 @@
 angular.module('seater.directives', [])
 .directive('droppable',function(){
     return {
-      controller: function($scope, $element) {
-
-      },
       restrict:'A',
-      link:function(scope,element,attrs,controller){
+      link:function($scope,element,attrs){
         element.droppable({
           drop:function(event,ui){
 
@@ -20,32 +17,51 @@ angular.module('seater.directives', [])
     };
 }).directive('draggable', function() {
     return {
-        require: '^droppable',
         restrict:'A',
-        link:function(scope,element,attrs, controller){
+        link:function($scope,element,attrs){
            element.draggable({
+              containment: $('#canvas'),
+              revert: 'invalid',
+              appendTo: $('#canvas'),
               stack: ".table-wrap",
               start : function(event, ui) {
                 $('.ui-tooltip').fadeOut('fast');
               },
               stop : function(event, ui) {
-                scope.table.xPos = event.target.offsetLeft+'px';
-                scope.table.yPos = event.target.offsetTop+'px';
+
+                $scope.table.xPos = event.target.offsetLeft+'px';
+                $scope.table.yPos = event.target.offsetTop+'px';
+
               }
            });
+
+
+          // Generator case (If dragged from objects panel);
+          if (attrs.generator) {
+            element.draggable( "option", "helper", "clone" );
+            element.draggable( "option", "zIndex", 40000 );
+            element.draggable( "option", "start", function(event, ui) {
+              $(event.target).css({'z-index' : '4534543534543'});
+              $scope.togglePalette();
+            });
+            element.draggable( "option", "stop", function(event, ui) {
+
+            });
+          }
+
         }
     };
 }).directive('resizable',function(){
     return{
       restrict:'A',
-      link:function(scope,element,attrs){
+      link:function($scope,element,attrs){
         element.resizable();
       }
     };
 }).directive('canvas',function(){
     return{
       restrict:'A',
-      link:function(scope,element,attrs){
+      link:function($scope,element,attrs){
 
         var windowHeight = $(window).outerHeight(),
             headerHeight = $('header').outerHeight(),
@@ -55,6 +71,7 @@ angular.module('seater.directives', [])
         element.css({'height' : canvasHeight+'px'});
 
         $(window).resize(function() {
+          //@TODO : DEBOUNCE
           setCanvasHeight();
         });
 
@@ -70,17 +87,7 @@ angular.module('seater.directives', [])
 }).directive('palette',function(){
     return{
       restrict:'A',
-      link:function(scope,element,attrs){
-        var height = element.outerHeight();
-        var pullTab = element.find('.pull-tab');
-        element.css({ 'top': '-'+height+'px' }); // hide by default
-        pullTab.toggle(
-          function() {
-              element.animate({ 'top': '0' });
-          },
-          function() {
-              element.animate({ 'top': '-'+height+'px'});
-          });
+      link:function($scope,element,attrs){
       }
     };
 }).directive('editSeat',function(){
@@ -108,7 +115,7 @@ angular.module('seater.directives', [])
           hide: false
         }).hide();
 
-        return function postLink(scope, iElement, iAttrs) {
+        return function postLink($scope, iElement, iAttrs) {
 
           var api = tElement.qtip('api');
           $('.seat a').live('click', function(e) {

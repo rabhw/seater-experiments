@@ -9,6 +9,12 @@ function AppCtrl($scope, $routeParams, $location) {
 
 function PlanCtrl($scope, $routeParams, planService) {
 
+	$scope.togglePalette = function() {
+		$('#objects').toggleClass('show');
+	}
+
+	$scope.table = '';
+
 	$scope.plans = planService.all();
 	$scope.guests = planService.guests();
 
