@@ -1,6 +1,11 @@
 @import "base";
 
+html {
+	height: 100%;
+}
+
 body {
+	height: 100%;
 	@include background($tan-light image-url('bg.png'));
 	&:before {
 		content: "";
@@ -35,9 +40,9 @@ a {
 }
 
 #wrap {
-	max-width: 1650px;
+	height: 100%;
 	min-width: 940px;
-	padding: 0 $global-padding/2;
+	padding: 0 $global-padding;
 	margin: 0 auto;
 	position: relative;
 }
@@ -66,39 +71,81 @@ header {
 
 
 #objects {
+	@include opacity(0);
+	overflow: hidden;
+	width: 300px;
 	@include transition;
-	height: 155px;
 	background: $grey-lighter;
-	border-bottom: 1px solid $grey-light;
-	position: absolute;
+	border: 1px solid $grey-light;
+	position: fixed;
 	z-index: 20000;
 	padding: $global-padding;
-	top: -236px; // hide by default
-	left: 0;
-	right: 0;
-	@include box-shadow(0 20px 20px -20px $grey-60);
-	@include border-bottom-radius($border-radius-small);
-	@include opacity(0.95);
+	top: 185px;
+	left: -382px;  // hide by default
+	bottom: 0;
+	@include box-shadow(20px 0 20px -20px $grey-60);
 	&.show {
-		top: 0px; // height + padding
+		@include opacity(1);
+		left: 0px;
 	}
 	.table-wrap {
 		position: relative;
-		float: left;
-		margin-right: 2%;
+		display: inline-block;
 	}
-	.pull-tab {
-		@extend .button;
-		padding: 0;
-		line-height: 40px;
-		border-top: none;
-		width: 140px;
-		height: 45px;
-		position: absolute;
-		left: 25%;
-		bottom: -47px;
-		margin-left: -70px;
-		@include border-bottom-radius;
+
+	// ATTEMPT TO MAKE HEADER FIXED
+	.section-head {
+		padding: 25px 40px;
+		margin: -40px;
+		background: white;
+		@include box-shadow(0 0 15px $grey-20)
+	}
+
+
+	.hint {
+		display: block;
+		padding-left: 0;
+		padding-top: 6px;
+	}
+}
+
+.pull-tab {
+	@extend .button;
+	padding: 0;
+	line-height: 44px;
+	border-top: none;
+	width: 116px;
+	height: 45px;
+	position: fixed;
+	z-index: 20000;
+	top: 205px;
+	left: 0;
+	@include border-left-radius(0);
+	@include border-right-radius;
+	@include transition;
+
+	&.shift {
+		left: 382px;
+	}
+}
+
+#objects-list {
+	width: 100%;
+	position: absolute;
+	top: 93px;
+	bottom: 0;
+	padding-top: 20px;
+	margin-left: -40px;
+	overflow: auto;
+	li {
+		@include pie-clearfix;
+		float: left;
+		text-align: center;
+		width: 47%;
+		margin-bottom: 20px;
+		&:nth-child(2n+1) {
+			clear: left;
+		}
 	}
 }
 

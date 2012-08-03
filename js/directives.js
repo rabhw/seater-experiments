@@ -22,7 +22,6 @@ angular.module('seater.directives', [])
         link:function($scope,element,attrs){
            element.draggable({
               containment: $('#canvas'),
-              grid: [50, 20],
               revert: 'invalid',
               appendTo: $('#canvas'),
               stack: ".table-wrap",
@@ -68,8 +67,7 @@ angular.module('seater.directives', [])
 
         var windowHeight = $(window).outerHeight(),
             headerHeight = $('header').outerHeight(),
-            footerHeight = $('footer').outerHeight(),
-            canvasHeight = (windowHeight - headerHeight - footerHeight)*0.98;
+            canvasHeight = (windowHeight - headerHeight)*0.96;
 
         element.css({'height' : canvasHeight+'px'});
 
@@ -80,7 +78,7 @@ angular.module('seater.directives', [])
 
         function setCanvasHeight() {
           windowHeight = $(window).outerHeight();
-          canvasHeight = (windowHeight - headerHeight - footerHeight)*0.98;
+          canvasHeight = (windowHeight - headerHeight)*0.96;
           element.css({'height' : canvasHeight+'px'})
         }
 

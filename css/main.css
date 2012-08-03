@@ -192,6 +192,30 @@ nav:after {
   z-index: 9999;
 }
 
+/* line 62, ../scss/_layout.scss */
+::-webkit-scrollbar {
+  background: transparent;
+  overflow: visible;
+  width: 10px;
+  height: 10px;
+}
+
+/* line 69, ../scss/_layout.scss */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* line 73, ../scss/_layout.scss */
+::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 8px;
+}
+
+/* line 78, ../scss/_layout.scss */
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
+}
+
 /* line 44, sprite/*.png */
 .sprite-sprite, .sprite-logo {
   background: url('../img/sprite-saa0f77a72f.png') no-repeat;
@@ -208,11 +232,6 @@ nav:after {
 .table-wrap {
   position: absolute;
   cursor: move;
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  -moz-transition: -moz-transform 0.25s ease-in-out;
-  -ms-transition: -ms-transform 0.25s ease-in-out;
-  -o-transition: -o-transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out;
 }
 /* line 7, ../scss/_tables.scss */
 .table-wrap.ui-draggable-dragging {
@@ -826,7 +845,7 @@ nav:after {
 }
 
 /* line 1, ../scss/_components.scss */
-.button, #objects .pull-tab, button {
+.button, .pull-tab, button {
   font-size: 1em;
   font-weight: 900;
   cursor: pointer;
@@ -2064,8 +2083,9 @@ disabled look for already selected choices in the results dropdown
 
 /* line 21, ../scss/_modal.scss */
 .modal {
+  display: none;
   position: fixed;
-  top: -25%;
+  top: 45%;
   left: 50%;
   z-index: 40000;
   overflow: auto;
@@ -2085,34 +2105,34 @@ disabled look for already selected choices in the results dropdown
   -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
-/* line 35, ../scss/_modal.scss */
+/* line 36, ../scss/_modal.scss */
 .modal.in {
-  top: 45%;
+  display: block;
 }
 
-/* line 40, ../scss/_modal.scss */
+/* line 41, ../scss/_modal.scss */
 .modal-header {
   padding: 20px 20px 0 20px;
 }
-/* line 43, ../scss/_modal.scss */
+/* line 44, ../scss/_modal.scss */
 .modal-header .close {
   float: right;
   margin-top: 2px;
 }
 
-/* line 47, ../scss/_modal.scss */
+/* line 48, ../scss/_modal.scss */
 .modal-body {
   overflow-y: auto;
   max-height: 400px;
   padding: 0 20px 20px 20px;
 }
 
-/* line 53, ../scss/_modal.scss */
+/* line 54, ../scss/_modal.scss */
 .modal-form {
   margin-bottom: 0;
 }
 
-/* line 58, ../scss/_modal.scss */
+/* line 59, ../scss/_modal.scss */
 .modal-footer {
   padding: 20px;
   margin-bottom: 0;
@@ -2133,21 +2153,27 @@ disabled look for already selected choices in the results dropdown
   display: table;
   clear: both;
 }
-/* line 68, ../scss/_modal.scss */
+/* line 69, ../scss/_modal.scss */
 .modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
 }
-/* line 73, ../scss/_modal.scss */
+/* line 74, ../scss/_modal.scss */
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
 
 /* line 3, ../scss/main.scss */
-body {
-  background: #f9f1e3 url('../img/bg.png?1343925943');
+html {
+  height: 100%;
 }
-/* line 5, ../scss/main.scss */
+
+/* line 7, ../scss/main.scss */
+body {
+  height: 100%;
+  background: #f1debd url('../img/bg.png?1343925943');
+}
+/* line 10, ../scss/main.scss */
 body:before {
   content: "";
   position: fixed;
@@ -2160,7 +2186,7 @@ body:before {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   z-index: 100;
 }
-/* line 15, ../scss/main.scss */
+/* line 20, ../scss/main.scss */
 body:after {
   content: "";
   position: fixed;
@@ -2174,33 +2200,33 @@ body:after {
   z-index: 100;
 }
 
-/* line 27, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 a {
   text-decoration: none;
   color: #888888;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 #logo {
   text-indent: -9999em;
   margin-left: 40px;
 }
 
-/* line 37, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 #wrap {
-  max-width: 1650px;
+  height: 100%;
   min-width: 940px;
-  padding: 0 20px;
+  padding: 0 40px;
   margin: 0 auto;
   position: relative;
 }
 
-/* line 45, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 header {
   padding-top: 40px;
 }
 
-/* line 49, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 #main {
   background: white;
   -moz-border-radius-bottomleft: 4px;
@@ -2214,76 +2240,132 @@ header {
   overflow: hidden;
 }
 
-/* line 57, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 #canvas {
   height: 600px;
   position: relative;
   overflow: auto;
 }
 
-/* line 63, ../scss/main.scss */
+/* line 68, ../scss/main.scss */
 #nav-app {
   font-size: 16px;
 }
 
-/* line 68, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 #objects {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  overflow: hidden;
+  width: 300px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  height: 155px;
   background: #f3f3f3;
-  border-bottom: 1px solid #d5d5d5;
-  position: absolute;
+  border: 1px solid #d5d5d5;
+  position: fixed;
   z-index: 20000;
   padding: 40px;
-  top: -236px;
-  left: 0;
-  right: 0;
-  -webkit-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.6);
-  -moz-border-radius-bottomleft: 2px;
-  -webkit-border-bottom-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
-  opacity: 0.95;
+  top: 185px;
+  left: -382px;
+  bottom: 0;
+  -webkit-box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.6);
+  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.6);
 }
-/* line 82, ../scss/main.scss */
+/* line 87, ../scss/main.scss */
 #objects.show {
-  top: 0px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  left: 0px;
 }
-/* line 85, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 #objects .table-wrap {
   position: relative;
-  float: left;
-  margin-right: 2%;
+  display: inline-block;
 }
-/* line 90, ../scss/main.scss */
-#objects .pull-tab {
+/* line 97, ../scss/main.scss */
+#objects .section-head {
+  padding: 25px 40px;
+  margin: -40px;
+  background: white;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+/* line 105, ../scss/main.scss */
+#objects .hint {
+  display: block;
+  padding-left: 0;
+  padding-top: 6px;
+}
+
+/* line 112, ../scss/main.scss */
+.pull-tab {
   padding: 0;
-  line-height: 40px;
+  line-height: 44px;
   border-top: none;
-  width: 140px;
+  width: 116px;
   height: 45px;
-  position: absolute;
-  left: 25%;
-  bottom: -47px;
-  margin-left: -70px;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  position: fixed;
+  z-index: 20000;
+  top: 205px;
+  left: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/* line 127, ../scss/main.scss */
+.pull-tab.shift {
+  left: 382px;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
+#objects-list {
+  width: 100%;
+  position: absolute;
+  top: 93px;
+  bottom: 0;
+  padding-top: 20px;
+  margin-left: -40px;
+  overflow: auto;
+}
+/* line 140, ../scss/main.scss */
+#objects-list li {
+  *zoom: 1;
+  float: left;
+  text-align: center;
+  width: 47%;
+  margin-bottom: 20px;
+}
+/* line 38, ../../../apps/Ruby/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#objects-list li:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 146, ../scss/main.scss */
+#objects-list li:nth-child(2n+1) {
+  clear: left;
+}
+
+/* line 153, ../scss/main.scss */
 input[type=text], textarea {
   width: 100%;
   padding: 5px;
@@ -2295,16 +2377,16 @@ input[type=text], textarea {
   border: 1px solid #d5d5d5;
 }
 
-/* line 118, ../scss/main.scss */
+/* line 165, ../scss/main.scss */
 #edit-seat select {
   width: 190px;
 }
-/* line 121, ../scss/main.scss */
+/* line 168, ../scss/main.scss */
 #edit-seat .actions {
   padding-top: 4px;
 }
 
-/* line 126, ../scss/main.scss */
+/* line 173, ../scss/main.scss */
 footer {
   padding: 20px;
 }

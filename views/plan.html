@@ -1,16 +1,104 @@
-<div class="container">
-    <div id="objects" ng-class="{show: showPalette}" droppable>
-        <a class="pull-tab" ng-click="showPalette=!showPalette">+ Add an object</a>
-        <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas below</span></h2>
-        <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
-                <div class="table-number">Circular</div>
-                <div class="table"></div><!-- .table -->
-        </div>
-        <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
-                <div class="table-number">Rectangular</div>
-                <div class="table"></div><!-- .table -->
-        </div>
-    </div>
+<a class="pull-tab" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette">+ Add object</a>
+<div id="objects" ng-class="{show: showPalette}" droppable>
+        <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas</span></h2>
+        <ul id="objects-list">
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                    <div class="table-number">Circular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+            <li>
+                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                    <div class="table-number">Rectangular</div>
+                    <div class="table"></div><!-- .table -->
+                </div>
+            </li>
+        </ul>
 </div>
 <div id="canvas" class="container" droppable canvas>
     <!-- <a ng-click="createTable=true">Open 1</a> -->

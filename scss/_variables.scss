@@ -10,7 +10,7 @@ $grey-darker: darken($grey, 10%);
 
 
 $tan: #edd4a8;
-$tan-light: lighten($tan, 14%);
+$tan-light: lighten($tan, 5%);
 
 $purple: #5c565e;
 $purple-light: lighten($purple, 40%);
@@ -29,6 +29,8 @@ $grey-80: fade-out(black, 0.2);
 $grey-60: fade-out(black, 0.4);
 $grey-40: fade-out(black, 0.6);
 $grey-20: fade-out(black, 0.8);
+$grey-10: fade-out(black, 0.9);
+$grey-5: fade-out(black, 0.95);
 
 
 /*

@@ -58,3 +58,23 @@ nav {
 	position: absolute;
 	z-index: 9999;
 }
+
+::-webkit-scrollbar {
+    background:transparent;
+    overflow:visible;
+    width:10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $grey-light;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $grey;
+}

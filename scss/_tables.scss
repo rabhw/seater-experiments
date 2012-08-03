@@ -1,8 +1,8 @@
 .table-wrap {
 	position: absolute;
 	cursor: move;
-	@include single-transition(transform, $transition-fast);
-
+	// @TODO: WEBKIT BUG WITH THIS TRANSITION (DRAG QUICKLY) makes viewport freak out
+	// @include single-transition(transform, $transition-fast);
 	
 	&.ui-draggable-dragging {
 		@include scale(1.25);
@@ -82,7 +82,7 @@
 .table {
 	background: $purple-light;
 	border: 4px solid $purple;
-	@include single-transition(transform);
+	@include single-transition(transform, $default-transition-duration);
 	@include box-shadow(0 0 10px $grey-20);
 	@include box-shadow(inset 0 0 30px $grey-20);
 }
