@@ -37,16 +37,27 @@ angular.module('seater.directives', [])
            });
 
 
-          // Generator case (If dragged from objects panel);
+          // Generator case (If dragged from objects panel) - Create new object then
           if (attrs.generator) {
+
+            // Set options appropriately for a generator object
             element.draggable( "option", "helper", "clone" );
             element.draggable( "option", "zIndex", 40000 );
+
             element.draggable( "option", "start", function(event, ui) {
               $scope.showPalette = false;
               $scope.$apply();
             });
+
             element.draggable( "option", "stop", function(event, ui) {
-              $scope.createTable = true;
+
+              // Show editing modal
+            $scope.showEditTable = true;
+              $scope.editTableId = null;
+              $scope.editTableShape = attrs.tableShape;
+              $scope.editTableX = ui.position.left+'px';
+              $scope.editTableY = ui.position.top+'px';
+              $scope.editTableNumSeats = 6; // default table size of 6
               $scope.$apply();
             });
           }

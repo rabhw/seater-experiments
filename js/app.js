@@ -13,7 +13,7 @@ var seater = angular.module('seater', ['ui', 'seater.services', 'seater.directiv
 seater.value('ui.config', {
    select2: {
 		allowClear: true,
-		width: 'element'
+		width: 'off'
    },
    jq: { 
       // The qtip namespace

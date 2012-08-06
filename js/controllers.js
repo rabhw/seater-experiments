@@ -3,7 +3,6 @@
 /* Controllers */
 
 function AppCtrl($scope, $routeParams, $location) {
-	$scope.createTable = false;
 	$scope.location = $location;
 }
 
@@ -55,6 +54,36 @@ function PlanCtrl($scope, $routeParams, planService) {
 			table.rotate = newRot;
 		}
 	}
+
+
+	$scope.editTableSeats = [];
+
+	$scope.$watch('editTableNumSeats', function(newValue) {
+
+		if (newValue) {
+			$scope.editTableSeats.length = newValue;
+			$scope.$apply();
+		}
+
+	});
+
+	$scope.editTable = function() {
+
+		$scope.showEditTable = false;
+
+		$scope.plans.tables.push({
+			//@TODO: generate id?
+				"id" : 543534,
+				"number" : $scope.editTableNum,
+				"shape" : $scope.editTableShape,
+				"xPos" : $scope.editTableX,
+				"yPos" : $scope.editTableY,
+				"rotate" : "0deg",
+				"seats" : $scope.editTableSeats
+		});
+	}
+
+
 }
 
 function GuestCtrl($scope, $routeParams, planService) {

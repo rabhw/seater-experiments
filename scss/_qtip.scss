@@ -4,6 +4,7 @@
 
 /* Core qTip styles */
 .ui-tooltip, .qtip{
+	z-index: 50 !important;
 	position: absolute;
 	left: -28000px;
 	top: -28000px;
