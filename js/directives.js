@@ -53,12 +53,12 @@ angular.module('seater.directives', [])
 
               // Show editing modal
             $scope.showEditTable = true;
-              $scope.editTableId = null;
-              $scope.editTableShape = attrs.tableShape;
-              $scope.editTableX = ui.position.left+'px';
-              $scope.editTableY = ui.position.top+'px';
-              $scope.editTableNumSeats = 6; // default table size of 6
-              $scope.$apply();
+            $scope.editTableFormTitle = "Add";
+            $scope.editTableId = null;
+            $scope.editTableShape = attrs.tableShape;
+            $scope.editTableX = ui.position.left+'px';
+            $scope.editTableY = ui.position.top+'px';
+            $scope.$apply();
             });
           }
 

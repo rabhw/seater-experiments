@@ -20,11 +20,15 @@ function PlanCtrl($scope, $routeParams, planService) {
 
 		var guest = planService.guest(tableId, seatIndex);
 
-		if (propertyToReturn) {
-			return guest[propertyToReturn];
-		}
-		else {
-			return guest;
+		if (guest) {
+
+			if (propertyToReturn) {
+				return guest[propertyToReturn];
+			}
+			else {
+				return guest;
+			}
+
 		}
 		
 	}
@@ -56,31 +60,66 @@ function PlanCtrl($scope, $routeParams, planService) {
 	}
 
 
-	$scope.editTableSeats = [];
+	$scope.editTableNumSeats = 6;
+	$scope.editTableSeats = [{guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}];
 
-	$scope.$watch('editTableNumSeats', function(newValue) {
+	$scope.$watch('editTableNumSeats', function(newValue, oldValue) {
 
-		if (newValue) {
-			$scope.editTableSeats.length = newValue;
-			$scope.$apply();
+		newValue = parseInt(newValue);
+
+		$scope.editTableSeats.length = newValue;
+
+		// If adding new seats, and the new seats index is empty, push an empty seat for now
+		if (newValue > oldValue && !$scope.editTableSeats[newValue-1].guestId) {
+			$scope.editTableSeats[newValue-1] = { guestId: null }
 		}
-
 	});
 
-	$scope.editTable = function() {
+
+	$scope.editTable = function(tableId) {
+		var table = planService.table(tableId);
+		console.log(table);
+		$scope.editTableFormTitle = "Edit";
+		$scope.showEditTable = true;
+		$scope.setupEditTable(table);
+	}
+
+	$scope.setupEditTable = function(table) {
+		$scope.flushEditTable();
+		$scope.editTableId = table.data.id;
+		$scope.editTableNum = table.data.name;
+		$scope.editTableNumSeats = table.data.seats.length;
+		$scope.editTableSeats = table.data.seats;
+		$scope.editTableIndex = table.index;
+	}
+
+	$scope.flushEditTable = function() {
+		$scope.editTableId = null;
+		$scope.editTableNum = null;
+		$scope.editTableIndex = null;
+	}
+
+	$scope.saveTable = function() {
 
 		$scope.showEditTable = false;
 
-		$scope.plans.tables.push({
-			//@TODO: generate id?
-				"id" : 543534,
-				"number" : $scope.editTableNum,
-				"shape" : $scope.editTableShape,
-				"xPos" : $scope.editTableX,
-				"yPos" : $scope.editTableY,
-				"rotate" : "0deg",
-				"seats" : $scope.editTableSeats
-		});
+		if ($scope.editTableId) {
+			$scope.plans.tables[$scope.editTableIndex].name = $scope.editTableNum;
+			$scope.plans.tables[$scope.editTableIndex].seats = $scope.editTableSeats;
+		}
+
+		else {
+			$scope.plans.tables.push({
+				//@TODO: generate id?
+					"id" : 543534,
+					"name" : $scope.editTableNum,
+					"shape" : $scope.editTableShape,
+					"xPos" : $scope.editTableX,
+					"yPos" : $scope.editTableY,
+					"rotate" : "0deg",
+					"seats" : $scope.editTableSeats
+			});
+		}
 	}
 
 

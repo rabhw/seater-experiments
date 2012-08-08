@@ -8,21 +8,21 @@ angular.module('seater.services', []).service('planService', function ($routePar
 		"tables" : [	
 			{
 				"id" : 23,
-				"number" : 2,
+				"name" : "Family",
 				"shape" : "circle",
 				"xPos" : "200px",
 				"yPos" : "300px",
 				"rotate" : "45deg",
-				"seats" : [1,2,3,12,11,10,7,9]
+				"seats" : [{guestId: 1}, {guestId: 2}, {guestId: 3}, {guestId: 4}, {guestId: 5}]
 			},
 			{
 				"id" : 48,
-				"number" : 4,
+				"name" : "Friends",
 				"shape" : "rect",
 				"xPos" : "600px",
 				"yPos" : "100px",
 				"rotate" : "0deg",
-				"seats" : [3,4,5,6]
+				"seats" : [{guestId: 6}, {guestId: 7}, {guestId: 8}, {guestId: 9}]
 			}
 		],
 		"guests" : [
@@ -89,28 +89,42 @@ angular.module('seater.services', []).service('planService', function ($routePar
         },
 
         table : function(tableId) {
-        	var table = _.filter(plans.tables, function(obj) {
-        		return obj.id == tableId;
+			
+        	var index = 0,
+        	tableData = _.find(plans.tables, function(obj){
+        	    return obj.id == tableId || ++index == plans.tables.length && (index = null);
         	});
 
-        	return table[0];
+        	return {
+        		'data' : tableData,
+        		'index' : index
+        	}
+
+
+
         },
 
         guest : function(tableId, seatId) {
-        	var table = this.table(tableId);
-        	var guestId = table.seats[seatId];
-        	var guest = _.filter(plans.guests, function(obj) {
-        		return obj.id == guestId;
-        	});
+        	var table = this.table(tableId).data;
 
-        	return guest[0];
+        	if (table.seats[seatId] && table.seats[seatId].guestId) {
+
+        		var guest = _.find(plans.guests, function(obj) {
+        			return obj.id == table.seats[seatId].guestId;
+        		});
+
+        		return guest;
+
+        	}
+
+        	else {
+        		return;
+        	}
         },
 
         saveSeat : function(tableId, seatId, guestId) {
-        	var table = this.table(tableId);
-        	console.log(tableId, seatId, guestId);
-        	table.seats[seatId] = guestId;
-        	console.log('saved');
+        	var table = this.table(tableId).data;
+        	table.seats[seatId].guestId = guestId;
         }
     };
 });
