@@ -13,7 +13,7 @@ angular.module('seater.services', []).service('planService', function ($routePar
 				"xPos" : "200px",
 				"yPos" : "300px",
 				"rotate" : "45deg",
-				"seats" : [{guestId: 1}, {guestId: 2}, {guestId: 3}, {guestId: 4}, {guestId: 5}]
+				"seats" : [{"guestId": 1}, {"guestId": 2}, {"guestId": 3}, {"guestId": 4}, {"guestId": 5}]
 			},
 			{
 				"id" : 48,
@@ -22,7 +22,7 @@ angular.module('seater.services', []).service('planService', function ($routePar
 				"xPos" : "600px",
 				"yPos" : "100px",
 				"rotate" : "0deg",
-				"seats" : [{guestId: 6}, {guestId: 7}, {guestId: 8}, {guestId: 9}]
+				"seats" : [{"guestId": 6}, {"guestId": 7}, {"guestId": 8}, {"guestId": 9}]
 			}
 		],
 		"guests" : [
@@ -73,8 +73,7 @@ angular.module('seater.services', []).service('planService', function ($routePar
 			{
 				"id" : 12,
 				"text" : "Najeeb Sachedina"
-			},
-
+			}
 		]
 	}
 

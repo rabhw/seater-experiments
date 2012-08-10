@@ -37,9 +37,10 @@
         <header>
             <h1 id="logo" class="sprite-logo">Find Your Seat</h1>
             <nav id="nav-app">
-                <ul class="tabs two">
+                <ul class="tabs three">
                     <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
                     <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
+                    <li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>
                 </ul>
             </nav>
         </header>
@@ -52,6 +53,7 @@
     <script src="js/lib/underscore.js"></script>
     <script src="js/lib/angular/angular.js"></script>
     <script src="js/lib/angular/angular-resource.js"></script>
+    <script src="js/lib/angular/mongolab.js"></script>
     <script src="js/lib/bootstrap-modal.js"></script>
     <script src="js/lib/angular-ui.js"></script>
     <script src="js/lib/select2.js"></script>

@@ -7,14 +7,14 @@ function AppCtrl($scope, $routeParams, $location) {
 }
 
 
-function PlanCtrl($scope, $routeParams, planService) {
+function PlanCtrl($scope, $route, $routeParams, Table, Guest) {
+
+	console.log($route.routes);
 
 	$scope.showPalette = false;
 
-	$scope.table = '';
-
-	$scope.plans = planService.all();
-	$scope.guests = planService.guests();
+	$scope.tables = Table.query();
+	$scope.guests = Guest.query();
 
 	$scope.getGuest = function(tableId, seatIndex, propertyToReturn) {
 
@@ -125,6 +125,30 @@ function PlanCtrl($scope, $routeParams, planService) {
 
 }
 
-function GuestCtrl($scope, $routeParams, planService) {
-	$scope.guests = planService.guests();
+function EditTableCtrl($scope, $routeParams, $location, Table, Guest) {
+	
+}
+
+function DebugCtrl($scope, $location, Guest, Table) {
+	$scope.guests = Guest.query();
+	$scope.tables = Table.query();
+
+	$scope.saveGuest = function() {
+	  Guest.save($scope.guest, function() {
+	  	$scope.guest = {}; // empty
+	  	$scope.guests = Guest.query(); // update to show new guests without full page refresh
+	  });
+	}
+
+	$scope.saveTable = function() {
+	  Table.save($scope.table, function() {
+	  	console.log('saved table');
+	  	$scope.table = {}; // empty
+	  	$scope.tables = Table.query(); // update to show new guests without full page refresh
+	  });
+	}
+}
+
+function GuestCtrl($scope) {
+
 }

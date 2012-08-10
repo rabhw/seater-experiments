@@ -1,0 +1,21 @@
+<div id="add-guests">
+	<h2>Add Guests</h2>
+	<input ng-model="guest.name" placeholder="guest name"> <button ng-click="saveGuest()">Add Guest</button>
+	<ul>
+		<li ng-repeat="guest in guests">
+			{{guest.name}}
+		</li>
+	</ul>
+</div>
+<hr />
+<div id="add-tables">
+	<h2>Add Tables</h2>
+	<input ng-model="table.name" placeholder="table name"><br>
+	<input ng-model="table.shape" placeholder="table shape"><br>
+	<button ng-click="saveTable()">Add Table</button>
+	<ul>
+		<li ng-repeat="table in tables">
+			{{table.name}} - {{table.shape}}
+		</li>
+	</ul>
+</div>

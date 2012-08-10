@@ -17,7 +17,7 @@
         </ul>
 </div>
 <div id="canvas" class="container" droppable canvas ng-class="{fadeIn: showPalette}">
-    <div draggable ng-repeat="table in plans.tables" class="table-wrap animated bounceIn" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
+    <div draggable ng-repeat="table in tables" class="table-wrap animated bounceIn" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
             <div class="seat-wrap">
@@ -27,7 +27,7 @@
         <div class="table-controls">
             <a ng-click="rotateTable(table, 'cw')" class="rotate-table cw"></a>
             <a ng-click="rotateTable(table, 'ccw')" class="rotate-table ccw"></a>
-            <a ng-click="editTable(table.id)">Edit</a>
+            <a ng-click="editTable()">Edit</a>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 
