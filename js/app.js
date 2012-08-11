@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-var seater = angular.module('seater', ['ui', 'seater.services', 'seater.directives', 'mongolabResource']).
+var seater = angular.module('seater', ['ui', 'seater.directives', 'mongolabResource']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/plan', {templateUrl: 'views/plan.html', controller: PlanCtrl});
     $routeProvider.when('/guests', {templateUrl: 'views/guests.html', controller: GuestCtrl});

@@ -41,13 +41,13 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.updateTable = function() {
 		$scope.editingTable.saveOrUpdate(
-			function save() {
+			function save(data) {
 				$scope.showEditTable = false;
+				$scope.tables = $scope.tables.concat(data);
 			},
 			function update(data) {
 			$scope.showEditTable = false; // hide the modal
 			$scope.originalTable = angular.extend($scope.originalTable, data); // merge result back to original
-			console.log(data);
 		});
 
 	}
@@ -82,10 +82,9 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 	}
 
 	$scope.rotateTable = function(table, dir) {
-
-		var currRot, newRot;
-
 		console.log(table);
+		$scope.disableTableControls = true;
+		var currRot, newRot;
 
 		if (table.rotate) {
 			currRot = parseInt(table.rotate);
@@ -95,9 +94,6 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 			currRot = 0;
 		}
 
-		console.log(currRot);
-
-		// Clockwise
 		if (dir === "cw") {
 			newRot = currRot+=45;
 			newRot = newRot+'deg';
@@ -109,6 +105,18 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 			newRot = newRot+'deg';
 			table.rotate = newRot;
 		}
+
+		table.update(function() {
+			$scope.disableTableControls = false;
+		});
+	}
+
+	$scope.removeTable = function(table) {
+		table.remove(function(data) {
+			$scope.tables = _.reject($scope.tables, function(obj) {
+				return obj._id.$oid == data._id.$oid;
+			});
+		});
 	}
 
 }

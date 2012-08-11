@@ -25,9 +25,10 @@
             </div>
         </div><!-- .table -->
         <div class="table-controls">
-            <button ng-click="rotateTable(table, 'cw')" class="small rotate-table cw"></button>
-            <button ng-click="rotateTable(table, 'ccw')" class="small rotate-table ccw"></button>
-            <button ng-click="editTable(table)" class="small">Edit</button>
+            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'cw')" ng-class="{disabled: disableTableControls}" class="small rotate-table cw"></button>
+            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'ccw')" ng-class="{disabled: disableTableControls}" class="small rotate-table ccw"></button>
+            <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="small">Edit</button>
+            <button ng-disabled="disableTableControls" ng-click="removeTable(table)" ng-class="{disabled: disableTableControls}" class="small">&times;</button>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 

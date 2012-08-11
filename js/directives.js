@@ -52,7 +52,7 @@ angular.module('seater.directives', [])
             element.draggable( "option", "stop", function(event, ui) {
 
               // Show editing modal
-            $scope.showEditTable = true;
+            $scope.editTable();
             $scope.editTableFormTitle = "Add";
             $scope.editingTable._id = null;
             $scope.editingTable.shape = attrs.tableShape;

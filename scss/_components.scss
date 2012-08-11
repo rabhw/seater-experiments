@@ -20,6 +20,10 @@
 	padding: 2px 4px;
 }
 
+.disabled {
+	background: $grey !important;
+}
+
 @include animate($class:true);
 .animated {
 	-webkit-animation-duration: 1s;

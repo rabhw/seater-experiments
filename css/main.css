@@ -882,6 +882,11 @@ nav:after {
   padding: 2px 4px;
 }
 
+/* line 23, ../scss/_components.scss */
+.disabled {
+  background: #888888 !important;
+}
+
 @-moz-keyframes flash {
   /* line 7, ../../../apps/Ruby/lib/ruby/gems/1.9.1/gems/animate-0.1.alpha.0/stylesheets/animate/attention/_flash.scss */
   0% {
@@ -7896,7 +7901,7 @@ nav:after {
   animation: 2s ease both;
 }
 
-/* line 24, ../scss/_components.scss */
+/* line 28, ../scss/_components.scss */
 .animated {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -7908,7 +7913,7 @@ nav:after {
   animation-fill-mode: both;
 }
 
-/* line 35, ../scss/_components.scss */
+/* line 39, ../scss/_components.scss */
 .guest-select {
   width: 100%;
 }
