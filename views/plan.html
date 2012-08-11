@@ -21,13 +21,13 @@
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
             <div class="seat-wrap">
-                <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a title="{{getGuest(table.id, $index, 'text')}}" ng-click="setGuest(table.id, $index)"></a></div>
+                <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></div>
             </div>
         </div><!-- .table -->
         <div class="table-controls">
             <a ng-click="rotateTable(table, 'cw')" class="rotate-table cw"></a>
             <a ng-click="rotateTable(table, 'ccw')" class="rotate-table ccw"></a>
-            <a ng-click="editTable()">Edit</a>
+            <a ng-click="editTable(table)">Edit</a>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 
@@ -44,17 +44,18 @@
 
         <div class="modal-body">
             Table Name:<br>
-            <input ng-model="editTableNum" placeholder="Give your table a name!" /><br><br>
+            <input ng-model="editingTable.name" placeholder="Give your table a name!" /><br><br>
 
             Number of Seats:<br>
-            <input type="range" ng-change="updateEditSeats()" ng-model="editTableNumSeats" min="1" max="10" step="1" /><span>{{editTableNumSeats}}</span><br><br>
+            <input type="number" ng-model="seatsLimit" min="1" max="10" step="1" /><span>{{seatsLimit}}</span><br><br>
 
             Guests sitting at this table:<br>
             <ul class="table-seats">
-                <li ng-repeat="seat in editTableSeats">
-                    <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editTableSeats[$index].guestId">
+                <li ng-repeat="seat in editingTable.seats">
+                    {{seat}}
+                    <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
                       <option></option>
-                      <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
+                      <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
                     </select>
                 </li>
             </ul>
@@ -62,7 +63,7 @@
 
         <div class="modal-footer">
             <a class="button negative" data-dismiss="modal">Cancel</a>
-            <a class="button" ng-click="saveTable()">Save table</a>
+            <a class="button" ng-click="updateTable()">Save table</a>
         </div>
          </form>
     </div>

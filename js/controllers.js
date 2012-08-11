@@ -7,38 +7,79 @@ function AppCtrl($scope, $routeParams, $location) {
 }
 
 
-function PlanCtrl($scope, $route, $routeParams, Table, Guest) {
-
-	console.log($route.routes);
+function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.showPalette = false;
 
 	$scope.tables = Table.query();
 	$scope.guests = Guest.query();
 
-	$scope.getGuest = function(tableId, seatIndex, propertyToReturn) {
+	$scope.editTable = function(table) {
+		$scope.showEditTable = true; // show the modal
+		$scope.originalTable = table;
+		$scope.editingTable = new Table(table); // create a copy of the table object based on the one clicked
 
-		var guest = planService.guest(tableId, seatIndex);
+		if (!$scope.editingTable.seats) {
+			$scope.seatsLimit = 6;
+			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}];
+		}
+
+		else {
+			$scope.seatsLimit = $scope.editingTable.seats.length;
+		}
+
+		$scope.$watch('seatsLimit', function(newValue, oldValue) {
+			if (newValue > oldValue) {
+				$scope.editingTable.seats.push({'guestId' : undefined});
+			}
+			else {
+				$scope.editingTable.seats.length = newValue;
+			}
+		});
+
+	}
+
+	$scope.updateTable = function() {
+		$scope.editingTable.saveOrUpdate(
+			function save() {
+				$scope.showEditTable = false;
+			},
+			function update(data) {
+			$scope.showEditTable = false; // hide the modal
+			$scope.originalTable = angular.extend($scope.originalTable, data); // merge result back to original
+			console.log(data);
+		});
+
+	}
+
+	$scope.getGuest = function(table, seatIndex, propertyToReturn) {
+		var guest = _.find($scope.guests, function(obj) {
+			return obj._id.$oid == table.seats[seatIndex].guestId
+		});
 
 		if (guest) {
-
-			if (propertyToReturn) {
+			if (guest[propertyToReturn]) {
 				return guest[propertyToReturn];
 			}
+
 			else {
 				return guest;
 			}
-
 		}
-		
+
+		else {
+			return "Empty seat";
+		}
 	}
 
-	$scope.setGuest = function(tableId, seatIndex) {
-		$scope.editTable = tableId;
-		$scope.editSeat = seatIndex;
+	$scope.setGuest = function(table, seatIndex) {
 
-		// @TODO: If seat is empty, will fail to read id property
-		$scope.editGuest = planService.guest(tableId, seatIndex).id;
+		$scope.editingSeat = table.seats[seatIndex].guestId;
+
+	}
+
+	$scope.saveSeat = function() {
+		
 	}
 
 	$scope.rotateTable = function(table, dir) {
@@ -58,70 +99,6 @@ function PlanCtrl($scope, $route, $routeParams, Table, Guest) {
 			table.rotate = newRot;
 		}
 	}
-
-
-	$scope.editTableNumSeats = 6;
-	$scope.editTableSeats = [{guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}, {guestId: null}];
-
-	$scope.$watch('editTableNumSeats', function(newValue, oldValue) {
-
-		newValue = parseInt(newValue);
-
-		$scope.editTableSeats.length = newValue;
-
-		// If adding new seats, and the new seats index is empty, push an empty seat for now
-		if (newValue > oldValue && !$scope.editTableSeats[newValue-1].guestId) {
-			$scope.editTableSeats[newValue-1] = { guestId: null }
-		}
-	});
-
-
-	$scope.editTable = function(tableId) {
-		var table = planService.table(tableId);
-		console.log(table);
-		$scope.editTableFormTitle = "Edit";
-		$scope.showEditTable = true;
-		$scope.setupEditTable(table);
-	}
-
-	$scope.setupEditTable = function(table) {
-		$scope.flushEditTable();
-		$scope.editTableId = table.data.id;
-		$scope.editTableNum = table.data.name;
-		$scope.editTableNumSeats = table.data.seats.length;
-		$scope.editTableSeats = table.data.seats;
-		$scope.editTableIndex = table.index;
-	}
-
-	$scope.flushEditTable = function() {
-		$scope.editTableId = null;
-		$scope.editTableNum = null;
-		$scope.editTableIndex = null;
-	}
-
-	$scope.saveTable = function() {
-
-		$scope.showEditTable = false;
-
-		if ($scope.editTableId) {
-			$scope.plans.tables[$scope.editTableIndex].name = $scope.editTableNum;
-			$scope.plans.tables[$scope.editTableIndex].seats = $scope.editTableSeats;
-		}
-
-		else {
-			$scope.plans.tables.push({
-				//@TODO: generate id?
-					"id" : 543534,
-					"name" : $scope.editTableNum,
-					"shape" : $scope.editTableShape,
-					"xPos" : $scope.editTableX,
-					"yPos" : $scope.editTableY,
-					"rotate" : "0deg",
-					"seats" : $scope.editTableSeats
-			});
-		}
-	}
-
 
 }
 

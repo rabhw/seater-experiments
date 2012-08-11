@@ -32,7 +32,7 @@ angular.module('seater.directives', [])
 
                 $scope.table.xPos = event.target.offsetLeft+'px';
                 $scope.table.yPos = event.target.offsetTop+'px';
-
+                $scope.table.update();
               }
            });
 
@@ -54,10 +54,10 @@ angular.module('seater.directives', [])
               // Show editing modal
             $scope.showEditTable = true;
             $scope.editTableFormTitle = "Add";
-            $scope.editTableId = null;
-            $scope.editTableShape = attrs.tableShape;
-            $scope.editTableX = ui.position.left+'px';
-            $scope.editTableY = ui.position.top+'px';
+            $scope.editingTable._id = null;
+            $scope.editingTable.shape = attrs.tableShape;
+            $scope.editingTable.xPos = ui.position.left+'px';
+            $scope.editingTable.yPos = ui.position.top+'px';
             $scope.$apply();
             });
           }

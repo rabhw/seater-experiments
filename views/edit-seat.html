@@ -1,10 +1,10 @@
 <div id="edit-seat">
-	<select ui-select2 class="guest-select" data-placeholder="Add a guest..." ng-model="editGuest">
+	<select ui-select2 class="guest-select" data-placeholder="Add a guest..." ng-model="editingSeat">
 	  <option></option>
-	  <option ng-repeat="guest in guests" value="{{guest.id}}">{{guest.text}}</option>
+	  <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
 	</select>
 	<div class="actions">
-		<a class="button negative" ng-click="saveSeat()">Cancel</a>
+		<a class="button negative">Cancel</a>
 		<a class="button" ng-click="saveSeat()">Save</a>
 	</div>
 </div>
