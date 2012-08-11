@@ -16,6 +16,10 @@
 	border: 1px solid $negative-dark;
 }
 
+.small {
+	padding: 2px 4px;
+}
+
 @include animate($class:true);
 .animated {
 	-webkit-animation-duration: 1s;

@@ -1,5 +1,5 @@
 <div id="edit-seat">
-	<select ui-select2 class="guest-select" data-placeholder="Add a guest..." ng-model="editingSeat">
+	<select ui-select2 class="guest-select" data-placeholder="Add a guest..." ng-model="editingSeat.guestId">
 	  <option></option>
 	  <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
 	</select>

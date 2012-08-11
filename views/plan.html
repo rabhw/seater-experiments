@@ -21,13 +21,13 @@
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
             <div class="seat-wrap">
-                <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></div>
+                <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-class="{occupied: occupiedSeat}" title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></div>
             </div>
         </div><!-- .table -->
         <div class="table-controls">
-            <a ng-click="rotateTable(table, 'cw')" class="rotate-table cw"></a>
-            <a ng-click="rotateTable(table, 'ccw')" class="rotate-table ccw"></a>
-            <a ng-click="editTable(table)">Edit</a>
+            <button ng-click="rotateTable(table, 'cw')" class="small rotate-table cw"></button>
+            <button ng-click="rotateTable(table, 'ccw')" class="small rotate-table ccw"></button>
+            <button ng-click="editTable(table)" class="small">Edit</button>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 
@@ -52,7 +52,6 @@
             Guests sitting at this table:<br>
             <ul class="table-seats">
                 <li ng-repeat="seat in editingTable.seats">
-                    {{seat}}
                     <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
                       <option></option>
                       <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>

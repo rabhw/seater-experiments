@@ -108,9 +108,10 @@ angular.module('seater.directives', [])
       templateUrl: 'views/edit-seat.html',
       transclude: true,
       replace: true,
-      controller: function($scope, $element, planService) {
+      controller: function($scope, $element) {
         $scope.saveSeat = function() {
-          planService.saveSeat($scope.editTable, $scope.editSeat, $scope.editGuest);
+          $scope.editingSeat.table.seats[$scope.editingSeat.seatIndex].guestId = $scope.editingSeat.guestId;
+          $scope.editingSeat.table.update();
           $($element).parents('.ui-tooltip').fadeOut('fast');
         }
       },

@@ -115,7 +115,7 @@ h2, .beta {
 }
 
 /* line 11, ../scss/_layout.scss */
-.table-wrap[data-table-shape="circle"] .table, .seat a {
+.table-wrap[data-table-shape="circle"] .table, .seat a, .seat .occupied:after {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -779,41 +779,39 @@ nav:after {
   position: absolute;
   bottom: -70px;
   text-align: center;
-  font-size: 20px;
 }
-/* line 113, ../scss/_tables.scss */
+/* line 112, ../scss/_tables.scss */
 .table-controls .rotate-table {
   display: inline-block;
-  width: 25%;
 }
-/* line 116, ../scss/_tables.scss */
+/* line 114, ../scss/_tables.scss */
 .table-controls .rotate-table.cw {
   text-align: left;
 }
-/* line 118, ../scss/_tables.scss */
+/* line 116, ../scss/_tables.scss */
 .table-controls .rotate-table.cw:after {
   top: 0;
   left: 0;
   content: "\21BB";
 }
-/* line 124, ../scss/_tables.scss */
+/* line 122, ../scss/_tables.scss */
 .table-controls .rotate-table.ccw {
   text-align: right;
 }
-/* line 126, ../scss/_tables.scss */
+/* line 124, ../scss/_tables.scss */
 .table-controls .rotate-table.ccw:after {
   top: 0;
   left: 0;
   content: "\21BA";
 }
 
-/* line 136, ../scss/_tables.scss */
+/* line 134, ../scss/_tables.scss */
 .table-wrap:hover .table-controls {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 141, ../scss/_tables.scss */
+/* line 139, ../scss/_tables.scss */
 .seat {
   position: absolute;
   -webkit-transform-origin: bottom center;
@@ -822,7 +820,7 @@ nav:after {
   -o-transform-origin: bottom center;
   transform-origin: bottom center;
 }
-/* line 144, ../scss/_tables.scss */
+/* line 142, ../scss/_tables.scss */
 .seat a {
   border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -839,8 +837,19 @@ nav:after {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 157, ../scss/_tables.scss */
+/* line 155, ../scss/_tables.scss */
 .seat a:hover {
+  background: #5c565e;
+}
+/* line 159, ../scss/_tables.scss */
+.seat .occupied:after {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  text-align: center;
   background: #5c565e;
 }
 
@@ -866,6 +875,11 @@ nav:after {
 .negative {
   background: #f56966;
   border: 1px solid #f0231e;
+}
+
+/* line 19, ../scss/_components.scss */
+.small {
+  padding: 2px 4px;
 }
 
 @-moz-keyframes flash {
@@ -7882,7 +7896,7 @@ nav:after {
   animation: 2s ease both;
 }
 
-/* line 20, ../scss/_components.scss */
+/* line 24, ../scss/_components.scss */
 .animated {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -7894,7 +7908,7 @@ nav:after {
   animation-fill-mode: both;
 }
 
-/* line 31, ../scss/_components.scss */
+/* line 35, ../scss/_components.scss */
 .guest-select {
   width: 100%;
 }

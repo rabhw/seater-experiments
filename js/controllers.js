@@ -59,6 +59,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 		if (guest) {
 			if (guest[propertyToReturn]) {
+				$scope.occupiedSeat = true;
 				return guest[propertyToReturn];
 			}
 
@@ -68,23 +69,33 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		}
 
 		else {
+			$scope.occupiedSeat = false;
 			return "Empty seat";
 		}
 	}
 
 	$scope.setGuest = function(table, seatIndex) {
-
-		$scope.editingSeat = table.seats[seatIndex].guestId;
-
-	}
-
-	$scope.saveSeat = function() {
-		
+		$scope.editingSeat = {};
+		$scope.editingSeat.table = table;
+		$scope.editingSeat.guestId = table.seats[seatIndex].guestId;
+		$scope.editingSeat.seatIndex = seatIndex;
 	}
 
 	$scope.rotateTable = function(table, dir) {
 
-		var currRot = parseInt(table.rotate), newRot;
+		var currRot, newRot;
+
+		console.log(table);
+
+		if (table.rotate) {
+			currRot = parseInt(table.rotate);
+		}
+
+		else {
+			currRot = 0;
+		}
+
+		console.log(currRot);
 
 		// Clockwise
 		if (dir === "cw") {

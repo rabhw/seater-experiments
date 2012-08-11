@@ -119,11 +119,6 @@ angular.module('seater.services', []).service('planService', function ($routePar
         	else {
         		return;
         	}
-        },
-
-        saveSeat : function(tableId, seatId, guestId) {
-        	var table = this.table(tableId).data;
-        	table.seats[seatId].guestId = guestId;
         }
     };
 });
