@@ -10659,8 +10659,8 @@ disabled look for already selected choices in the results dropdown
   left: 50%;
   z-index: 210;
   overflow: auto;
-  width: 708px;
-  margin: -250px 0 0 -354px;
+  width: 646px;
+  margin: -250px 0 0 -323px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 4px;
@@ -10954,17 +10954,32 @@ footer {
   padding: 20px;
 }
 
-/* line 172, ../scss/main.scss */
+/* line 171, ../scss/main.scss */
+.table-seats {
+  width: 610px;
+}
+/* line 173, ../scss/main.scss */
 .table-seats li {
   margin-right: 8%;
-  float: left;
+  display: inline-block;
   width: 42%;
   padding: 10px 0 10px 0;
   position: relative;
 }
-/* line 179, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 .table-seats .delete-seat {
   top: 14px;
   position: absolute;
   right: -25px;
+}
+
+/* line 187, ../scss/main.scss */
+.ui-state-highlight {
+  background: #f3f3f3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #d5d5d5;
 }

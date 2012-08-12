@@ -169,9 +169,10 @@ footer {
 
 
 .table-seats {
+	width: 610px;
 	li {
 		margin-right: 8%;
-		float: left;
+		display: inline-block;
 		width: 42%;
 		padding: 10px 0 10px 0;
 		position: relative;
@@ -181,4 +182,10 @@ footer {
 		position: absolute;
 		right: -25px;
 	}
+}
+
+.ui-state-highlight {
+	background: $grey-lighter;
+	@include border-radius;
+	border: 1px solid $grey-light;
 }

@@ -48,9 +48,9 @@
             <input ng-model="editingTable.name" placeholder="Give your table a name!" /><br><br>
 
             <button ng-click="addSeat()" class="btn btn-primary"><i class="icon-plus"></i> Add seat</button>
-            <br>
+            <br><br>
             Guests sitting at this table:<br>
-            <ul class="table-seats">
+            <ul class="table-seats" ui-sortable ng-model="editingTable.seats">
                 <li ng-repeat="seat in editingTable.seats">
                     <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
                       <option></option>
