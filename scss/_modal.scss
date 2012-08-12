@@ -9,12 +9,12 @@
   bottom: 0;
   left: 0;
   z-index: 200;
-  background-color: white;
+  background-color: black
 }
 
 .modal-backdrop,
 .modal-backdrop.fade.in {
-  @include opacity(0.75);
+  @include opacity(0.55);
 }
 
 // Base modal

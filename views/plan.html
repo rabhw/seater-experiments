@@ -1,4 +1,4 @@
-<a class="pull-tab" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette">+ Add object</a>
+<a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-plus"></i> Add object</a>
 <div id="objects" ng-class="{show: showPalette}" droppable>
         <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas</span></h2>
         <ul id="objects-list">
@@ -20,15 +20,15 @@
     <div draggable ng-repeat="table in tables" class="table-wrap animated bounceIn" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
-            <div class="seat-wrap">
-                <div ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-class="{occupied: occupiedSeat}" title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></div>
-            </div>
+            <ul class="seat-wrap">
+                <li ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-class="{occupied: occupiedSeat}" title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></li>
+            </ul>
         </div><!-- .table -->
         <div class="table-controls">
-            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'cw')" ng-class="{disabled: disableTableControls}" class="small rotate-table cw"></button>
-            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'ccw')" ng-class="{disabled: disableTableControls}" class="small rotate-table ccw"></button>
-            <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="small">Edit</button>
-            <button ng-disabled="disableTableControls" ng-click="removeTable(table)" ng-class="{disabled: disableTableControls}" class="small">&times;</button>
+            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'ccw')" ng-class="{disabled: disableTableControls}" class="btn btn-small rotate-table ccw" title="Rotate left"><i class="icon-undo"></i></button>
+            <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'cw')" ng-class="{disabled: disableTableControls}" class="btn btn-small rotate-table cw" title="Rotate right"><i class="icon-repeat"></i></button>
+            <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="btn btn-small"><i class="icon-cogs" title="Table settings"></i></button>
+            <button ng-disabled="disableTableControls" ng-click="removeTable(table)" ng-class="{disabled: disableTableControls}" class="btn btn-small btn-danger" title="Delete table"><i class="icon-remove"></i></button>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
 
@@ -62,8 +62,8 @@
         </div>
 
         <div class="modal-footer">
-            <a class="button negative" data-dismiss="modal">Cancel</a>
-            <a class="button" ng-click="updateTable()">Save table</a>
+            <a class="btn" data-dismiss="modal">Cancel</a>
+            <a class="btn btn-success" ng-click="updateTable()"><i class="icon-ok"></i> Save table</a>
         </div>
          </form>
     </div>

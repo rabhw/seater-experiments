@@ -54,7 +54,6 @@ angular.module('seater.directives', [])
               // Show editing modal
             $scope.editTable();
             $scope.editTableFormTitle = "Add";
-            $scope.editingTable._id = null;
             $scope.editingTable.shape = attrs.tableShape;
             $scope.editingTable.xPos = ui.position.left+'px';
             $scope.editingTable.yPos = ui.position.top+'px';

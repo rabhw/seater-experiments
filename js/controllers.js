@@ -16,6 +16,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.editTable = function(table) {
 		$scope.showEditTable = true; // show the modal
+		$scope.editTableFormTitle = "Edit";
 		$scope.originalTable = table;
 		$scope.editingTable = new Table(table); // create a copy of the table object based on the one clicked
 
@@ -28,16 +29,18 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 			$scope.seatsLimit = $scope.editingTable.seats.length;
 		}
 
-		$scope.$watch('seatsLimit', function(newValue, oldValue) {
-			if (newValue > oldValue) {
-				$scope.editingTable.seats.push({'guestId' : undefined});
-			}
-			else {
-				$scope.editingTable.seats.length = newValue;
-			}
-		});
-
 	}
+
+	$scope.$watch('seatsLimit', function(newValue, oldValue) {
+		if (newValue > oldValue) {
+			console.log('pushing an extra on');
+			$scope.editingTable.seats.push({'guestId' : undefined});
+		}
+		else if (oldValue > newValue) {
+			console.log('removing');
+			$scope.editingTable.seats.length = newValue;
+		}
+	});
 
 	$scope.updateTable = function() {
 		$scope.editingTable.saveOrUpdate(
