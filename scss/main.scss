@@ -170,8 +170,15 @@ footer {
 
 .table-seats {
 	li {
+		margin-right: 8%;
 		float: left;
-		width: 46%;
-		padding: 10px 4% 10px 0;
+		width: 42%;
+		padding: 10px 0 10px 0;
+		position: relative;
+	}
+	.delete-seat {
+		top: 14px;
+		position: absolute;
+		right: -25px;
 	}
 }

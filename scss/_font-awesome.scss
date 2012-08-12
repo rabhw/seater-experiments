@@ -385,9 +385,6 @@ input[type="submit"].btn.btn-mini {
   *margin-right: .3em;
   line-height: 16px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings.png");
-  background-position: 14px 14px;
-  background-repeat: no-repeat;
 }
 [class^="icon-"]:last-child,
 [class*=" icon-"]:last-child {
@@ -415,7 +412,7 @@ a [class*=" icon-"] {
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
   vertical-align: middle;
-  font-size: 4/3em;
+  font-size: 1.3em;
 }
 
 .btn {

@@ -105,10 +105,10 @@
 .table-controls {
 	@include opacity(0);
 	@include transition;
-	width: 150%;
-	left: -25%;
+	width: 160%;
+	left: -30%;
 	position: absolute;
-	bottom: -70px;
+	bottom: -80px;
 	text-align: center;
 }
 

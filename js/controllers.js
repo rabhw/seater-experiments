@@ -20,27 +20,30 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		$scope.originalTable = table;
 		$scope.editingTable = new Table(table); // create a copy of the table object based on the one clicked
 
+		// 6 Seats as default for new tables
 		if (!$scope.editingTable.seats) {
-			$scope.seatsLimit = 6;
 			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}];
-		}
-
-		else {
-			$scope.seatsLimit = $scope.editingTable.seats.length;
 		}
 
 	}
 
-	$scope.$watch('seatsLimit', function(newValue, oldValue) {
-		if (newValue > oldValue) {
-			console.log('pushing an extra on');
+	$scope.addSeat = function() {
+		// Max seats = 10
+		if ($scope.editingTable.seats.length < 10) {
 			$scope.editingTable.seats.push({'guestId' : undefined});
 		}
-		else if (oldValue > newValue) {
-			console.log('removing');
-			$scope.editingTable.seats.length = newValue;
+	}
+
+	$scope.removeSeat = function(seatIndex) {
+		// Min seats = 1
+		if ($scope.editingTable.seats.length > 1) {
+			$scope.editingTable.seats.splice(seatIndex, 1);
 		}
-	});
+	}
+
+	$scope.tableIsClean = function() {
+		return angular.equals($scope.originalTable, $scope.editingTable);
+	}
 
 	$scope.updateTable = function() {
 		$scope.editingTable.saveOrUpdate(
@@ -49,32 +52,19 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 				$scope.tables = $scope.tables.concat(data);
 			},
 			function update(data) {
-			$scope.showEditTable = false; // hide the modal
+			$scope.showEditTable = false;
 			$scope.originalTable = angular.extend($scope.originalTable, data); // merge result back to original
 		});
 
 	}
 
-	$scope.getGuest = function(table, seatIndex, propertyToReturn) {
-		var guest = _.find($scope.guests, function(obj) {
-			return obj._id.$oid == table.seats[seatIndex].guestId
+	$scope.removeTable = function(table) {
+		table.remove(function(data) {
+			$scope.showEditTable = false;
+			$scope.tables = _.reject($scope.tables, function(obj) {
+				return obj._id.$oid == data._id.$oid;
+			});
 		});
-
-		if (guest) {
-			if (guest[propertyToReturn]) {
-				$scope.occupiedSeat = true;
-				return guest[propertyToReturn];
-			}
-
-			else {
-				return guest;
-			}
-		}
-
-		else {
-			$scope.occupiedSeat = false;
-			return "Empty seat";
-		}
 	}
 
 	$scope.setGuest = function(table, seatIndex) {
@@ -102,7 +92,6 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 			newRot = newRot+'deg';
 			table.rotate = newRot;
 		}
-		// Counter-Clockwise
 		else {
 			newRot = currRot-=45;
 			newRot = newRot+'deg';
@@ -114,18 +103,28 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		});
 	}
 
-	$scope.removeTable = function(table) {
-		table.remove(function(data) {
-			$scope.tables = _.reject($scope.tables, function(obj) {
-				return obj._id.$oid == data._id.$oid;
-			});
+	$scope.getGuest = function(table, seatIndex, propertyToReturn) {
+		var guest = _.find($scope.guests, function(obj) {
+			return obj._id.$oid == table.seats[seatIndex].guestId
 		});
+
+		if (guest) {
+			if (guest[propertyToReturn]) {
+				$scope.occupiedSeat = true;
+				return guest[propertyToReturn];
+			}
+
+			else {
+				return guest;
+			}
+		}
+
+		else {
+			$scope.occupiedSeat = false;
+			return "Empty seat";
+		}
 	}
 
-}
-
-function EditTableCtrl($scope, $routeParams, $location, Table, Guest) {
-	
 }
 
 function DebugCtrl($scope, $location, Guest, Table) {
