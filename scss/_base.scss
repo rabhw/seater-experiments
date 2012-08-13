@@ -2,14 +2,15 @@
 @import "compass/reset";
 @import "variables";
 @import "animate";
+@import "animations";
 @import "font-awesome";
 @import "type";
 @import "mixins";
 @import "layout";
 @import "sprites";
 @import "tables";
-@import "components";
-
+@import "buttons";
+@import "forms";
 @import "select2";
 @import "qtip";
-@import "modal";
+@import "modals";
