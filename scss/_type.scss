@@ -3,10 +3,14 @@
 */
 
 body {
-	font-size: 14px;
-	line-height: 1.5;
-	color: #555;
-	font-family: 'Lato', sans-serif;
+	font-size: $baseFontSize;
+	line-height: $baseLineHeight;
+	color: $textColor;
+	font-family: $baseFontFamily;
+	font-weight: 500;
+}
+
+h1, .alpha, h2, .beta {
 	font-weight: 900;
 }
 

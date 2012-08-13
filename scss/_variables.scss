@@ -61,12 +61,12 @@ $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
 // Typography
-$baseFontSize:          13px !default;
-$baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseFontSize:          14px !default;
+$baseFontFamily:        "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-$sansSerifFontFamily:		$baseFontFamily;
+$sansSerifFontFamily:	$baseFontFamily;
 $monospaceFontFamily:   Menlo, Monaco, "Courier New", monospace;
-$baseLineHeight:        18px !default;
+$baseLineHeight:        20px !default;
 $textColor:             $grayDark !default;
 
 // Buttons
@@ -97,8 +97,8 @@ $zindexDropdown:        1000 !default;
 $zindexPopover:         1010 !default;
 $zindexTooltip:         1020 !default;
 $zindexFixedNavbar:     1030 !default;
-$zindexModalBackdrop:   1040 !default;
-$zindexModal:           1050 !default;
+$zindexModalBackdrop:   170 !default;
+$zindexModal:           180 !default;
 
 // Input placeholder text color
 $placeholderText:       $grayLight !default;

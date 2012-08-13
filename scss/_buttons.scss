@@ -31,12 +31,12 @@
 .btn:hover {
   color: $grayDark;
   text-decoration: none;
-  background-color: darken($white, 10%);
-  background-position: 0 -15px;
+/*   background-color: darken($white, 10%);
+  background-position: 0 -15px; */
 
   // transition is only when going to hover, otherwise the background
   // behind the gradient (there for IE<=9 fallback) gets mismatched
-  @include transition(background-position .1s linear);
+  // @include transition(background-position .1s linear);
 }
 
 // Focus state for keyboard and accessibility
@@ -62,7 +62,7 @@
   cursor: default;
   background-image: none;
   background-color: darken($white, 10%);
-  @include opacity(65);
+  @include opacity(0.5);
   @include box-shadow(none);
 }
 

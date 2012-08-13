@@ -25,7 +25,7 @@
             </ul>
         </div><!-- .table -->
         <div class="table-controls">
-            <button ng-disabled="disableTableControls" ng-click="removeTable(table)" ng-class="{disabled: disableTableControls}" class="btn btn-danger" title="Delete table"><i class="icon-trash"></i></button>
+            <button ng-disabled="disableTableControls" ng-click="removeTable(table)" ng-class="{disabled: disableTableControls}" class="btn btn-danger" title="Remove table"><i class="icon-trash"></i></button>
             <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'ccw')" ng-class="{disabled: disableTableControls}" class="btn rotate-table ccw" title="Rotate left"><i class="icon-undo"></i></button>
             <button ng-disabled="disableTableControls" ng-click="rotateTable(table, 'cw')" ng-class="{disabled: disableTableControls}" class="btn rotate-table cw" title="Rotate right"><i class="icon-repeat"></i></button>
             <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="btn"><i class="icon-edit" title="Edit table"></i></button>
@@ -35,38 +35,28 @@
 
     <edit-seat></edit-seat>        
 
-    <div id="edit-table" ui-modal ng-model="showEditTable">
-        <form name="myForm">
-
+    <div id="edit-table" ui-modal ng-model="showEditTable" class="fade">
         <div class="modal-header">
-            <a data-dismiss="modal" class="close"><i class="icon-remove"></i></a>
-            <h2 class="section-head">{{editTableFormTitle}} table<span class="hint">If you're not sure about an option, you can always edit it later!</span></h2>
+            <input type="text" class="title-input" ng-model="editingTable.name" placeholder="Give your table a name!"><button ng-click="addSeat()" class="btn btn-primary pull-right"><i class="icon-plus"></i> Add seat</button>
         </div>
 
         <div class="modal-body">
-            Table Name:<br>
-            <input ng-model="editingTable.name" placeholder="Give your table a name!" /><br><br>
-
-            <button ng-click="addSeat()" class="btn btn-primary"><i class="icon-plus"></i> Add seat</button>
-            <br><br>
-            Guests sitting at this table:<br>
             <ul class="table-seats" ui-sortable ng-model="editingTable.seats">
                 <li ng-repeat="seat in editingTable.seats">
                     <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
                       <option></option>
                       <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
                     </select>
-                    <a class="delete-seat" ng-click="removeSeat($index)"><i class="icon-trash icon-large"></i></a>
+                    <a class="delete-seat" ng-click="removeSeat($index)" title="Remove seat"><i class="icon-trash icon-large"></i></a>
                 </li>
             </ul>
         </div>
 
         <div class="modal-footer">
             <button class="pull-left btn btn-danger" ng-hide="!originalTable" ng-click="removeTable(originalTable)"><i class="icon-trash"></i> Delete table</button>
-            <button class="btn" data-dismiss="modal">Cancel</button>
             <button ng-disabled="tableIsClean()" class="btn btn-success" ng-click="updateTable()"><i class="icon-ok"></i> {{editTableFormTitle}} table</button>
+            <button class="btn" data-dismiss="modal">Cancel</button>
         </div>
-         </form>
     </div>
 
 </div><!-- #canvas -->

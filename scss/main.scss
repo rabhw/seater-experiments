@@ -144,14 +144,6 @@ header {
 	}
 }
 
-
-input[type=text], textarea {
-	width: 100%;
-	padding: 5px;
-	@include border-radius($border-radius-small);
-	border: 1px solid $grey-light;
-}
-
 button {
 	@extend .button;
 }
@@ -167,12 +159,17 @@ footer {
 	padding: $global-padding/2;
 }
 
+.guest-select {
+	width: 100%;
+}
+
 
 .table-seats {
 	width: 610px;
+	@include pie-clearfix;
 	li {
 		margin-right: 8%;
-		display: inline-block;
+		float: left;
 		width: 42%;
 		padding: 10px 0 10px 0;
 		position: relative;
