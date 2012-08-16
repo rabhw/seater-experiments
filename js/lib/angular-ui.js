@@ -887,7 +887,6 @@ angular.module('ui.directives').directive('uiSortable', [
     return {
       require: '?ngModel',
       link: function(scope, element, attrs, ngModel) {
-        console.log(attrs.uiOptions);
         var onStart, onUpdate, opts, _start, _update;
         opts = angular.extend({}, options, scope.$eval(attrs.uiOptions));
         if (ngModel != null) {

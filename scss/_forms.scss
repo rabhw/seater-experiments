@@ -332,7 +332,9 @@ select:focus:required:invalid {
 // ---------
 
 .help-block {
-  margin-top: 5px;
+  font-size: 0.85em;
+  display: block;
+  margin-top: 1px;
   margin-bottom: 0;
   color: $grayLight;
 }
@@ -343,6 +345,10 @@ select:focus:required:invalid {
   margin-bottom: 9px;
   vertical-align: middle;
   padding-left: 5px;
+}
+
+.help-block strong, .help-inline strong {
+  color: $gray;
 }
 
 

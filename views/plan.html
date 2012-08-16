@@ -21,7 +21,7 @@
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
             <ul class="seat-wrap">
-                <li ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-class="{occupied: occupiedSeat}" title="{{getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></li>
+                <li ng-repeat="seat in table.seats" class="seat" data-seat-number="{{$index+1}}"><a ng-class="{occupied: occupiedSeat}" title="Seat {{$index+1 +': ' + getGuest(table, $index, 'name')}}" ng-click="setGuest(table, $index)"></a></li>
             </ul>
         </div><!-- .table -->
         <div class="table-controls">
@@ -36,18 +36,20 @@
     <edit-seat></edit-seat>        
 
     <div id="edit-table" ui-modal ng-model="showEditTable" class="fade">
+        <a data-dismiss="modal" class="close">&times;</a>
         <div class="modal-header">
-            <input type="text" class="title-input" ng-model="editingTable.name" placeholder="Give your table a name!"><button ng-click="addSeat()" class="btn btn-primary pull-right"><i class="icon-plus"></i> Add seat</button>
+            <input type="text" class="title-input" ng-model="editingTable.name" placeholder="Give your table a name or number"><button ng-click="addSeat()" class="btn btn-primary pull-right"><i class="icon-plus"></i> Add seat</button>
         </div>
 
         <div class="modal-body">
-            <ul class="table-seats" ui-sortable ng-model="editingTable.seats">
+            <ul class="table-seats" ui-sortable ui-options="{'scroll': false}" ng-model="editingTable.seats">
                 <li ng-repeat="seat in editingTable.seats">
                     <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
                       <option></option>
                       <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
                     </select>
                     <a class="delete-seat" ng-click="removeSeat($index)" title="Remove seat"><i class="icon-trash icon-large"></i></a>
+                    <span class="help-block"><strong>Seat {{$index+1}}</strong> &ndash; Drag to re-arrange</span>
                 </li>
             </ul>
         </div>

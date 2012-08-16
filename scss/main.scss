@@ -42,6 +42,7 @@ a {
 #wrap {
 	height: 100%;
 	min-width: 940px;
+	max-width: 1440px;
 	padding: 0 $global-padding;
 	margin: 0 auto;
 	position: relative;
@@ -67,6 +68,7 @@ header {
 
 #nav-app {
 	font-size: 16px;
+	font-weight: 700;
 }
 
 
@@ -166,16 +168,17 @@ footer {
 
 .table-seats {
 	width: 610px;
+	margin-top: -20px;
 	@include pie-clearfix;
 	li {
 		margin-right: 8%;
 		float: left;
 		width: 42%;
-		padding: 10px 0 10px 0;
+		padding: 20px 0 0 0;
 		position: relative;
 	}
 	.delete-seat {
-		top: 14px;
+		top: 22px;
 		position: absolute;
 		right: -25px;
 	}

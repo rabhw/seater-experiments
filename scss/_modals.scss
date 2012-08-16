@@ -30,8 +30,6 @@
   top: 50%;
   left: 50%;
   z-index: $zindexModal;
-  max-height: 500px;
-  overflow: auto;
   width: 646px;
   margin: -250px 0 0 -323px;
   background-color: $white;
@@ -46,12 +44,24 @@
     top: -25%;
   }
   &.fade.in { top: 50%; }
+  .close {
+    box-shadow: 0 0 5px $grey-10;
+    border: 1px solid #999;
+    padding-top: 0px;
+    text-align: center;
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    background: white;
+    width: 20px;
+    height: 20px;
+    @extend %circle;
+  }
 }
 .modal-header {
-  padding: 14px 20px;
+  padding: 20px 25px;
   border-bottom: 1px solid #eee;
   // Close icon
-  .close { margin-top: 2px; float: right; }
   .title-input { @extend .beta; width: 80%; margin-bottom: 0; height: auto; line-height: normal; }
 }
 .modal-body {

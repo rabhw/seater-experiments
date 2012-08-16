@@ -88,17 +88,22 @@
 }
 
 .table-number {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
 	z-index: 10;
 	cursor: move;
 	position: absolute;
-	width: 100px;
+	width: 90px;
 	height: 48px;
-	text-align: center;
 	line-height: 48px;
 	top: 50%;
 	left: 50%;
 	margin-top: -24px;
-	margin-left: -50px;
+	margin-left: -45px;
 	color: $purple;
 }
 
