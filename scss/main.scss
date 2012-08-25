@@ -41,68 +41,68 @@ a {
 
 #wrap {
 	height: 100%;
-	min-width: 940px;
-	max-width: 1440px;
+	max-width: 780px;
 	padding: 0 $global-padding;
 	margin: 0 auto;
-	position: relative;
-}
-
-header {
-	padding-top: 40px;
 }
 
 #main {
-	background: white;
-	@include border-bottom-radius;
-	border: 1px solid $grey-light;
-	border-top: none;
-	overflow: hidden;
 }
 
 #canvas {
-	height: 600px;
-	position: relative;
-	overflow: auto;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: $paleGrey;
+	@include box-shadow(inset 0 0 15px $grey-60);
+	z-index: $zindexCanvas;
 }
 
 #nav-app {
-	font-size: 16px;
+	color: $white;
+	position: absolute;
+	padding: 0 30px;
+	left: -400px;
+	top: 0;
+	bottom: 0;
+	width: 340px;
+	height: 100%;
+	background: $blueDark;
+	@include box-shadow(0 0 20px $grey-20);
+	z-index: $zindexNavPanel;
+	@include single-transition(left, $default-transition-duration);
+	// display: none;
+	&.shift {
+		left: 0;
+	}
+}
+
+.top-nav {
+	font-size: 1.571em;
 	font-weight: 700;
+	padding: 30px 0;
+	li {
+		padding: 10px 0;
+	}
+	.active {
+		color: $white;
+	}
 }
 
 
 #objects {
-	@include opacity(0);
-	overflow: hidden;
-	width: 300px;
-	@include transition;
-	background: $grey-lighter;
-	border: 1px solid $grey-light;
-	position: fixed;
-	z-index: 100;
-	padding: $global-padding;
-	top: 185px;
-	left: -382px;  // hide by default
-	bottom: 0;
-	@include box-shadow(20px 0 20px -20px $grey-60);
-	&.show {
-		@include opacity(1);
-		left: 0px;
-	}
 	.table-wrap {
 		position: relative;
 		display: inline-block;
 	}
 
-	// ATTEMPT TO MAKE HEADER FIXED
-	.section-head {
-		padding: 25px 40px;
-		margin: -40px;
-		background: white;
-		@include box-shadow(0 0 15px $grey-20)
+	.table {
+		border-color: $white;
 	}
-
 
 	.hint {
 		display: block;
@@ -114,28 +114,20 @@ header {
 .pull-tab {
 	border-top: none;
 	position: fixed;
-	z-index: 90;
-	top: 205px;
+	z-index: $zindexPullTab;
+	top: 100px;
 	left: 0;
 	@include border-left-radius(0);
-	@include border-right-radius;
 	@include single-transition(left, $default-transition-duration);
-
 	&.shift {
-		left: 382px;
+		left: 399px;
 	}
 }
 
 #objects-list {
 	width: 100%;
-	position: absolute;
-	top: 93px;
-	bottom: 0;
-	padding-top: 20px;
-	margin-left: -40px;
-	overflow: auto;
+	@include pie-clearfix;
 	li {
-		@include pie-clearfix;
 		float: left;
 		text-align: center;
 		width: 47%;

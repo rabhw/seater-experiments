@@ -132,14 +132,14 @@ angular.module('ui.directives').directive('uiCodemirror', ['ui.config', '$parse'
  Gives the ability to style currency based on its sign.
 */
   angular.module('ui.directives').directive('uiCurrency', ['ui.config','currencyFilter' , function(uiConfig, currencyFilter) {
-	  var options = {
-	      pos: 'ui-currency-pos',
-	      neg: 'ui-currency-neg',
-	      zero: 'ui-currency-zero'
-	};
-	if (uiConfig.currency) {
-		angular.extend(options, uiConfig.currency);
-	}
+    var options = {
+        pos: 'ui-currency-pos',
+        neg: 'ui-currency-neg',
+        zero: 'ui-currency-zero'
+  };
+  if (uiConfig.currency) {
+    angular.extend(options, uiConfig.currency);
+  }
     return {
       restrict: 'EAC',
       require: 'ngModel',
@@ -262,20 +262,20 @@ angular.module('ui.directives').directive('uiDate', [
  */
 angular.module('ui.directives').directive('uiEvent', ['$parse',
 function($parse) {
-	return function(scope, elm, attrs) {
-		var events = scope.$eval(attrs.uiEvent);
-		angular.forEach(events, function(uiEvent, eventName){
+  return function(scope, elm, attrs) {
+    var events = scope.$eval(attrs.uiEvent);
+    angular.forEach(events, function(uiEvent, eventName){
       var fn = $parse(uiEvent);
-			elm.bind(eventName, function(evt) {
+      elm.bind(eventName, function(evt) {
         var params = Array.prototype.slice.call(arguments);
         //Take out first paramater (event object);
         params = params.splice(1);
-				scope.$apply(function() {
+        scope.$apply(function() {
           fn(scope, {$event: evt, $params: params})
         });
-			});
-		});
-	};
+      });
+    });
+  };
 }]);
 
 /*
@@ -327,43 +327,43 @@ angular.module('ui.directives').directive('uiIf', [function() {
  * 
  * @param ui-jq {string} The $elm.[pluginName]() to call.
  * @param [ui-options] {mixed} Expression to be evaluated and passed as options to the function
- *   	Multiple parameters can be separated by commas
+ *    Multiple parameters can be separated by commas
  *    Set {ngChange:false} to disable passthrough support for change events ( since angular watches 'input' events, not 'change' events )
  * 
  * @example <input ui-jq="datepicker" ui-options="{showOn:'click'},secondParameter,thirdParameter">
  */
 angular.module('ui.directives').directive('uiJq', ['ui.config', function(uiConfig) {
-	return {
-		restrict: 'A',
-		compile: function(tElm, tAttrs) {  
-			if (!angular.isFunction(tElm[tAttrs.uiJq])) {
-				throw new Error('ui-jq: The "'+tAttrs.uiJq+'" function does not exist');
-				return;
-			}
-			var options = uiConfig['jq'] && uiConfig['jq'][tAttrs.uiJq];
-			return function (scope, elm, attrs) {
-				var linkOptions = [], ngChange = 'change';
+  return {
+    restrict: 'A',
+    compile: function(tElm, tAttrs) {  
+      if (!angular.isFunction(tElm[tAttrs.uiJq])) {
+        throw new Error('ui-jq: The "'+tAttrs.uiJq+'" function does not exist');
+        return;
+      }
+      var options = uiConfig['jq'] && uiConfig['jq'][tAttrs.uiJq];
+      return function (scope, elm, attrs) {
+        var linkOptions = [], ngChange = 'change';
 
-				if (attrs.uiOptions) {
-					linkOptions = scope.$eval('['+attrs.uiOptions+']');
-					if (angular.isObject(options) && angular.isObject(linkOptions[0])) {
-						linkOptions[0] = angular.extend(options, linkOptions[0]);
-					} 
-				} else if (options) {
-					linkOptions = [options]; 
-				}
-				if (attrs.ngModel && elm.is('select,input,textarea')) {
-					if (linkOptions && angular.isObject(linkOptions[0]) && linkOptions[0].ngChange !== undefined) {
-						ngChange = linkOptions[0].ngChange;
-					}
-					ngChange && elm.on(ngChange, function(){
-						elm.trigger('input');
-					});
-				}
-				elm[attrs.uiJq].apply(elm, linkOptions);
-			};
-		}
-	};
+        if (attrs.uiOptions) {
+          linkOptions = scope.$eval('['+attrs.uiOptions+']');
+          if (angular.isObject(options) && angular.isObject(linkOptions[0])) {
+            linkOptions[0] = angular.extend(options, linkOptions[0]);
+          } 
+        } else if (options) {
+          linkOptions = [options]; 
+        }
+        if (attrs.ngModel && elm.is('select,input,textarea')) {
+          if (linkOptions && angular.isObject(linkOptions[0]) && linkOptions[0].ngChange !== undefined) {
+            ngChange = linkOptions[0].ngChange;
+          }
+          ngChange && elm.on(ngChange, function(){
+            elm.trigger('input');
+          });
+        }
+        elm[attrs.uiJq].apply(elm, linkOptions);
+      };
+    }
+  };
 }]);
 
 
@@ -621,7 +621,7 @@ angular.module('ui.directives').directive('uiMask', [
   }
 ]);
 
-angular.module('ui.directives')
+/*angular.module('ui.directives')
 .directive('uiModal', ['$timeout', function($timeout) {
   return {
     restrict: 'EAC',
@@ -635,6 +635,7 @@ angular.module('ui.directives')
       elm.on('show.ui', function() {
         $timeout(function() {
           model.$setViewValue(true);
+          console.log('shown');
         });
       });
       elm.on('hide.ui', function() {
@@ -644,7 +645,37 @@ angular.module('ui.directives')
       });
     }
   };
+}]);*/
+
+
+angular.module('ui.directives')
+.directive('uiModal', ['$timeout', function($timeout) {
+  return {
+    restrict: 'EAC',
+    require: 'ngModel',
+    link: function(scope, elm, attrs, model) {
+      //helper so you don't have to type class="modal hide"
+      elm.addClass('modal hide');
+      scope.$watch(attrs.ngModel, function(value) {
+        elm.modal(value && 'show' || 'hide');
+      });
+      //If bootstrap animations are enabled, listen to 'shown' and 'hidden' events
+      elm.on(jQuery.support.transition && 'shown' || 'show', function() {
+        $timeout(function() {
+          model.$setViewValue(true);
+          console.log('shown');
+        });
+      });
+      elm.on(jQuery.support.transition && 'hidden' || 'hide', function() {
+        $timeout(function() {
+          model.$setViewValue(false);
+        });
+      });
+    }
+  };
 }]);
+
+
 
 /**
  * Add a clear button to form inputs to reset their value
@@ -653,14 +684,14 @@ angular.module('ui.directives').directive('uiReset', ['$parse', function($parse)
   return {
     require:'ngModel',
     link: function(scope, elm, attrs, ctrl) {
-  		elm.wrap('<span class="ui-resetwrap" />').after('<a class="ui-reset" />').next().click(function(e){
-  			e.preventDefault();
-  			scope.$apply(function(){
-    			// This lets you SET the value of the 'parsed' model
-    			ctrl.$setViewValue(null);
-  			});
-  		});
-  	}
+      elm.wrap('<span class="ui-resetwrap" />').after('<a class="ui-reset" />').next().click(function(e){
+        e.preventDefault();
+        scope.$apply(function(){
+          // This lets you SET the value of the 'parsed' model
+          ctrl.$setViewValue(null);
+        });
+      });
+    }
   };
 }]);
 
@@ -709,104 +740,104 @@ angular.module('ui.directives').directive('uiScrollfix', ['$window', function ($
  * Enhanced Select2 Dropmenus
  *
  * @AJAX Mode - When in this mode, your value will be an object (or array of objects) of the data used by Select2
- *   	This change is so that you do not have to do an additional query yourself on top of Select2's own query
+ *    This change is so that you do not have to do an additional query yourself on top of Select2's own query
  * @params [options] {object} The configuration options passed to $.fn.select2(). Refer to the documentation
  */
 angular.module('ui.directives').directive('uiSelect2', ['ui.config', '$http', function(uiConfig, $http){
-	var options = {};
-	if (uiConfig.select2) {
-		angular.extend(options, uiConfig.select2);
-	}
-	return {
-		require: '?ngModel',
-		compile: function(tElm, tAttrs) {
-			var watch,
-			repeatOption,
-			isSelect = tElm.is('select'),
-			isMultiple = (tAttrs.multiple !== undefined);
+  var options = {};
+  if (uiConfig.select2) {
+    angular.extend(options, uiConfig.select2);
+  }
+  return {
+    require: '?ngModel',
+    compile: function(tElm, tAttrs) {
+      var watch,
+      repeatOption,
+      isSelect = tElm.is('select'),
+      isMultiple = (tAttrs.multiple !== undefined);
 
-			// Enable watching of the options dataset if in use
-			if (tElm.is('select')) {
-				repeatOption = tElm.find('option[ng-repeat]');
-				if (repeatOption.length) {
-					watch = repeatOption.attr('ng-repeat').split(' ').pop();
-				}
-			}
+      // Enable watching of the options dataset if in use
+      if (tElm.is('select')) {
+        repeatOption = tElm.find('option[ng-repeat]');
+        if (repeatOption.length) {
+          watch = repeatOption.attr('ng-repeat').split(' ').pop();
+        }
+      }
 
-			return function(scope, elm, attrs, controller) {
-				// instance-specific options
-				var opts = angular.extend({}, options, scope.$eval(attrs.uiSelect2));
+      return function(scope, elm, attrs, controller) {
+        // instance-specific options
+        var opts = angular.extend({}, options, scope.$eval(attrs.uiSelect2));
 
-				if (isSelect) {
-					// Use <select multiple> instead
-					delete opts.multiple;
-					delete opts.initSelection;
-				} else if (isMultiple) {
-					opts.multiple = true;
-				}
+        if (isSelect) {
+          // Use <select multiple> instead
+          delete opts.multiple;
+          delete opts.initSelection;
+        } else if (isMultiple) {
+          opts.multiple = true;
+        }
 
-				if (controller) {
-					// Watch the model for programmatic changes
-					controller.$render = function() {
-						if (isSelect) {
-							elm.select2('val', controller.$modelValue);
-						} else {
-							if (isMultiple && !controller.$modelValue) {
-								elm.select2('data', []);
-							} else {
-								elm.select2('data', controller.$modelValue);
-							}
-						}
-					};
+        if (controller) {
+          // Watch the model for programmatic changes
+          controller.$render = function() {
+            if (isSelect) {
+              elm.select2('val', controller.$modelValue);
+            } else {
+              if (isMultiple && !controller.$modelValue) {
+                elm.select2('data', []);
+              } else {
+                elm.select2('data', controller.$modelValue);
+              }
+            }
+          };
 
 
-					// Watch the options dataset for changes
-					if (watch) {
-						scope.$watch(watch, function(newVal, oldVal, scope){
-							if (!newVal) return;
-							// Delayed so that the options have time to be rendered
-							setTimeout(function(){
-								elm.select2('val', controller.$viewValue);
-								// Refresh angular to remove the superfluous option
-								elm.trigger('change');
-							});
-						});
-					}
+          // Watch the options dataset for changes
+          if (watch) {
+            scope.$watch(watch, function(newVal, oldVal, scope){
+              if (!newVal) return;
+              // Delayed so that the options have time to be rendered
+              setTimeout(function(){
+                elm.select2('val', controller.$viewValue);
+                // Refresh angular to remove the superfluous option
+                elm.trigger('change');
+              });
+            });
+          }
 
-					if (!isSelect) {
-						// Set the view and model value and update the angular template manually for the ajax/multiple select2.
-						elm.bind("change", function(){
-							scope.$apply(function(){
-								controller.$setViewValue(elm.select2('data'));
-							});
-						});
+          if (!isSelect) {
+            // Set the view and model value and update the angular template manually for the ajax/multiple select2.
+            elm.bind("change", function(){
+              scope.$apply(function(){
+                controller.$setViewValue(elm.select2('data'));
+              });
+            });
 
-						if (opts.initSelection) {
-							var initSelection = opts.initSelection;
-							opts.initSelection = function(element, callback) {
-								initSelection(element, function(value){
-									controller.$setViewValue(value);
-									callback(value);
-								});
-							}
-						}
-					}
-				}
+            if (opts.initSelection) {
+              var initSelection = opts.initSelection;
+              opts.initSelection = function(element, callback) {
+                initSelection(element, function(value){
+                  controller.$setViewValue(value);
+                  callback(value);
+                });
+              }
+            }
+          }
+        }
 
-				attrs.$observe('disabled', function(value){
-					elm.select2(value && 'disable' || 'enable');
-				});
+        attrs.$observe('disabled', function(value){
+          elm.select2(value && 'disable' || 'enable');
+        });
 
-				// Set initial value since Angular doesn't
-				elm.val(scope.$eval(attrs.ngModel));
+        // Set initial value since Angular doesn't
+        elm.val(scope.$eval(attrs.ngModel));
 
-				// Initialize the plugin late so that the injected DOM does not disrupt the template compiler
-				setTimeout(function(){
-					elm.select2(opts);
-				});
-			}
-		}
-	};
+        // Initialize the plugin late so that the injected DOM does not disrupt the template compiler
+        setTimeout(function(){
+          elm.select2(opts);
+        });
+      }
+    }
+  };
 }]);
 
 
@@ -819,15 +850,15 @@ angular.module('ui.directives').directive('uiSelect2', ['ui.config', '$http', fu
  * @param expression {boolean} evaluated expression to determine if the class should be added
  */
 angular.module('ui.directives').directive('uiShow', [function() {
-	return function(scope, elm, attrs) {
-		scope.$watch(attrs.uiShow, function(newVal, oldVal){
-			if (newVal) {
-				elm.addClass('ui-show');
-			} else {
-				elm.removeClass('ui-show');
-			}	
-		});
-	};
+  return function(scope, elm, attrs) {
+    scope.$watch(attrs.uiShow, function(newVal, oldVal){
+      if (newVal) {
+        elm.addClass('ui-show');
+      } else {
+        elm.removeClass('ui-show');
+      } 
+    });
+  };
 }])
 
 /**
@@ -839,15 +870,15 @@ angular.module('ui.directives').directive('uiShow', [function() {
  * @param expression {boolean} evaluated expression to determine if the class should be added
  */
 .directive('uiHide', [function() {
-	return function(scope, elm, attrs) {
-		scope.$watch(attrs.uiHide, function(newVal, oldVal){
-			if (newVal) {
-				elm.addClass('ui-hide');
-			} else {
-				elm.removeClass('ui-hide');
-			}
-		});
-	};
+  return function(scope, elm, attrs) {
+    scope.$watch(attrs.uiHide, function(newVal, oldVal){
+      if (newVal) {
+        elm.addClass('ui-hide');
+      } else {
+        elm.removeClass('ui-hide');
+      }
+    });
+  };
 }])
 
 /**
@@ -860,15 +891,15 @@ angular.module('ui.directives').directive('uiShow', [function() {
  * @param expression {boolean} evaluated expression to determine if the class should be added
  */
 .directive('uiToggle', [function() {
-	return function(scope, elm, attrs) {
-		scope.$watch(attrs.uiToggle, function(newVal, oldVal){
-			if (newVal) {
-				elm.removeClass('ui-hide').addClass('ui-show');
-			} else {
-				elm.removeClass('ui-show').addClass('ui-hide');
-			}
-		});
-	};
+  return function(scope, elm, attrs) {
+    scope.$watch(attrs.uiToggle, function(newVal, oldVal){
+      if (newVal) {
+        elm.removeClass('ui-hide').addClass('ui-show');
+      } else {
+        elm.removeClass('ui-show').addClass('ui-hide');
+      }
+    });
+  };
 }]);
 
 /*
@@ -928,51 +959,51 @@ angular.module('ui.directives').directive('uiSortable', [
  * Binds a TinyMCE widget to <textarea> elements.
  */
 angular.module('ui.directives').directive('uiTinymce', ['ui.config', function(uiConfig){
-	uiConfig.tinymce = uiConfig.tinymce || {};
-	return {
-		require: 'ngModel',
-		link: function(scope, elm, attrs, ngModel) {
-			var expression,
-			  options = {
-				// Update model on button click
-				onchange_callback: function(inst) {
-					if (inst.isDirty()) {
-						inst.save();
-						ngModel.$setViewValue(elm.val());
+  uiConfig.tinymce = uiConfig.tinymce || {};
+  return {
+    require: 'ngModel',
+    link: function(scope, elm, attrs, ngModel) {
+      var expression,
+        options = {
+        // Update model on button click
+        onchange_callback: function(inst) {
+          if (inst.isDirty()) {
+            inst.save();
+            ngModel.$setViewValue(elm.val());
                            scope.$apply();
-					}
-				},
-				// Update model on keypress
-				handle_event_callback: function(e) {
-					if (this.isDirty()) {
-						this.save();
-						ngModel.$setViewValue(elm.val());
+          }
+        },
+        // Update model on keypress
+        handle_event_callback: function(e) {
+          if (this.isDirty()) {
+            this.save();
+            ngModel.$setViewValue(elm.val());
                            scope.$apply();
-					}
-					return true; // Continue handling
-				},
-				// Update model when calling setContent (such as from the source editor popup)
-				setup : function(ed) {
-					ed.onSetContent.add(function(ed, o) {
-						if (ed.isDirty()) {
-							ed.save();
-							ngModel.$setViewValue(elm.val());
-							scope.$apply();
-						}
-					});
-				}
-			};
-			if (attrs.uiTinymce) {
-				expression = scope.$eval(attrs.uiTinymce);
-			} else {
-				expression = {};
-			}
-			angular.extend(options, uiConfig.tinymce, expression);
-			setTimeout(function(){
-				elm.tinymce(options);
-			});
-		}
-	};
+          }
+          return true; // Continue handling
+        },
+        // Update model when calling setContent (such as from the source editor popup)
+        setup : function(ed) {
+          ed.onSetContent.add(function(ed, o) {
+            if (ed.isDirty()) {
+              ed.save();
+              ngModel.$setViewValue(elm.val());
+              scope.$apply();
+            }
+          });
+        }
+      };
+      if (attrs.uiTinymce) {
+        expression = scope.$eval(attrs.uiTinymce);
+      } else {
+        expression = {};
+      }
+      angular.extend(options, uiConfig.tinymce, expression);
+      setTimeout(function(){
+        elm.tinymce(options);
+      });
+    }
+  };
 }]);
 
 /**
@@ -1031,19 +1062,19 @@ angular.module('ui.directives').directive('uiValidate', function () {
  * @param [caseSensitive] {boolean} optional boolean to use case-sensitive searching
  */
 angular.module('ui.filters').filter('highlight', function() {
-	return function(text, search, caseSensitive) {
-		if (search || angular.isNumber(search)) {
-			text = text.toString();
-			search = search.toString();
-			if (caseSensitive) {
-				return text.split(search).join('<span class="ui-match">'+search+'</span>');
-			} else {
-				return text.replace(new RegExp(search, 'gi'), '<span class="ui-match">$&</span>');
-			}
-		} else {
-			return text;
-		}
-	};
+  return function(text, search, caseSensitive) {
+    if (search || angular.isNumber(search)) {
+      text = text.toString();
+      search = search.toString();
+      if (caseSensitive) {
+        return text.split(search).join('<span class="ui-match">'+search+'</span>');
+      } else {
+        return text.replace(new RegExp(search, 'gi'), '<span class="ui-match">$&</span>');
+      }
+    } else {
+      return text;
+    }
+  };
 });
 
 
@@ -1057,57 +1088,57 @@ angular.module('ui.filters').filter('highlight', function() {
  *          {{ 'Here Is my_phoneNumber' | inflector:'variable' }} => hereIsMyPhoneNumber
  */ 
 angular.module('ui.filters').filter('inflector', function () {
-	function ucwords(text) {
-		return text.replace(/^([a-z])|\s+([a-z])/g, function ($1) {
-			return $1.toUpperCase();
-		});
-	}
-	function breakup(text, separator) {
-		return text.replace(/[A-Z]/g, function(match){
-			return separator + match;
-		});
-	}
-	var inflectors = {
-		humanize: function(value) {
-			return ucwords(breakup(value, ' ').split('_').join(' '));
-		},
-		underscore: function(value) {
-			return value.substr(0,1).toLowerCase() + breakup(value.substr(1), '_').toLowerCase().split(' ').join('_');
-		},
-		variable: function(value) {
-			value = value.substr(0,1).toLowerCase() + ucwords(value.split('_').join(' ')).substr(1).split(' ').join('');
-			return value;
-		}
-	};
+  function ucwords(text) {
+    return text.replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+      return $1.toUpperCase();
+    });
+  }
+  function breakup(text, separator) {
+    return text.replace(/[A-Z]/g, function(match){
+      return separator + match;
+    });
+  }
+  var inflectors = {
+    humanize: function(value) {
+      return ucwords(breakup(value, ' ').split('_').join(' '));
+    },
+    underscore: function(value) {
+      return value.substr(0,1).toLowerCase() + breakup(value.substr(1), '_').toLowerCase().split(' ').join('_');
+    },
+    variable: function(value) {
+      value = value.substr(0,1).toLowerCase() + ucwords(value.split('_').join(' ')).substr(1).split(' ').join('');
+      return value;
+    }
+  };
 
-	return function (text, inflector, separator) {
-		if (inflector !== false && angular.isString(text)) {
-			inflector = inflector || 'humanize';
-			return inflectors[inflector](text);
-		} else {
-			return text;
-		}
-	};
+  return function (text, inflector, separator) {
+    if (inflector !== false && angular.isString(text)) {
+      inflector = inflector || 'humanize';
+      return inflectors[inflector](text);
+    } else {
+      return text;
+    }
+  };
 });
 
 
 /**
  * Filters out all duplicate items from an array by checking the specified key
  * @param [key] {string} the name of the attribute of each object to compare for uniqueness
-	if the key is empty, the entire object will be compared
-	if the key === false then no filtering will be performed
+  if the key is empty, the entire object will be compared
+  if the key === false then no filtering will be performed
  * @return {array}
  */
 angular.module('ui.filters').filter('unique', function() {
 
-	return function(items, filterOn) {
+  return function(items, filterOn) {
 
     if (filterOn===false){
       return items;
     }
 
-		if ((filterOn || angular.isUndefined(filterOn))&& angular.isArray(items)) {
-			var hashCheck = {}, newItems = [];
+    if ((filterOn || angular.isUndefined(filterOn))&& angular.isArray(items)) {
+      var hashCheck = {}, newItems = [];
 
       var extractValueToCompare = function(item) {
         if (angular.isObject(item) && angular.isString(filterOn)) {
@@ -1132,7 +1163,7 @@ angular.module('ui.filters').filter('unique', function() {
 
       });
       items = newItems;
-		}
-		return items;
-	};
+    }
+    return items;
+  };
 });

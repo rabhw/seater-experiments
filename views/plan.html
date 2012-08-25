@@ -1,22 +1,36 @@
-<a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-plus"></i> Add object</a>
-<div id="objects" ng-class="{show: showPalette}" droppable>
-        <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas</span></h2>
-        <ul id="objects-list">
-            <li>
-                <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
-                    <div class="table-number">Circular</div>
-                    <div class="table"></div><!-- .table -->
-                </div>
-            </li>
-            <li>
-                <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
-                    <div class="table-number">Rectangular</div>
-                    <div class="table"></div><!-- .table -->
-                </div>
+<ng-include src="'/nav-panel.html'"></ng-include>
+
+
+<edit-seat></edit-seat>        
+
+<div id="edit-table" ui-modal ng-model="showEditTable" class="fade">
+    <a data-dismiss="modal" class="close">&times;</a>
+    <div class="modal-header">
+        <input type="text" class="title-input" ng-model="editingTable.name" placeholder="Give your table a name or number"><button ng-click="addSeat()" class="btn btn-primary pull-right"><i class="icon-plus"></i> Add seat</button>
+    </div>
+
+    <div class="modal-body">
+        <ul class="table-seats" ui-sortable ui-options="{'scroll': false}" ng-model="editingTable.seats">
+            <li ng-repeat="seat in editingTable.seats">
+                <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
+                  <option></option>
+                  <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
+                </select>
+                <a class="delete-seat" ng-click="removeSeat($index)" title="Remove seat"><i class="icon-trash icon-large"></i></a>
+                <span class="help-block"><strong>Seat {{$index+1}}</strong> &ndash; Drag to re-arrange</span>
             </li>
         </ul>
+    </div>
+
+    <div class="modal-footer">
+        <button class="pull-left btn btn-danger" ng-hide="!originalTable" ng-click="removeTable(originalTable)"><i class="icon-trash"></i> Delete table</button>
+        <button ng-disabled="tableIsClean()" class="btn btn-success" ng-click="updateTable()"><i class="icon-ok"></i> {{editTableFormTitle}} table</button>
+        <button class="btn" data-dismiss="modal">Cancel</button>
+    </div>
 </div>
-<div id="canvas" class="container" droppable canvas ng-class="{fadeIn: showPalette}">
+
+
+<div id="canvas" class="container" droppable canvas ng-class="{shift: showPalette}">
     <div draggable ng-repeat="table in tables" class="table-wrap animated bounceIn" data-table-shape="{{table.shape}}" data-table-size="{{table.seats.length}}" style="top: {{table.yPos}}; left: {{table.xPos}};">
         <div class="table-number">{{table.name}}</div>
         <div class="table" style="-webkit-transform: rotate({{table.rotate}}); -moz-transform: rotate({{table.rotate}}); -ms-transform: rotate({{table.rotate}}); -o-transform: rotate({{table.rotate}}); transform: rotate({{table.rotate}});">
@@ -31,34 +45,4 @@
             <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="btn"><i class="icon-edit" title="Edit table"></i></button>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
-
-
-    <edit-seat></edit-seat>        
-
-    <div id="edit-table" ui-modal ng-model="showEditTable" class="fade">
-        <a data-dismiss="modal" class="close">&times;</a>
-        <div class="modal-header">
-            <input type="text" class="title-input" ng-model="editingTable.name" placeholder="Give your table a name or number"><button ng-click="addSeat()" class="btn btn-primary pull-right"><i class="icon-plus"></i> Add seat</button>
-        </div>
-
-        <div class="modal-body">
-            <ul class="table-seats" ui-sortable ui-options="{'scroll': false}" ng-model="editingTable.seats">
-                <li ng-repeat="seat in editingTable.seats">
-                    <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId">
-                      <option></option>
-                      <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
-                    </select>
-                    <a class="delete-seat" ng-click="removeSeat($index)" title="Remove seat"><i class="icon-trash icon-large"></i></a>
-                    <span class="help-block"><strong>Seat {{$index+1}}</strong> &ndash; Drag to re-arrange</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="modal-footer">
-            <button class="pull-left btn btn-danger" ng-hide="!originalTable" ng-click="removeTable(originalTable)"><i class="icon-trash"></i> Delete table</button>
-            <button ng-disabled="tableIsClean()" class="btn btn-success" ng-click="updateTable()"><i class="icon-ok"></i> {{editTableFormTitle}} table</button>
-            <button class="btn" data-dismiss="modal">Cancel</button>
-        </div>
-    </div>
-
 </div><!-- #canvas -->

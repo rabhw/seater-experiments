@@ -4,12 +4,11 @@
 
 function AppCtrl($scope, $routeParams, $location) {
 	$scope.location = $location;
+	$scope.showPalette = false;
 }
 
 
 function PlanCtrl($scope, $filter, Table, Guest) {
-
-	$scope.showPalette = false;
 
 	$scope.tables = Table.query();
 	$scope.guests = Guest.query();

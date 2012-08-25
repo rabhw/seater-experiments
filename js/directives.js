@@ -25,13 +25,21 @@ angular.module('seater.directives', [])
               revert: 'invalid',
               appendTo: $('#canvas'),
               stack: ".table-wrap",
+              zIndex: 2700,
               start : function(event, ui) {
                 $('.ui-tooltip').fadeOut('fast');
               },
               stop : function(event, ui) {
+                var canvasWidth = $(window).width();
+                var canvasHeight = $(window).height();
 
-                $scope.table.xPos = event.target.offsetLeft+'px';
-                $scope.table.yPos = event.target.offsetTop+'px';
+                console.log(canvasWidth, canvasHeight);
+                console.log(event.target.offsetLeft, event.target.offsetTop);
+                var tablePosX = ((event.target.offsetLeft / canvasWidth)*100)+'%';
+                var tablePosY = ((event.target.offsetTop / canvasHeight)*100)+'%';
+
+                $scope.table.xPos = tablePosX;
+                $scope.table.yPos = tablePosY;
                 $scope.table.update();
               }
            });
@@ -51,12 +59,17 @@ angular.module('seater.directives', [])
 
             element.draggable( "option", "stop", function(event, ui) {
 
+                              var canvasWidth = $(window).width();
+                var canvasHeight = $(window).height();
+                var tablePosX = ((ui.position.left / canvasWidth)*100)+'%';
+                var tablePosY = ((ui.position.top / canvasHeight)*100)+'%';
+
               // Show editing modal
             $scope.editTable();
             $scope.editTableFormTitle = "Add";
             $scope.editingTable.shape = attrs.tableShape;
-            $scope.editingTable.xPos = ui.position.left+'px';
-            $scope.editingTable.yPos = ui.position.top+'px';
+            $scope.editingTable.xPos = tablePosX;
+            $scope.editingTable.yPos = tablePosY;
             $scope.$apply();
             });
           }
@@ -68,37 +81,6 @@ angular.module('seater.directives', [])
       restrict:'A',
       link:function($scope,element,attrs){
         element.resizable();
-      }
-    };
-}).directive('canvas',function(){
-    return{
-      restrict:'A',
-      link:function($scope,element,attrs){
-
-        var windowHeight = $(window).outerHeight(),
-            headerHeight = $('header').outerHeight(),
-            canvasHeight = (windowHeight - headerHeight)*0.96;
-
-        element.css({'height' : canvasHeight+'px'});
-
-        $(window).resize(function() {
-          //@TODO : DEBOUNCE
-          setCanvasHeight();
-        });
-
-        function setCanvasHeight() {
-          windowHeight = $(window).outerHeight();
-          canvasHeight = (windowHeight - headerHeight)*0.96;
-          element.css({'height' : canvasHeight+'px'})
-        }
-
-        
-      }
-    };
-}).directive('palette',function(){
-    return{
-      restrict:'A',
-      link:function($scope,element,attrs){
       }
     };
 }).directive('editSeat',function(){

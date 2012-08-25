@@ -108,7 +108,7 @@ Version: @@ver@@ Timestamp: @@timestamp@@
     -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
     -o-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
     box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
-    z-index: 250;
+    z-index: $zindexSelectDrop;
     width:100%;
     margin-top:-1px;
 
@@ -165,7 +165,7 @@ Version: @@ver@@ Timestamp: @@timestamp@@
 .select2-search {
   display: inline-block;
     white-space: nowrap;
-    z-index: 30000;
+    z-index: $zindexSelectSearch;
   min-height: 26px;
   width: 100%;
   margin: 0;

@@ -34,19 +34,38 @@
 
 
     <div id="wrap" ng-controller="AppCtrl">
-        <header>
-            <h1 id="logo" class="sprite-logo">Find Your Seat</h1>
-            <nav id="nav-app">
-                <ul class="tabs three">
-                    <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
-                    <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
-                    <li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>
-                </ul>
-            </nav>
-        </header>
         <div id="main" ng-view></div>
         <div id="loading" class="hide"><i class="icon-cogs icon-large"></i> Loading</div>
     </div>
+
+    <script type="text/ng-template" id="/nav-panel.html">
+    <a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-plus"></i> Add object</a>
+    <nav id="nav-app" ng-class="{shift: showPalette}">
+      <ul class="top-nav">
+          <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
+          <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
+          <li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>
+      </ul>
+      <div id="objects" droppable ng-show="location.path() == '/plan'">
+              <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas</span></h2>
+              <ul id="objects-list">
+                  <li>
+                      <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">
+                          <div class="table-number">Circular</div>
+                          <div class="table"></div><!-- .table -->
+                      </div>
+                  </li>
+                  <li>
+                      <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
+                          <div class="table-number">Rectangular</div>
+                          <div class="table"></div><!-- .table -->
+                      </div>
+                  </li>
+              </ul>
+      </div>
+    </nav>
+    </script>
+
 
     <script src="js/lib/jquery-1.7.2.min.js"></script>
     <script src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
@@ -55,7 +74,7 @@
     <script src="js/lib/angular/angular.js"></script>
     <script src="js/lib/angular/angular-resource.js"></script>
     <script src="js/lib/angular/mongolab.js"></script>
-    <script src="js/lib/bootstrap-modal.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/angular-ui.js"></script>
     <script src="js/lib/select2.js"></script>
     <script src="js/lib/jquery.qtip.js"></script>

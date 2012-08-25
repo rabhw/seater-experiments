@@ -1,11 +1,12 @@
 // MODALS
 // ------
 
-.modal-open {
-  .dropdown-menu {  z-index: $zindexDropdown + $zindexModal; }
-  .dropdown.open { *z-index: $zindexDropdown + $zindexModal; }
-  .popover       {  z-index: $zindexPopover  + $zindexModal; }
-  .tooltip       {  z-index: $zindexTooltip  + $zindexModal; }
+.fade {
+  @include transition(opacity .15s linear);
+  opacity: 0;
+  &.in {
+    opacity: 1;
+  }
 }
 
 .modal-backdrop {
@@ -31,7 +32,7 @@
   left: 50%;
   z-index: $zindexModal;
   width: 646px;
-  margin: -250px 0 0 -323px;
+  margin: 0 0 0 -323px;
   background-color: $white;
   border: 1px solid #999;
   border: 1px solid rgba(0,0,0,.3);
@@ -43,7 +44,7 @@
     @include transition(unquote('opacity .3s linear, top .3s ease-out'));
     top: -25%;
   }
-  &.fade.in { top: 50%; }
+  &.fade.in { top: 5%; }
   .close {
     box-shadow: 0 0 5px $grey-10;
     border: 1px solid #999;
