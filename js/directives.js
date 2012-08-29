@@ -32,9 +32,6 @@ angular.module('seater.directives', [])
               stop : function(event, ui) {
                 var canvasWidth = $(window).width();
                 var canvasHeight = $(window).height();
-
-                console.log(canvasWidth, canvasHeight);
-                console.log(event.target.offsetLeft, event.target.offsetTop);
                 var tablePosX = ((event.target.offsetLeft / canvasWidth)*100)+'%';
                 var tablePosY = ((event.target.offsetTop / canvasHeight)*100)+'%';
 
