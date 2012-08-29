@@ -15,9 +15,16 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.editTable = function(table) {
 		$scope.showEditTable = true; // show the modal
-		$scope.editTableFormTitle = "Edit";
-		$scope.originalTable = table;
-		$scope.editingTable = new Table(table); // create a copy of the table object based on the one clicked
+		if (table) {
+			$scope.editTableFormTitle = "Edit";
+			$scope.originalTable = table;
+			$scope.editingTable = new Table(table); // create a copy of the table object based on the one clicked
+		}
+
+		else {
+			$scope.editTableFormTitle = "Add";
+			$scope.editingTable = new Table();
+		}
 
 		// 6 Seats as default for new tables
 		if (!$scope.editingTable.seats) {
@@ -40,11 +47,49 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		}
 	}
 
+	$scope.clearSeat = function(guestId) {
+		// Empties a single seat
+		_.each($scope.tables, function(table) {
+			_.each(table.seats, function(seat) {
+				if (seat.guestId === guestId) {
+					seat.guestId = undefined;
+					table.update();
+				}
+			});
+		});
+	}
+
+	$scope.clearAllSeats = function(tableToCheck) {
+		// Checks all seats of a given table, empties as needed
+		_.each($scope.tables, function(table) {
+			_.each(table.seats, function(seat) {
+				_.each(tableToCheck.seats, function(checkedSeat) {
+					if (seat.guestId === checkedSeat.guestId) {
+						seat.guestId = undefined;
+						table.update();
+					}
+				});
+			});
+		});
+	}
+
+	$scope.clearEditTableSeat = function(indexToIgnore) {
+		// Keeps guest dropdowns unique while in editing pane
+		_.each($scope.editingTable.seats, function(seat, index) {
+			if (seat.guestId === $scope.editingTable.seats[indexToIgnore].guestId && index != indexToIgnore) {
+				seat.guestId = undefined;
+			}
+		});
+	}
+
 	$scope.tableIsClean = function() {
 		return angular.equals($scope.originalTable, $scope.editingTable);
 	}
 
 	$scope.updateTable = function() {
+
+		$scope.clearAllSeats($scope.editingTable);
+
 		$scope.editingTable.saveOrUpdate(
 			function save(data) {
 				$scope.showEditTable = false;
@@ -74,7 +119,6 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 	}
 
 	$scope.rotateTable = function(table, dir) {
-		console.log(table);
 		$scope.disableTableControls = true;
 		var currRot, newRot;
 
@@ -139,7 +183,6 @@ function DebugCtrl($scope, $location, Guest, Table) {
 
 	$scope.saveTable = function() {
 	  Table.save($scope.table, function() {
-	  	console.log('saved table');
 	  	$scope.table = {}; // empty
 	  	$scope.tables = Table.query(); // update to show new guests without full page refresh
 	  });

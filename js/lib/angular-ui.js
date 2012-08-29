@@ -663,7 +663,6 @@ angular.module('ui.directives')
       elm.on(jQuery.support.transition && 'shown' || 'show', function() {
         $timeout(function() {
           model.$setViewValue(true);
-          console.log('shown');
         });
       });
       elm.on(jQuery.support.transition && 'hidden' || 'hide', function() {

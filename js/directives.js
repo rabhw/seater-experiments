@@ -64,9 +64,8 @@ angular.module('seater.directives', [])
                 var tablePosX = ((ui.position.left / canvasWidth)*100)+'%';
                 var tablePosY = ((ui.position.top / canvasHeight)*100)+'%';
 
-              // Show editing modal
+            // Show editing modal
             $scope.editTable();
-            $scope.editTableFormTitle = "Add";
             $scope.editingTable.shape = attrs.tableShape;
             $scope.editingTable.xPos = tablePosX;
             $scope.editingTable.yPos = tablePosY;
@@ -91,6 +90,7 @@ angular.module('seater.directives', [])
       replace: true,
       controller: function($scope, $element) {
         $scope.saveSeat = function() {
+          $scope.clearSeat($scope.editingSeat.guestId);
           $scope.editingSeat.table.seats[$scope.editingSeat.seatIndex].guestId = $scope.editingSeat.guestId;
           $scope.editingSeat.table.update();
           $($element).parents('.ui-tooltip').fadeOut('fast');
