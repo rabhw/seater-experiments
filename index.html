@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" ng-app="seater">
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,500,700' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
 
     <!-- Use the .htaccess and remove these lines to avoid edge case issues.
@@ -39,7 +38,8 @@
     </div>
 
     <script type="text/ng-template" id="/nav-panel.html">
-    <a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-tasks"></i> Tasks</a>
+    <div id="tab-hint" class="animated" ng-class="{ 'fadeIn' : canvasEmpty(), 'fadeOut' : !canvasEmpty() }"><i class="icon-large icon-arrow-left"></i> Click here to start!</div>
+    <a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-tasks"></i> Menu</a>
     <nav id="nav-app" ng-class="{shift: showPalette}">
       <ul class="top-nav">
           <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>

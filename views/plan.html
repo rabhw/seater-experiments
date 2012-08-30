@@ -45,4 +45,8 @@
             <button ng-disabled="disableTableControls" ng-click="editTable(table)" ng-class="{disabled: disableTableControls}" class="btn"><i class="icon-edit" title="Edit table"></i></button>
         </div><!-- .table-controls -->
     </div><!-- .table-wrap -->
+
+
+    <div id="empty-hint" class="animated" ng-class="{ 'bounceInDown' : canvasEmpty(), 'bounceOutUp' : !canvasEmpty() }">Looks like you haven&rsquo;t added any tables yet!</div>
+
 </div><!-- #canvas -->

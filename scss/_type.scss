@@ -2,20 +2,45 @@
 //	Font Import
 */
 
+@include font-face(
+    'Brevia Light',
+    font-files(
+        "brevia-light-webfont.woff", woff,
+        "brevia-light-webfont.ttf", truetype,
+        "brevia-light-webfont.svg#BreviaLight", svg),
+    	'brevia-light-webfont.eot',
+	    normal,
+	    normal
+);
+
+@include font-face(
+    'Brevia Medium',
+    font-files(
+        "brevia-medium-webfont.woff", woff,
+        "brevia-medium-webfont.ttf", truetype,
+        "brevia-medium-webfont.svg#BreviaMedium", svg),
+    	'brevia-medium-webfont.eot',
+	    normal,
+	    normal
+);
+
+
 body {
 	font-size: $baseFontSize;
 	line-height: $baseLineHeight;
 	color: $textColor;
 	font-family: $baseFontFamily;
-	font-weight: 500;
+	font-weight: normal;
 }
 
 strong {
-	font-weight: 700;
+	font-family: $boldFontFamily;
+	font-weight: normal;
 }
 
 h1, .alpha, h2, .beta {
-	font-weight: 700;
+	font-family: $boldFontFamily;
+	font-weight: normal;
 }
 
 h1, .alpha {
@@ -40,7 +65,6 @@ h2, .beta {
 	padding-left: 20px;
 	font-size: 0.636em;
 	color: $grey;
-	font-weight: 300;
 }
 
 h3, .gamma {

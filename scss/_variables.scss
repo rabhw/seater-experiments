@@ -62,7 +62,8 @@ $brown: 				#7a5020;
 
 // Typography
 $baseFontSize:          14px !default;
-$baseFontFamily:        "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseFontFamily:        "Brevia Light", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$boldFontFamily:        "Brevia Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 $sansSerifFontFamily:	$baseFontFamily;
 $monospaceFontFamily:   Menlo, Monaco, "Courier New", monospace;
@@ -92,6 +93,7 @@ $analog2:           adjust-hue($baseColor, -22) !default;
 
 // Z-index master list
 $zindexCanvas: 			0;
+$zindexTabHint: 		30;
 $zindexPullTab: 		50;
 $zindexNavPanel: 		60;
 $zindexModalBackdrop:   170;

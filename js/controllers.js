@@ -13,6 +13,13 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 	$scope.tables = Table.query();
 	$scope.guests = Guest.query();
 
+	$scope.canvasEmpty = function() {
+
+		if ($scope.tables.length === 0) {
+			return true;
+		}
+	}
+
 	$scope.editTable = function(table) {
 		$scope.showEditTable = true; // show the modal
 		if (table) {
@@ -73,10 +80,10 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		});
 	}
 
-	$scope.clearEditTableSeat = function(indexToIgnore) {
+	$scope.clearEditTableSeat = function(changedIndex) {
 		// Keeps guest dropdowns unique while in editing pane
 		_.each($scope.editingTable.seats, function(seat, index) {
-			if (seat.guestId === $scope.editingTable.seats[indexToIgnore].guestId && index != indexToIgnore) {
+			if (seat.guestId === $scope.editingTable.seats[changedIndex].guestId && index != changedIndex) {
 				seat.guestId = undefined;
 			}
 		});
@@ -106,7 +113,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 		table.remove(function(data) {
 			$scope.showEditTable = false;
 			$scope.tables = _.reject($scope.tables, function(obj) {
-				return obj._id.$oid == data._id.$oid;
+				return obj._id.$oid === data._id.$oid;
 			});
 		});
 	}
@@ -120,6 +127,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.rotateTable = function(table, dir) {
 		$scope.disableTableControls = true;
+
 		var currRot, newRot;
 
 		if (table.rotate) {
@@ -148,7 +156,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 	$scope.getGuest = function(table, seatIndex, propertyToReturn) {
 		var guest = _.find($scope.guests, function(obj) {
-			return obj._id.$oid == table.seats[seatIndex].guestId
+			return obj._id.$oid === table.seats[seatIndex].guestId
 		});
 
 		if (guest) {

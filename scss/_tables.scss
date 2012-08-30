@@ -88,11 +88,10 @@
 }
 
 .table-number {
+	font-family: $boldFontFamily;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	font-size: 14px;
-	font-weight: 700;
 	text-align: center;
 	z-index: 10;
 	cursor: move;
