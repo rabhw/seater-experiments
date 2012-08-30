@@ -58,7 +58,7 @@ a {
 	width: 100%;
 	height: 100%;
 	background: $paleGrey;
-	@include box-shadow(inset 0 0 15px $grey-60);
+	@include background(radial-gradient($white, $grayLight 1650px));
 	z-index: $zindexCanvas;
 }
 
