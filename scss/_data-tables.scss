@@ -30,8 +30,7 @@ table {
   }
   th {
     padding: 20px;
-  @extend .gamma;
-    font-weight: bold;
+    @extend .gamma;
     vertical-align: bottom;
   }
   td {

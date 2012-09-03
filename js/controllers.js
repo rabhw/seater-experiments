@@ -202,7 +202,7 @@ function DebugCtrl($scope, $location, Guest, Table) {
 function GuestCtrl($scope, Table, Guest) {
 
 
-	$scope.showPalette = true;
+	// $scope.showPalette = true;
 
 	$scope.tables = Table.query();
 	$scope.guests = Guest.query();
