@@ -35,7 +35,7 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 		// 8 Seats as default for new tables
 		if (!$scope.editingTable.seats) {
-			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, , {'guestId' : undefined}, , {'guestId' : undefined}];
+			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}];
 		}
 
 	}
