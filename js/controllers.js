@@ -215,9 +215,10 @@ function GuestCtrl($scope, Table, Guest) {
 	$scope.seatedAt = function(guest) {
 		var tableName;
 		_.each($scope.tables, function(table) {
-			_.find(table.seats, function(seat) {
+			_.each(table.seats, function(seat) {
 				if (seat.guestId === guest._id.$oid) {
 					tableName = table.name;
+					return;
 				}
 			});
 		});

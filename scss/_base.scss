@@ -9,8 +9,11 @@
 @import "layout";
 @import "sprites";
 @import "tables";
-@import "buttons";
-@import "forms";
 @import "select2";
 @import "qtip";
+
+// Bootstrap cherrypicks
+@import "buttons";
+@import "forms";
 @import "modals";
+@import "data-tables";

@@ -11,21 +11,22 @@
 		<input ng-model="guest.name" placeholder="guest name"> <button ng-click="saveGuest()">Add Guest</button>
 	</div>
 </div>
+
 <input type="text" ng-model="guestSearch" placeholder="Start typing to filter guest list">
-<div id="guest-list">
-	<ul>
-		<li ng-repeat="guest in guests | filter:guestSearch">
-			<div class="grid">
-				<div class="col-1-3">
-					{{guest.name}}
-				</div>
-				<div class="col-1-3">
-					{{seatedAt(guest)}}
-				</div>
-				<div class="col-1-3">
-					<button ng-click="" class="btn btn-danger" title="Remove guest"><i class="icon-trash"></i></button>
-				</div>
-			</div>
-		</li>
-	</ul>
-</div>
+
+<table class="data-table data-table-striped">
+  <thead>
+    <tr>
+      <th>Guest Name</th>
+      <th>Table Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="guest in guests | filter:guestSearch">
+      <td>{{guest.name}}</td>
+      <td>{{seatedAt(guest)}}</td>
+      <td><button ng-click="" class="btn btn-danger" title="Remove guest"><i class="icon-trash"></i></button></td>
+    </tr>
+  </tbody>
+</table>
