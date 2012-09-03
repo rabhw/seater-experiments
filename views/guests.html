@@ -3,18 +3,17 @@
 <div class="grid">
 	<div class="col-1-2">
 		<h2 class="section-head">Upload guest list<span class="hint-block">Upload a .csv file to add guests in bulk</span></h2>
-		<input ng-model="guest.name" placeholder="guest name"> <button ng-click="saveGuest()">Add Guest</button>
+		<input type="file" ng-model="csvUpload" placeholder="Guest name"> <button class="btn btn-success" ng-click="saveGuest()">Upload file</button>
 	</div>
 
 	<div class="col-1-2">
 		<h2 class="section-head">Manually add guests<span class="hint-block">Type in guest names manually</span></h2>
-		<input ng-model="guest.name" placeholder="guest name"> <button ng-click="saveGuest()">Add Guest</button>
+		<input ng-model="guest.name" placeholder="Guest name"> <button class="btn btn-success" ng-click="saveGuest()">Add Guest</button>
 	</div>
 </div>
 
 <input type="text" ng-model="guestSearch" placeholder="Start typing to filter guest list">
-
-<table class="data-table data-table-striped">
+<table id="guest-list" class="data-table data-table-striped data-table-bordered data-table-hover">
   <thead>
     <tr>
       <th>Guest Name</th>
@@ -23,10 +22,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="guest in guests | filter:guestSearch">
+    <tr ng-repeat="guest in guests | filter:guestSearch" ui-animate>
       <td>{{guest.name}}</td>
       <td>{{seatedAt(guest)}}</td>
-      <td><button ng-click="" class="btn btn-danger" title="Remove guest"><i class="icon-trash"></i></button></td>
+      <td><button ng-click="removeGuest(guest)" class="btn btn-danger" title="Remove guest"><i class="icon-trash"></i></button></td>
     </tr>
   </tbody>
 </table>

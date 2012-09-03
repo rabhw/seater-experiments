@@ -8,7 +8,7 @@ html {
 
 body {
 	height: 100%;
-	&:before {
+/* 	&:before {
 		content: "";
 		position: fixed;
 		top: -10px;
@@ -27,7 +27,7 @@ body {
 		height: 10px;
 		@include box-shadow(0 0 10px $grey-40);
 		z-index: 2;
-	}
+	} */
 }
 
 a {
@@ -78,6 +78,9 @@ a {
 	@include single-transition(left, $default-transition-duration);
 	&.shift {
 		left: 0;
+	}
+	.hint-block {
+		color: $white-80;
 	}
 }
 
@@ -165,19 +168,7 @@ footer {
 		float: left;
 		width: 42%;
 		padding: 20px 0 0 0;
-		position: relative;
-		bottom: auto;
-		@include opacity(1);
-		@include scale(1);
-		visibility: visible;
-		@include transition(opacity $transition-fast, bottom $transition-fast, transform $transition-fast);
-		@extend %accelerate;
-		&.ui-animate {
-			bottom: -40px;
-			@include opacity(0);
-			@include scale(0.85);
-			visibility: hidden;
-		}
+		@extend %animated-list;
 	}
 	.delete-seat {
 		top: 22px;
@@ -190,12 +181,6 @@ footer {
 	}
 }
 
-.ui-state-highlight {
-	background: $grey-lighter;
-	@include border-radius;
-	border: 1px solid $grey-light;
-}
-
 
 #empty-hint {
 	width: 100%;
@@ -203,6 +188,7 @@ footer {
 	top: 50%;
 	text-align: center;
 	font-size: 3em;
+	color: $grey-80;
 	margin-top: -1.5em;
 	z-index: $zindexEmptyHint;
 }
@@ -218,11 +204,7 @@ footer {
 }
 
 #guest-list {
-	@extend .well;
-	.info {
-		float: left;
-		min-width: 150px;
-		min-height: 1px;
-		margin-right: $global-padding;
+	tr {
+		@extend %animated-list;
 	}
 }

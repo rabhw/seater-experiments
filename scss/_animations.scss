@@ -1,5 +1,19 @@
 @include animate($class:true);
 
+%animated-list {
+		position: relative;
+		top: auto;
+		@include opacity(1);
+		visibility: visible;
+		@include transition(opacity $transition-medium, transform $transition-fast);
+		@include translateY(0);
+		&.ui-animate {
+			@include translateY(-40px);
+			@include opacity(0);
+			visibility: hidden;
+		}
+}
+
 .animated-fast {
 	@extend %accelerate;
 	@include animation-duration($transition-fast);

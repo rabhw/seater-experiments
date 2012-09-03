@@ -43,7 +43,7 @@
       <ul class="top-nav">
           <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
           <li><a href="#/guests" ng-class="{active: location.path() == '/guests'}">Manage Guests</a></li>
-          <li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>
+          <!--<li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>-->
       </ul>
       <div id="objects" droppable ng-show="location.path() == '/plan'">
               <h2 class="section-head">Add an object<span class="hint-block">Drag and drop an object onto the canvas</span></h2>
@@ -54,12 +54,12 @@
                           <div class="table"></div><!-- .table -->
                       </div>
                   </li>
-                  <li>
+                  <!--<li>
                       <div draggable class="table-wrap" data-table-shape="rect" data-generator="true">
                           <div class="table-number">Rectangular</div>
-                          <div class="table"></div><!-- .table -->
+                          <div class="table"></div>
                       </div>
-                  </li>
+                  </li>-->
               </ul>
       </div>
     </nav>

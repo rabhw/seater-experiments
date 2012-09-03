@@ -73,7 +73,7 @@ table {
   td + td,
   th + td,
   td + th {
-    border-left: 1px solid #ddd;
+    // border-left: 1px solid #ddd;
   }
   // Prevent a double border
   thead:first-child tr:first-child th,
@@ -111,6 +111,22 @@ table {
     tr:nth-child(odd) td,
     tr:nth-child(odd) th {
       background-color: #f9f9f9;
+    }
+  }
+}
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.data-table-hover {
+  tbody {
+    tr td, tr th {
+      @include transition(all, $transition-fast);
+    }
+    tr:hover td,
+    tr:hover th {
+      background-color: $skyBlue;
+      color: $white;
     }
   }
 }

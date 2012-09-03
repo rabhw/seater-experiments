@@ -33,9 +33,9 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 			$scope.editingTable = new Table();
 		}
 
-		// 6 Seats as default for new tables
+		// 8 Seats as default for new tables
 		if (!$scope.editingTable.seats) {
-			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}];
+			$scope.editingTable.seats = [{'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, {'guestId' : undefined}, , {'guestId' : undefined}, , {'guestId' : undefined}];
 		}
 
 	}
@@ -99,10 +99,12 @@ function PlanCtrl($scope, $filter, Table, Guest) {
 
 		$scope.editingTable.saveOrUpdate(
 			function save(data) {
+				console.log('saving new table');
 				$scope.showEditTable = false;
 				$scope.tables = $scope.tables.concat(data);
 			},
 			function update(data) {
+			console.log('updating existing table');
 			$scope.showEditTable = false;
 			$scope.originalTable = angular.extend($scope.originalTable, data); // merge result back to original
 		});
@@ -224,6 +226,14 @@ function GuestCtrl($scope, Table, Guest) {
 		});
 
 		return tableName;
+	}
+
+	$scope.removeGuest = function(guest) {
+		guest.remove(function(data) {
+			$scope.guests = _.reject($scope.guests, function(obj) {
+				return obj._id.$oid === data._id.$oid;
+			});
+		});
 	}
 
 }

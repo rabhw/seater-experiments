@@ -1,29 +1,3 @@
-/*
-// Colors
-*/
-
-$grey: #888888;
-$grey-lighter: lighten($grey, 42%);
-$grey-light: lighten($grey, 30%);
-$grey-dark: darken($grey, 5%);
-$grey-darker: darken($grey, 10%);
-
-$skin: #ba8a70;
-
-$fadedGreen: #718f85;
-$negative: #f56966;
-$negative-dark: darken($negative, 15%);
-
-$grey-80: fade-out(black, 0.2);
-$grey-60: fade-out(black, 0.4);
-$grey-40: fade-out(black, 0.6);
-$grey-20: fade-out(black, 0.8);
-$grey-15: fade-out(black, 0.85);
-$grey-10: fade-out(black, 0.9);
-$grey-5: fade-out(black, 0.95);
-
-
-
 // GLOBAL VALUES
 // --------------------------------------------------
 
@@ -42,6 +16,25 @@ $paleGreen: #a7bd63;
 $greenBlack: #33332d;
 $skyBlue: #91abc9;
 $orange: #db4105;
+
+
+// Shades of grey
+$grey-80: fade-out($greenBlack, 0.2);
+$grey-60: fade-out($greenBlack, 0.4);
+$grey-50: fade-out($greenBlack, 0.5);
+$grey-40: fade-out($greenBlack, 0.6);
+$grey-20: fade-out($greenBlack, 0.8);
+$grey-15: fade-out($greenBlack, 0.85);
+$grey-10: fade-out($greenBlack, 0.9);
+$grey-5: fade-out($greenBlack, 0.95);
+
+$white-80: fade-out(white, 0.2);
+$white-60: fade-out(white, 0.4);
+$white-40: fade-out(white, 0.6);
+$white-20: fade-out(white, 0.8);
+$white-15: fade-out(white, 0.85);
+$white-10: fade-out(white, 0.9);
+$white-5: fade-out(white, 0.95);
 
 // Links
 $linkColor:             $skyBlue !default;
