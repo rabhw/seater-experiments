@@ -8,14 +8,6 @@ $grey-light: lighten($grey, 30%);
 $grey-dark: darken($grey, 5%);
 $grey-darker: darken($grey, 10%);
 
-
-$tan: #edd4a8;
-$tan-light: lighten($tan, 5%);
-
-$purple: #5c565e;
-$purple-light: lighten($purple, 40%);
-$purple-lighter: lighten($purple, 60%);
-
 $skin: #ba8a70;
 
 $fadedGreen: #718f85;
@@ -26,6 +18,7 @@ $grey-80: fade-out(black, 0.2);
 $grey-60: fade-out(black, 0.4);
 $grey-40: fade-out(black, 0.6);
 $grey-20: fade-out(black, 0.8);
+$grey-15: fade-out(black, 0.85);
 $grey-10: fade-out(black, 0.9);
 $grey-5: fade-out(black, 0.95);
 
@@ -33,10 +26,6 @@ $grey-5: fade-out(black, 0.95);
 
 // GLOBAL VALUES
 // --------------------------------------------------
-
-// Links
-$linkColor:             #08c !default;
-$linkColorHover:        darken($linkColor, 15%) !default;
 
 // Grays
 $black:                 #000 !default;
@@ -46,19 +35,17 @@ $gray:                  lighten($black, 50%) !default;
 $grayLight:             lighten($black, 75%) !default;
 $grayLighter:           lighten($black, 90%) !default;
 $white:                 #fff !default;
-$paleGrey: #f7f7f7;
 
-// Accent colors
-$blue:                  #77c5d2 !default;
-$blueDark:				#333645;
-$greenBlue: 			#d9ede2;	
-$green:                 #46a546 !default;
-$red:                   #9d261d !default;
-$yellow:                #ffc40d !default;
-$orange:                #fe881c !default;
-$pink:                  #c3325f !default;
-$purple:                #7a43b6 !default;
-$brown: 				#7a5020;
+// Theme colors
+$offWhite: #fff8e3;
+$paleGreen: #a7bd63;
+$greenBlack: #33332d;
+$skyBlue: #91abc9;
+$orange: #db4105;
+
+// Links
+$linkColor:             $skyBlue !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
 
 // Typography
 $baseFontSize:          14px !default;
@@ -67,25 +54,11 @@ $boldFontFamily:        "Brevia Medium", "Helvetica Neue", Helvetica, Arial, san
 $serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 $sansSerifFontFamily:	$baseFontFamily;
 $monospaceFontFamily:   Menlo, Monaco, "Courier New", monospace;
-$baseLineHeight:        20px !default;
-$textColor:             $grayDark !default;
+$baseLineHeight:        1.5 !default;
+$textColor:             $greenBlack !default;
 
 // Buttons
-$primaryButtonBackground:    $blue !default;
-
-// Color Scheme
-// Use this to roll your own color schemes if you like (unused by Bootstrap by default)
-$baseColor:         $blue !default;                  // Set a base color
-$complement:        adjust-hue($baseColor, 180) !default;  // Determine a complementary color
-$split1:            adjust-hue($baseColor, 158) !default;  // Split complements
-$split2:            adjust-hue($baseColor, -158) !default;
-$triad1:            adjust-hue($baseColor, 135) !default;  // Triads colors
-$triad2:            adjust-hue($baseColor, -135) !default;
-$tetra1:            adjust-hue($baseColor, 90) !default;   // Tetra colors
-$tetra2:            adjust-hue($baseColor, -90) !default;
-$analog1:           adjust-hue($baseColor, 22) !default;   // Analogs colors
-$analog2:           adjust-hue($baseColor, -22) !default;
-
+$primaryButtonBackground:    $skyBlue !default;
 
 
 // COMPONENT VARIABLES
@@ -94,6 +67,8 @@ $analog2:           adjust-hue($baseColor, -22) !default;
 // Z-index master list
 $zindexCanvas: 			0;
 $zindexTabHint: 		30;
+$zindexEmptyHint:		30;
+$zindexTableWrap:		40;
 $zindexPullTab: 		50;
 $zindexNavPanel: 		60;
 $zindexModalBackdrop:   170;
@@ -146,6 +121,5 @@ $transition-slow: 1s;
 /*
 //	Border radius
 */
-$default-border-radius: 4px;
-$border-radius-small: 2px;
-$border-radius-large: 8px;
+$default-border-radius: 2px;
+$border-radius-large: 4px;

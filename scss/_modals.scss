@@ -3,6 +3,7 @@
 
 .fade {
   @include transition(opacity .15s linear);
+  @extend %accelerate;
   opacity: 0;
   &.in {
     opacity: 1;
@@ -42,6 +43,7 @@
   @include background-clip(padding-box);
   &.fade {
     @include transition(unquote('opacity .3s linear, top .3s ease-out'));
+    @extend %accelerate;
     top: -25%;
   }
   &.fade.in { top: 5%; }

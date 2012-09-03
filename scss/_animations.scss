@@ -1,11 +1,25 @@
 @include animate($class:true);
+
+.animated-fast {
+	@extend %accelerate;
+	@include animation-duration($transition-fast);
+	@include experimental(animation-fill-mode, both);
+}
+
 .animated {
-	-webkit-animation-duration: 0.75s;
-	-moz-animation-duration: 0.75s;
-	-o-animation-duration: 0.75s;
-	animation-duration: 0.75s;
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
+	@extend %accelerate;
+	@include animation-duration($default-transition-duration);
+	@include experimental(animation-fill-mode, both);
+}
+
+.animated-medium {
+	@extend %accelerate;
+	@include animation-duration($transition-medium);
+	@include experimental(animation-fill-mode, both);
+}
+
+.animated-slow {
+	@extend %accelerate;
+	@include animation-duration($transition-slow);
+	@include experimental(animation-fill-mode, both);
 }

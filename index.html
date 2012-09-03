@@ -34,12 +34,11 @@
 
     <div id="wrap" ng-controller="AppCtrl">
         <div id="main" ng-view></div>
-        <div id="loading" class="hide"><i class="icon-cogs icon-large"></i> Loading</div>
     </div>
 
     <script type="text/ng-template" id="/nav-panel.html">
     <div id="tab-hint" class="animated" ng-class="{ 'fadeIn' : canvasEmpty(), 'fadeOut' : !canvasEmpty() }"><i class="icon-large icon-arrow-left"></i> Click here to start!</div>
-    <a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-tasks"></i> Menu</a>
+    <a class="pull-tab btn btn-large btn-primary" ng-class="{shift: showPalette}" ng-click="showPalette=!showPalette"><i class="icon-list-ul"></i> Menu</a>
     <nav id="nav-app" class="animated" ng-class="{'shift': showPalette}">
       <ul class="top-nav">
           <li><a href="#/plan" ng-class="{active: location.path() == '/plan'}">Seating Plan</a></li>
@@ -47,7 +46,7 @@
           <li><a href="#/debug" ng-class="{active: location.path() == '/debug'}">Debug</a></li>
       </ul>
       <div id="objects" droppable ng-show="location.path() == '/plan'">
-              <h2 class="section-head">Add an object<span class="hint">Drag and drop an object onto the canvas</span></h2>
+              <h2 class="section-head">Add an object<span class="hint-block">Drag and drop an object onto the canvas</span></h2>
               <ul id="objects-list">
                   <li>
                       <div draggable class="table-wrap" data-table-shape="circle" data-generator="true">

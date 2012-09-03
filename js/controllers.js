@@ -197,6 +197,32 @@ function DebugCtrl($scope, $location, Guest, Table) {
 	}
 }
 
-function GuestCtrl($scope) {
+function GuestCtrl($scope, Table, Guest) {
+
+
+	$scope.showPalette = true;
+
+	$scope.tables = Table.query();
+	$scope.guests = Guest.query();
+
+	$scope.saveGuest = function() {
+	  Guest.save($scope.guest, function(data) {
+	  	$scope.guest = {}; // empty
+	  	$scope.guests = $scope.guests.concat(data);
+	  });
+	}
+
+	$scope.seatedAt = function(guest) {
+		var tableName;
+		_.each($scope.tables, function(table) {
+			_.find(table.seats, function(seat) {
+				if (seat.guestId === guest._id.$oid) {
+					tableName = table.name;
+				}
+			});
+		});
+
+		return tableName;
+	}
 
 }

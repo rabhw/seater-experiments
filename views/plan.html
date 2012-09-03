@@ -11,7 +11,7 @@
 
     <div class="modal-body">
         <ul class="table-seats" ui-sortable ui-options="{'scroll': false}" ng-model="editingTable.seats">
-            <li ng-repeat="seat in editingTable.seats">
+            <li ng-repeat="seat in editingTable.seats" ui-animate>
                 <select class="guest-select" ui-select2 data-placeholder="Add a guest..." ng-model="editingTable.seats[$index].guestId" ng-change="clearEditTableSeat($index)">
                   <option></option>
                   <option ng-repeat="guest in guests" value="{{guest._id.$oid}}">{{guest.name}}</option>
@@ -47,6 +47,6 @@
     </div><!-- .table-wrap -->
 
 
-    <div id="empty-hint" class="animated" ng-class="{ 'bounceInDown' : canvasEmpty(), 'bounceOutUp' : !canvasEmpty() }">Looks like you haven&rsquo;t added any tables yet!</div>
+    <div id="empty-hint" class="animated" ng-class="{ 'bounceInDown' : canvasEmpty(), 'fadeOut' : !canvasEmpty() }">Looks like you haven&rsquo;t added any tables yet!</div>
 
 </div><!-- #canvas -->

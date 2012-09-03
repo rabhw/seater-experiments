@@ -621,7 +621,7 @@ angular.module('ui.directives').directive('uiMask', [
   }
 ]);
 
-/*angular.module('ui.directives')
+angular.module('ui.directives')
 .directive('uiModal', ['$timeout', function($timeout) {
   return {
     restrict: 'EAC',
@@ -635,7 +635,6 @@ angular.module('ui.directives').directive('uiMask', [
       elm.on('show.ui', function() {
         $timeout(function() {
           model.$setViewValue(true);
-          console.log('shown');
         });
       });
       elm.on('hide.ui', function() {
@@ -645,36 +644,7 @@ angular.module('ui.directives').directive('uiMask', [
       });
     }
   };
-}]);*/
-
-
-angular.module('ui.directives')
-.directive('uiModal', ['$timeout', function($timeout) {
-  return {
-    restrict: 'EAC',
-    require: 'ngModel',
-    link: function(scope, elm, attrs, model) {
-      //helper so you don't have to type class="modal hide"
-      elm.addClass('modal hide');
-      scope.$watch(attrs.ngModel, function(value) {
-        elm.modal(value && 'show' || 'hide');
-      });
-      //If bootstrap animations are enabled, listen to 'shown' and 'hidden' events
-      elm.on(jQuery.support.transition && 'shown' || 'show', function() {
-        $timeout(function() {
-          model.$setViewValue(true);
-        });
-      });
-      elm.on(jQuery.support.transition && 'hidden' || 'hide', function() {
-        $timeout(function() {
-          model.$setViewValue(false);
-        });
-      });
-    }
-  };
 }]);
-
-
 
 /**
  * Add a clear button to form inputs to reset their value

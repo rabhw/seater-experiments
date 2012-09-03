@@ -38,13 +38,13 @@ strong {
 	font-weight: normal;
 }
 
-h1, .alpha, h2, .beta {
+h2, .beta {
 	font-family: $boldFontFamily;
 	font-weight: normal;
 }
 
 h1, .alpha {
-	font-size: 2em;
+	font-size: 2.5em;
 	margin-bottom: 0.75em;
 }
 
@@ -57,14 +57,23 @@ h2, .beta {
 	line-height: 1;
 	margin-bottom: 0.786em;
 	padding-bottom: 0.75em;
-	border-bottom: 1px solid $grey-light;
+	border-bottom: 1px solid $grey-20;
 }
 
 .hint {
 	display: inline-block;
 	padding-left: 20px;
 	font-size: 0.636em;
-	color: $grey;
+}
+
+.hint-block {
+	display: block;
+	font-size: 0.636em;
+	padding-top: 6px;
+}
+
+.hint, .hint-block {
+	color: $grey-40;
 }
 
 h3, .gamma {

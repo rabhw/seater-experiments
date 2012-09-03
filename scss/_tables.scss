@@ -1,8 +1,7 @@
 .table-wrap {
 	position: absolute;
 	cursor: move;
-	// @TODO: WEBKIT BUG WITH THIS TRANSITION (DRAG QUICKLY) makes viewport freak out
-	// @include single-transition(transform, $transition-fast);
+	z-index: $zindexTableWrap;
 	
 	&.ui-draggable-dragging {
 		@include scale(1.25);
@@ -80,9 +79,10 @@
 }
 
 .table {
-	background: $purple-light;
-	border: 4px solid $purple;
+	background: $skyBlue;
+	border: 4px solid lighten($greenBlack, 5%);
 	@include single-transition(transform, $default-transition-duration);
+	@extend %accelerate;
 	@include box-shadow(0 0 10px $grey-20);
 	@include box-shadow(inset 0 0 30px $grey-20);
 }
@@ -103,21 +103,25 @@
 	left: 50%;
 	margin-top: -24px;
 	margin-left: -45px;
-	color: $purple;
+	color: $greenBlack;
 }
 
 .table-controls {
 	@include opacity(0);
-	@include transition;
+	@include transition(opacity 0.2s 0.75s ease); // delays to prevent flashing
+	@extend %accelerate;
 	width: 160%;
 	left: -30%;
 	position: absolute;
 	bottom: -80px;
 	text-align: center;
+	z-index: $zindexTableWrap;
 }
 
 .table-wrap:hover {
 	.table-controls {
+		@include transition(opacity 0.2s 0 ease);
+		@extend %accelerate;
 		@include opacity(1);
 	}
 }
@@ -126,8 +130,8 @@
 	position: absolute;
 	@include transform-origin(bottom ,center);
 	a {
-		border: 1px solid $grey-20;
-		// @include box-shadow(0 0 0 1px $grey-40);
+		border: 1px solid lighten($greenBlack, 5%);
+		background: $grey-10;
 		cursor: pointer;
 		position: absolute;
 		top: 0;
@@ -136,10 +140,10 @@
 		width: 20px;
 		height: 20px;
 		@extend %circle;
-		background: $purple-light;
 		@include transition(all 0.5s);
+		@extend %accelerate;
 		&:hover {
-			background: $purple;
+			background: $offWhite;
 		}
 	}
 	.occupied:after {
@@ -151,6 +155,6 @@
 		height: 10px;
 		text-align: center;
 		@extend %circle;
-		background: $fadedGreen;
+		background: $skyBlue;
 	}
 }

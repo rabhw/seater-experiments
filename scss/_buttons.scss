@@ -12,14 +12,14 @@
   font-family: $boldFontFamily;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
-  color: $grayDark;
+  color: $greenBlack;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
   // TODO - check
   @include background-image(linear-gradient($white, $white 25%, darken($white, 10)));
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
-  @include border-radius(4px);
+  @include border-radius;
   $shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   @include box-shadow($shadow);
   cursor: pointer;
@@ -30,7 +30,6 @@
 
 // Hover state
 .btn:hover {
-  color: $grayDark;
   text-decoration: none;
 /*   background-color: darken($white, 10%);
   background-position: 0 -15px; */
@@ -53,7 +52,6 @@
   @include box-shadow($shadow);
   background-color: darken($white, 10%);
   background-color: darken($white, 15%);
-  color: rgba(0,0,0,.5);
   outline: 0;
 }
 
@@ -76,7 +74,7 @@
   padding: 9px 14px;
   font-size: $baseFontSize + 2px;
   line-height: normal;
-  @include border-radius(5px);
+  @include border-radius($border-radius-large);
 }
 .btn-large .icon {
   margin-top: 1px;
@@ -108,7 +106,7 @@
 .btn-success:hover,
 .btn-info,
 .btn-info:hover {
-  // text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
 // Provide *some* extra contrast for those who can get it
 .btn-primary.active,
@@ -130,11 +128,11 @@
 }
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground(#ee5f5b, #bd362f);
+  @include buttonBackground(lighten($orange, 15%), $orange);
 }
 // Success appears as green
 .btn-success {
-  @include buttonBackground(#62c462, #51a351);
+  @include buttonBackground($paleGreen, adjust-hue($paleGreen, 3));
 }
 // Info appears as a neutral blue
 .btn-info {

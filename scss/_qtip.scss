@@ -100,8 +100,8 @@
 
 /* Default tooltip style */
 .ui-tooltip-default{
-	border-color: #F1D031;
-	background-color: #FFFFA3;
+	border-color: darken($offWhite, 15%);
+	background-color: $offWhite;
 	color: #555;
 }
 

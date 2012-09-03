@@ -112,12 +112,12 @@
 // Mixin for generating button backgrounds
 // ---------------------------------------
 @mixin buttonBackground($startColor, $endColor) {
-  color: darken($startColor, 48%);
+  color: white;
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
   @include gradientBar($startColor, $endColor);
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:active, &.active, &.disabled, &[disabled] {
-    background-color: $endColor;
+    background-color: darken($endColor, 10%);
   }
 
   // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
